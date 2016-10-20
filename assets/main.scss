@@ -54,7 +54,7 @@ $banner-height: 250px;
     margin: 5px auto;
     max-width: 1013px;
     height: $banner-height;
-    background-image: url({{ "/images/melbourne-misty.jpeg" | relative_url }});
+    background-image: url({{ "/images/melbourne-misty.jpeg" | prepend: site.github.url }});
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;

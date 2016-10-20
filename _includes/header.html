@@ -1,6 +1,6 @@
 <div class="site-nav-wrapper">
   <div class="org-logo">
-    <a href="http://aclweb.org" title="Association for Computational Linguistics"><img src="{{ 'images/acl-logo.png' | relative_url }}" alt="ACL"></a>
+    <a href="http://aclweb.org" title="Association for Computational Linguistics"><img src="{{ '/images/acl-logo.png' | prepend: site.github.url }}" alt="ACL"></a>
   </div>
   <nav class="site-nav">
     <span class="menu-icon">
@@ -14,7 +14,7 @@
     <div class="trigger">
       {% for my_page in site.pages %}
         {% if my_page.title %}
-        <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+        <a class="page-link" href="{{ my_page.url | prepend: site.github.url }}">{{ my_page.title | escape }}</a>
         {% endif %}
       {% endfor %}
     </div>
