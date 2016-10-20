@@ -37,3 +37,75 @@ $on-laptop:        800px;
 
 // Import partials from the `minima` theme.
 @import "minima";
+
+
+$top-nav-height: 40px;
+$banner-height: 250px;
+
+
+.site-header {
+    border: none;
+}
+
+.banner {
+    padding: 30px 15px;
+    /* margin-bottom: 30px; */
+//    height: 300px;
+    margin: 5px auto;
+    max-width: 1013px;
+    height: $banner-height;
+    background-image: url({{ "/images/melbourne-misty.jpeg" | relative_url }});
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    border: none;
+}
+
+.site-nav-wrapper {
+    max-width: $content-width - 2 * $spacing-unit;
+    float: none;
+    margin: 10px auto;
+    height: $top-nav-height; 
+    padding: 0 $spacing-unit;   
+}
+
+.site-nav {
+    line-height: $top-nav-height;
+    vertical-align: middle;
+}
+
+.site-title {
+    float: right;
+    font-weight: 500;
+    font-size: 50px;
+}
+
+.site-sub-title-wrapper {
+    height: $banner-height;
+}
+
+.site-sub-title {
+    float: left;
+    vertical-align: bottom;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    .sub-title-main {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 110%;
+        margin-bottom: 10px;
+    }
+    .sub-title-extra {
+        font-size: 15px;
+    }
+}
+    
+
+.org-logo {
+    float: left; 
+    vertical-align: middle;
+    img {   
+        max-height: $top-nav-height - 10px;
+    }
+}

@@ -1,0 +1,14 @@
+title: ACL 2018
+description: 56th Annual Meeting of the Association for Computational Linguistics
+author: The ACL 2018 Organising Committee
+# email: your-email@domain.com
+# baseurl: "/minima"
+# twitter_username: jekyllrb
+# github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+theme: minima
+exclude:
+  - Gemfile
+  - Gemfile.lock
