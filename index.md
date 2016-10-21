@@ -8,10 +8,10 @@ the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) in July 20
 
 ### General Chair
 
-* Claire Cardie 
+* Claire Cardie, Cornell University
 
 ### Local Chairs
 
-* Tim Baldwin
-* Karin Verspoor
-* Trevor Cohn
+* Tim Baldwin, The University of Melbourne
+* Karin Verspoor, The University of Melbourne
+* Trevor Cohn, The University of Melbourne
