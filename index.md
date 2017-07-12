@@ -78,12 +78,12 @@ committee:
     - name: Tim Baldwin
       affiliation: University of Melbourne
       page: https://people.eng.unimelb.edu.au/tbaldwin/
-#    - name: Karin Verspoor
-#      affiliation: University of Melbourne
-#      page: http://www.cis.unimelb.edu.au/people/staff.php?person_ID=458973
-#    - name: Trevor Cohn
-#      affiliation: University of Melbourne
-#      page: http://people.eng.unimelb.edu.au/tcohn/
+    - name: Karin Verspoor
+      affiliation: University of Melbourne
+      page: http://www.cis.unimelb.edu.au/people/staff.php?person_ID=458973
+    - name: Trevor Cohn
+      affiliation: University of Melbourne
+      page: http://people.eng.unimelb.edu.au/tcohn/
 
 ---
 
