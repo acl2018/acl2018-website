@@ -53,4 +53,4 @@ much appreciated before *September 30, 2017*.
 
 [nomform]: (https://docs.google.com/forms/d/e/1FAIpQLSevxUeABBVPuhe7tr6DsSa4PT5Y9gYa9Mq6kVlpTchxfAUdAQ/viewform?usp=sf_link)
 
--- *Iryna Gurevych and Yusuke Miyao (ACL 2018 Program Chairs)*
+– *Iryna Gurevych and Yusuke Miyao (ACL 2018 Program Chairs)*
