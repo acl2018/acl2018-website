@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+top: true
 committee:
   - rolename: General Chair
     people:
@@ -89,6 +90,10 @@ committee:
 
 The 56th Annual Meeting of the Association for Computational Linguistics will be held in Melbourne, Australia at
 the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 15th to 20th, 2018.
+
+### News
+
+* [Please help us recruit the best area chairs, reviewers, and invited speakers](news/call-for-nominations)
 
 ### Organising Committee
 
