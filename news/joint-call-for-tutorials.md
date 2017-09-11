@@ -6,13 +6,10 @@ snippet: ACL, COLING, EMNLP and NAACL 2018 are seeking tutorial proposals
 
 The Association for Computational Linguistics (ACL), the International Conference on Computational Linguistics (COLING), the Conference on Empirical Methods in Natural Language Processing (EMNLP), and the North American Chapter of the Association for Computational Linguistics (NAACL) invite proposals for tutorials to be held in conjunction with ACL 2018, COLING 2018, EMNLP 2018, or NAACL 2018. We seek proposals for tutorials in all areas of computational linguistics, broadly conceived to include related disciplines such as linguistics, speech, information retrieval and multimodal processing. We particularly welcome (1) tutorials that cover advances in newly emerging areas not previously covered in any ACL/COLING/EMNLP/NAACL related tutorial, or (2) tutorials that provide introductions into related fields that are potentially relevant for the CL community (e.g., bioinformatics, social media, human language processing, machine learning techniques). Tutorials will be held at one of the following conference venues:
 
-[ACL 2018](http://acl2018.org/) is the 56th Annual Meeting of the Association for Computational Linguistics. It will be held in Melbourne, Australia on July 15–20, 2018. The ACL tutorials will be held on July 15th.
-
-[COLING 2018](http://coling2018.org/) is the 27th Biennial International Conference on Computational Linguistics (COLING). It will be held in Santa Fe, New Mexico, USA on August 20-25, 2018. The COLING tutorials will be held on August 20-21. 
-
-EMNLP 2018 is the SIGDAT conference on Empirical Methods in Natural Language Processing (EMNLP). EMNLP will be held later in 2018 (after the other three conferences). Exact details on dates and venue for EMNLP tutorials will be announced soon.
-
-[NAACL 2018](http://naacl2018.org/) is the 16th Annual Meeting of the North American Chapter of the Association for Computational Linguistics (NAACL). It will be held in New Orleans, Louisiana, USA, June 1-6, 2018. The NAACL tutorials will be held on June 1.
+* [ACL 2018](http://acl2018.org/) is the 56th Annual Meeting of the Association for Computational Linguistics. It will be held in Melbourne, Australia on July 15–20, 2018. The ACL tutorials will be held on July 15th.
+* [COLING 2018](http://coling2018.org/) is the 27th Biennial International Conference on Computational Linguistics (COLING). It will be held in Santa Fe, New Mexico, USA on August 20-25, 2018. The COLING tutorials will be held on August 20-21. 
+* EMNLP 2018 is the SIGDAT conference on Empirical Methods in Natural Language Processing (EMNLP). EMNLP will be held later in 2018 (after the other three conferences). Exact details on dates and venue for EMNLP tutorials will be announced soon.
+* [NAACL 2018](http://naacl2018.org/) is the 16th Annual Meeting of the North American Chapter of the Association for Computational Linguistics (NAACL). It will be held in New Orleans, Louisiana, USA, June 1-6, 2018. The NAACL tutorials will be held on June 1.
 
 
 ### Remuneration
