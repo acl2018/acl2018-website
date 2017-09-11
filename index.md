@@ -94,6 +94,7 @@ the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 
 ### News
 
 * [Please help us recruit the best area chairs, reviewers, and invited speakers](news/call-for-nominations)
+* [ACL, COLING, EMNLP and NAACL 2018 are seeking tutorial proposals](news/joint-call-for-tutorials)
 
 ### Organising Committee
 
