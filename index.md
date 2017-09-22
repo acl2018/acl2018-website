@@ -48,9 +48,9 @@ committee:
     - name: Kevin Gimpel
       page: http://www.ttic.edu/gimpel
       affiliation: University of Chicago
-    - name: Lu Wei
+    - name: Wei Lu
       page: http://www.statnlp.org/faculty/lu_wei
-      affiliation: Singapore University of Technology and Design
+      affiliation: Singapore University of Technology and Design (Advisory)
   - rolename: Exhibits Coordinator
     people:
     - name: Karin Verspoor
