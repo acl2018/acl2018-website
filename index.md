@@ -112,6 +112,8 @@ the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 
 {% for kd in page.key_dates %}
   * **{{ kd.date }}**: {{ kd.event }}{% endfor %}
 
+_All deadlines are: 11:59pm UTC-12_
+
 ### Organising Committee
 
 {% for role in page.committee %}
