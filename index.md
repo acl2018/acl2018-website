@@ -94,9 +94,11 @@ key_dates:
     event: Notification of Acceptance
   - date: May 11th
     event: Camera-ready Due
+  - date: July 15th–20th
+    event: Main Conference
 ---
 
-The 56th Annual Meeting of the Association for Computational Linguistics will be held in Melbourne, Australia at
+The 56th Annual Meeting of the Association for Computational Linguistics will be held in [Melbourne, Australia](https://www.melbourne.org/?utm_source=Microsite&utm_campaign=Computational%20Linguistics) at
 the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 15th to 20th, 2018.
 
 
