@@ -47,7 +47,7 @@ committee:
       affiliation: University of Edinburgh
     - name: Kevin Gimpel
       page: http://www.ttic.edu/gimpel
-      affiliation: University of Chicago
+      affiliation: Toyota Technological Institute at Chicago
     - name: Wei Lu
       page: http://www.statnlp.org/faculty/lu_wei
       affiliation: Singapore University of Technology and Design (Advisory)
