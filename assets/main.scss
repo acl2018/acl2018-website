@@ -52,9 +52,9 @@ $banner-height: 250px;
     /* margin-bottom: 30px; */
 //    height: 300px;
     margin: 5px auto;
-    max-width: 1013px;
+    max-width: 911px;
     height: $banner-height;
-    background-image: url({{ "/images/melbourne-misty.jpeg" | prepend: site.github.url }});
+    background-image: url({{ "/images/yarra-panorama.jpg" | prepend: site.github.url }});
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -78,7 +78,12 @@ $banner-height: 250px;
     float: right;
     font-weight: 500;
     font-size: 50px;
+    a:link, a:visited {
+        color: white;
+    }
 }
+
+
 
 .site-sub-title-wrapper {
     height: $banner-height;
@@ -100,7 +105,7 @@ $banner-height: 250px;
         font-size: 15px;
     }
     background-color: #424242;
-    opacity: 0.7;
+    opacity: 0.75;
     padding: 10px;
 }
     
