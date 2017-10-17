@@ -85,6 +85,11 @@ committee:
     - name: Trevor Cohn
       affiliation: University of Melbourne
       page: http://people.eng.unimelb.edu.au/tcohn/
+  - rolename: Webmaster
+    people: 
+      - name: Andrew MacKinlay
+        affiliation: IBM Research
+        page: http://researcher.ibm.com/researcher/view.php?person=au1-admackin
 key_dates:
   - date: February 22nd
     event: Submission Deadline
@@ -123,6 +128,3 @@ _All deadlines are: 11:59pm UTC-12_
   * [{{ person.name }}]({{ person.page }}), {{ person.affiliation }}{% endfor %}
 {% endfor %}
 
-
-### Support
-**Webmaster:** [Andrew MacKinlay](http://researcher.ibm.com/researcher/view.php?person=au1-admackin), IBM Research
