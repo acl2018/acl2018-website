@@ -18,7 +18,7 @@ have no preferences.
 
 ### Area Chair nominations
 
-*Maximum of 3 nominees**
+*Maximum of 3 nominees*
 
 Self nominations are welcomed and encouraged. You will have to answer 
 why you think your nominee is qualified to review for her/his area of 
