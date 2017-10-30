@@ -2,6 +2,7 @@
 layout: page
 title: First Joint Call for Tutorial Proposals
 snippet: ACL, COLING, EMNLP and NAACL 2018 are seeking tutorial proposals
+date: 2017-09-11
 ---
 
 The Association for Computational Linguistics (ACL), the International Conference on Computational Linguistics (COLING), the Conference on Empirical Methods in Natural Language Processing (EMNLP), and the North American Chapter of the Association for Computational Linguistics (NAACL) invite proposals for tutorials to be held in conjunction with ACL 2018, COLING 2018, EMNLP 2018, or NAACL 2018. We seek proposals for tutorials in all areas of computational linguistics, broadly conceived to include related disciplines such as linguistics, speech, information retrieval and multimodal processing. We particularly welcome:
