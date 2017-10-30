@@ -35,9 +35,9 @@ _All deadlines are: 11:59pm UTC-12_
 
 **General Chair:** [Claire Cardie](http://www.cs.cornell.edu/home/cardie/)
 
-[Full Organising Committee List]({{ "committee#organising-committee" | prepend: site.github.url }})
+[Full Organising Committee List]({{ "/committee#organising-committee" | prepend: site.github.url }})
 
-[Full Area Chair List]({{ "committee#area-chairs" | prepend: site.github.url }})
+[Full Area Chair List]({{ "/committee#area-chairs" | prepend: site.github.url }})
 
 
 
