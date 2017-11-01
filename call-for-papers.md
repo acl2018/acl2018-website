@@ -140,7 +140,7 @@ papers must not exceed four (4) pages of content. References do not
 count against these limits.
 
 -   [LaTeX]({{ site.github.url }}/downloads/acl18-latex.zip)
--   [Microsoft Word]({{ site.github.url }}/downloads/acl18-latex.zip)
+-   [Microsoft Word]({{ site.github.url }}/downloads/acl18-word.zip)
 
 All submissions must be in PDF format and must conform to the official
 style guidelines, which are contained in these template files.
