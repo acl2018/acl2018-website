@@ -12,3 +12,14 @@ theme: minima
 exclude:
   - Gemfile
   - Gemfile.lock
+key_dates:
+  - date: February 22nd
+    event: Submission Deadline
+  - date: March 26th–28th
+    event: Author Response Period
+  - date: April 20th
+    event: Notification of Acceptance
+  - date: May 11th
+    event: Camera-ready Due
+  - date: July 15th–20th
+    event: Main Conference
