@@ -134,7 +134,7 @@ without review.
 Submission is electronic, using the Softconf START conference management
 system. The submission site will be announced shortly.
 
-Long/short paper submissions must use the official ACL 2017 style
+Long/short paper submissions must use the official ACL 2018 style
 templates. Long papers must not exceed eight (8) pages of content. Short
 papers must not exceed four (4) pages of content. References do not
 count against these limits.
