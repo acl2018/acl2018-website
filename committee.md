@@ -116,6 +116,10 @@ area_chairs:
       - name: Ralph Grishman
       - name: Yi Yang
       - name: Nazli Goharian
+  - area:   Linguistic Theories, Cognitive Modeling and Psycholinguistics
+    people: 
+      - name: Shuly Wintner
+      - name: Tim O'Donnell
   - area:   Machine Learning
     people:
       - name: Andre Martins
@@ -135,23 +139,27 @@ area_chairs:
   - area:   Multilinguality
     people:
       - name: Bernardo Magnini
+  - area: Phonology, Morphology and Word Segmentation
+    people:
+      - name: Graham Neubig
+      - name: Hai Zhao
   - area:   Question Answering
     people:
       - name: Lluís Màrquez
       - name: Teruko Mitamura
       - name: Zornitsa Kozareva
-  - area:   Question Answering
-    people:
       - name: Richard Socher
+  - area:   Resources and Evaluation
+    people:
       - name: Gerard de Melo
       - name: Karen Fort
   - area:   Sentence-level Semantics
     people:
       - name: Luke Zettlemoyer
       - name: Ellie Pavlick
-      - name: Smaranda Muresan
   - area:   Sentiment Analysis and Argument Mining
     people:
+      - name: Smaranda Muresan
       - name: Benno Stein
       - name: Yulan He
   - area:   Social Media
@@ -162,33 +170,25 @@ area_chairs:
     people:
       - name: Kathleen McKeown
       - name: Xiaodan Zhu
-  - area:   Textual Inference and Other Areas of Semantics
-    people:
-      - name: Michael Roth
-      - name: Fabio Massimo Zanzotto
-  - area:   Word-level Semantics
-    people:
-      - name: Ekaterina Shutova
-      - name: Roberto Navigli
-  - area:   Linguistic Theories, Cognitive Modeling and Psycholinguistics
-    people: 
-      - name: Shuly Wintner
-      - name: Tim O'Donnell
-  - area: Phonology, Morphology and Word Segmentation
-    people:
-      - name: Graham Neubig
-      - name: Hai Zhao
   - area: Tagging, Chunking, Syntax and Parsing
     people: 
       - name: Liang Huang
       - name: Weiwei Sun
       - name: Željko Agić
       - name: Yue Zhang
+  - area:   Textual Inference and Other Areas of Semantics
+    people:
+      - name: Michael Roth
+      - name: Fabio Massimo Zanzotto
   - area: Vision, Robotics, Multimodal, Grounding and Speech
     people:
       - name: Yoav Artzi
       - name: Shinji Watanabe
       - name: Timothy Hospedales    
+  - area:   Word-level Semantics
+    people:
+      - name: Ekaterina Shutova
+      - name: Roberto Navigli
       
 ---
 
