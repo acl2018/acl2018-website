@@ -152,7 +152,7 @@ area_chairs:
   - area:   Resources and Evaluation
     people:
       - name: Gerard de Melo
-      - name: Karën Fort
+      - name: "Karën Fort"
   - area:   Sentence-level Semantics
     people:
       - name: Luke Zettlemoyer
