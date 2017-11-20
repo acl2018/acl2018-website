@@ -117,3 +117,25 @@ $banner-height: 250px;
         max-height: $top-nav-height - 10px;
     }
 }
+
+
+.feed-link {
+    text-transform: uppercase;
+    a:link, a:visited {
+        color: #777;
+    }
+    ::before {
+        content: "[ ";
+    }
+    ::after {
+        content: " ]";
+    }
+    
+    text-align: right;
+    font-size: 0.7em;
+}
+
+
+.date {
+    font-style: italic;
+}

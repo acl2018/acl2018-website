@@ -7,6 +7,9 @@ author: The ACL 2018 Organising Committee
 # github_username:  jekyll
 
 # Build settings
+plugins:
+  - jekyll-redirect-from
+  - jekyll-feed
 markdown: kramdown
 theme: minima
 exclude:
@@ -23,3 +26,5 @@ key_dates:
     event: Camera-ready Due
   - date: July 15th–20th
     event: Main Conference
+permalink: pretty
+

@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: news
 title: Call for PC and speaker nominations
 snippet: Please help us recruit the best area chairs, reviewers, and invited speakers
-date: 2017-09-06
+redirect_from:
+  - /news/call-for-nominations
 ---
 
 Help us recruit the best area chairs, reviewers, and invited 

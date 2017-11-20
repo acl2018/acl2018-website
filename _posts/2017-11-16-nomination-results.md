@@ -1,8 +1,7 @@
 ---
-layout: page
+layout: news
 title: Nomination statistics
-snippet: Statistics of nominations for area chairs, reviewers and speakers
-author: ACL 2018 Committee
+snippet: Statistics of nominations for area chairs, reviewers and speakers are available
 ---
 
 Here are the results of the [call for nominations]({{ site.github.url }}/news/call-for-nominations) posted in September 2017.
