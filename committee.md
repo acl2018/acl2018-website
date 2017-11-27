@@ -85,6 +85,28 @@ committee:
     - name: Trevor Cohn
       affiliation: University of Melbourne
       page: http://people.eng.unimelb.edu.au/tcohn/
+  - rolename: Student Research Workshop Organisers
+    people:
+    - name: Vered Shwartz
+      affiliation: Bar-Ilan University
+      page: http://u.cs.biu.ac.il/~havivv/
+    - name: Jeniya Tabassum
+      affiliation: Ohio State University
+      page: https://sites.google.com/site/jeniyatabassum/
+    - name: Rob Voigt
+      affiliation: Stanford University
+      page: https://nlp.stanford.edu/robvoigt/
+  - rolename: Faculty Advisors to the Student Research Workshop
+    people:
+    - name: Marie-Catherine de Marneffe
+      affiliation: Ohio State
+      page: http://www.ling.ohio-state.edu/~demarneffe.1/
+    - name: Wanxiang Che
+      affiliation: Harbin Institute of Technology
+      page: http://encs.hit.edu.cn/33/11/c5511a144145/page.htm
+    - name: Malvina Nissim
+      affiliation: University of Groningen
+      page: https://www.rug.nl/staff/m.nissim/
   - rolename: Webmaster
     people: 
       - name: Andrew MacKinlay
