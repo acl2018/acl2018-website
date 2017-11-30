@@ -16,15 +16,19 @@ exclude:
   - Gemfile
   - Gemfile.lock
 key_dates:
-  - date: February 22nd
+  - date: February 22nd, 2018
     event: Submission Deadline
-  - date: March 26th–28th
+  - date: March 26th–28th, 2018
     event: Author Response Period
-  - date: April 20th
+  - date: April 20th, 2018
     event: Notification of Acceptance
-  - date: May 11th
+  - date: May 11th, 2018
     event: Camera-ready Due
-  - date: July 15th–20th
+  - date: July 15th, 2018
+    event: Tutorials
+  - date: July 16th–18th, 2018
     event: Main Conference
+  - date: July 19th–20th, 2018
+    event: Tutorials
 permalink: pretty
 

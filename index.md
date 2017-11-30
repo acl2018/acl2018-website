@@ -21,10 +21,13 @@ the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 
 <p class="feed-link"><a href="{{ site.github_url }}/feed.xml">Atom Feed</a></p>
 
 ### Key Dates
-{% for kd in site.key_dates %}
-  * **{{ kd.date }}**: {{ kd.event }}{% endfor %}
 
-_All deadlines are: 11:59pm UTC-12_
+<table class='conf-dates'>
+{% for kd in site.key_dates %}
+  <tr><td class='conf-date-label'>{{ kd.date }}</td> <td>{{ kd.event }}</td></tr>
+{% endfor %}
+</table>
+
 
 ### Committee
 
