@@ -3,9 +3,7 @@ layout: page
 title: Workshops
 ---
 
-### Workshops
-
-The following workshops will take place on July 19 and 20.  (Almost all workshops are one day long.)
+The following workshops will take place on July 19 and 20.  Workshops are one day long, except where noted.
 
 * [BioNLP 2018](https://aclweb.org/aclwiki/BioNLP_Workshop) (Two day workshop.)
 * [3rd Workshop on Representation Learning for NLP (RepL4NLP-2018)](https://sites.google.com/site/repl4nlp2018)
@@ -16,7 +14,7 @@ The following workshops will take place on July 19 and 20.  (Almost all workshop
 * [Multilingual Surface Realization: Shared Task and Beyond (MSR-WS)](http://taln.upf.edu/pages/msr2018-ws/)
 * [NEWS 2018: The Seventh Named Entities Workshop](http://workshop.colips.org/news2018/)
 * [Sixth International Workshop on Natural Language Processing for Social Media (SocialNLP 2018)](https://sites.google.com/site/socialnlp2017/)
-* [The 2nd Workshop on Neural Machine Translation and Generation (NMT2018)]()
+* The 2nd Workshop on Neural Machine Translation and Generation (NMT2018)
 * [The 5th Workshop on Natural Language Processing Techniques for Educational Applications (NLPTEA 2018)](http://www.sigcall.org/)
 * [Third Workshop on Computational Approaches to Linguistic Code-Switching](https://code-switching.github.io/2018/)
 * [Workshop for NLP Open Source Software (NLP-OSS)](https://nlposs.github.io/)
