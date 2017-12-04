@@ -3,8 +3,7 @@ layout: page
 title: Call for Papers
 top_index: 3
 top: true
-redirect_from:
-  - /2017/11/02/call-for-papers
+redirect_from: /2017/11/02/call-for-papers
 ---
 
 The ACL 2018 conference invites the submission of long and short papers

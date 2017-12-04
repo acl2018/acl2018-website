@@ -3,8 +3,7 @@ layout: page
 title: Workshops
 top_index: 1
 top: true
-redirect_from:
-  - /2017/12/04/workshops
+redirect_from: /2017/12/04/workshops
 ---
 
 The following workshops will take place on July 19 and 20.  Workshops are one day long, except where noted.
