@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+top_index: 50
 top: true
 ---
 

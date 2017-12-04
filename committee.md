@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Committee
+top_index: 2
 top: true
 committee:
   - rolename: General Chair
