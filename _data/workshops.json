@@ -6,6 +6,11 @@
         "WorkshopURL": "https://aclweb.org/aclwiki/BioNLP_Workshop"
     }, 
     {
+        "Authors": "Vered Shwartz, Jeniya Tabassum and Rob Voigt", 
+        "Title": "ACL Student Research Workshop (SRW)", 
+        "WorkshopURL": "https://sites.google.com/view/aclsrw2018/"
+    }, 
+    {
         "Authors": "Nancy Chen, Xiangyu Duan, Rafael E. Banchs, Min Zhang and Haizhou Li", 
         "Submission ID": "11", 
         "Title": "NEWS 2018: The Seventh Named Entities Workshop", 
