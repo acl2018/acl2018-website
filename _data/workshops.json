@@ -1,15 +1,15 @@
 [
     {
-        "Authors": "Nancy Chen, Xiangyu Duan, Rafael E. Banchs, Min Zhang and Haizhou Li", 
-        "Submission ID": "11", 
-        "Title": "NEWS 2018: The Seventh Named Entities Workshop", 
-        "WorkshopURL": "http://workshop.colips.org/news2018/"
-    }, 
-    {
         "Authors": "Kevin Cohen, Dina Demner-Fushman, Sophia Ananiadou and Jun'ichi Tsujii", 
         "Submission ID": "18", 
         "Title": "BioNLP 2018", 
         "WorkshopURL": "https://aclweb.org/aclwiki/BioNLP_Workshop"
+    }, 
+    {
+        "Authors": "Nancy Chen, Xiangyu Duan, Rafael E. Banchs, Min Zhang and Haizhou Li", 
+        "Submission ID": "11", 
+        "Title": "NEWS 2018: The Seventh Named Entities Workshop", 
+        "WorkshopURL": "http://workshop.colips.org/news2018/"
     }, 
     {
         "Authors": "Masato Hagiwara, Dmitrijs Milajevs, Eunjeong Park and Liling Tan", 
