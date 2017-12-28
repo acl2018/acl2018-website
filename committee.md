@@ -125,8 +125,8 @@ area_chairs:
   - area:   Document Analysis
     people:
       - name: Hang Li
-      - name: David Smith
       - name: Yiqun Liu
+	  - name: Eugene Agichtein
   - area:   Generation
     people:
       - name: Ioannis Konstas
