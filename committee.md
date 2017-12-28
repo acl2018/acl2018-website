@@ -126,7 +126,7 @@ area_chairs:
     people:
       - name: Hang Li
       - name: Yiqun Liu
-	  - name: Eugene Agichtein
+      - name: Eugene Agichtein
   - area:   Generation
     people:
       - name: Ioannis Konstas
