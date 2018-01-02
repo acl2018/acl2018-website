@@ -225,9 +225,14 @@ area_chairs:
 {% endfor %}
 
 ### Area Chairs
+<ul>
 {% for areainfo in page.area_chairs %}
-  * **{{ areainfo.area }}**:
-  {% for person in areainfo.people %}    * {{ person.name }}
-  {% endfor %}
+  <li><strong>{{ areainfo.area }}</strong>:
+    <ul>
+      {% for person in areainfo.people %}
+      <li>{{ person.name }}{% if person.senior %}<div class="text-label">Senior Chair</div>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </li>
 {% endfor %}
-
+</ul>
