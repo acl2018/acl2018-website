@@ -9,7 +9,8 @@ The 56th Annual Meeting of the Association for Computational Linguistics will be
 the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 15th to 20th, 2018.
 
 
-### Latest News
+### Latest News 
+
 
 <ul>
   {% for post in site.posts %}
@@ -19,7 +20,7 @@ the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 
   {% endfor %}
 </ul>
 
-<p class="feed-link"><a href="{{ site.github_url }}/feed.xml">Atom Feed</a></p>
+<p class="feed-link-img"><a href="{{ site.github_url }}/feed.xml" title="Atom feed"><img src="images/rss.svg" alt="Atom Feed"></a></p>
 
 ### Key Dates
 

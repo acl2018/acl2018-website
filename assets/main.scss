@@ -136,6 +136,15 @@ $banner-height: 250px;
 }
 
 
+.feed-link-img {
+    text-align: right; 
+}
+
+.feed-link-img img {
+    width: 25px;
+    display: inline;    
+}
+
 .date {
     font-style: italic;
 }
