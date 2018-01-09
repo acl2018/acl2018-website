@@ -1,0 +1,120 @@
+  - area: Dialogue and Interactive Systems
+    people: 
+      - name: Asli Celikyilmaz
+        senior: true
+      - name: Verena Rieser
+  - area:   Discourse and Pragmatics
+    people:
+      - name: Manfred Stede
+      - name: Ani Nenkova
+        senior: true
+  - area:   Document Analysis
+    people:
+      - name: Hang Li
+        senior: true
+      - name: Yiqun Liu
+      - name: Eugene Agichtein
+  - area:   Generation
+    people:
+      - name: Ioannis Konstas
+      - name: Claire Gardent
+        senior: true
+  - area:   Information Extraction and Text Mining
+    people:
+      - name: Feiyu Xu
+      - name: Kevin Cohen
+      - name: Zhiyuan Liu
+      - name: Ralph Grishman
+        senior: true
+      - name: Yi Yang
+      - name: Nazli Goharian
+  - area:   Linguistic Theories, Cognitive Modeling and Psycholinguistics
+    people: 
+      - name: Shuly Wintner
+        senior: true
+      - name: Tim O'Donnell
+        senior: true
+  - area:   Machine Learning
+    people:
+      - name: Andre Martins
+      - name: Ariadna Quattoni
+      - name: Jun Suzuki
+        senior: true
+  - area:   Machine Translation
+    people:
+      - name: Yang Liu
+      - name: Matt Post
+        senior: true
+      - name: Lucia Specia
+      - name: Dekai Wu
+  - area:   Multidisciplinary (also for AC COI)
+    people:
+      - name: Yoav Goldberg
+      - name: Anders Søgaard
+      - name: Mirella Lapata
+  - area:   Multilinguality
+    people:
+      - name: Bernardo Magnini
+        senior: true
+  - area: Phonology, Morphology and Word Segmentation
+    people:
+      - name: Graham Neubig
+      - name: Hai Zhao
+        senior: true
+  - area:   Question Answering
+    people:
+      - name: Lluís Màrquez
+        senior: true
+      - name: Teruko Mitamura
+      - name: Zornitsa Kozareva
+      - name: Richard Socher
+  - area:   Resources and Evaluation
+    people:
+      - name: Gerard de Melo
+      - name: Karën Fort
+        senior: true
+  - area:   Sentence-level Semantics
+    people:
+      - name: Luke Zettlemoyer
+        senior: true
+      - name: Ellie Pavlick
+  - area:   Sentiment Analysis and Argument Mining
+    people:
+      - name: Smaranda Muresan
+      - name: Benno Stein
+      - name: Yulan He
+        senior: true
+  - area:   Social Media
+    people:
+      - name: David Jurgens
+      - name: Jing Jiang
+        senior: true
+  - area:   Summarization
+    people:
+      - name: Kathleen McKeown
+        senior: true
+      - name: Xiaodan Zhu
+  - area: Tagging, Chunking, Syntax and Parsing
+    people: 
+      - name: Liang Huang
+        senior: true
+      - name: Weiwei Sun
+      - name: Željko Agić
+      - name: Yue Zhang
+  - area:   Textual Inference and Other Areas of Semantics
+    people:
+      - name: Michael Roth
+        senior: true
+      - name: Fabio Massimo Zanzotto
+        senior: true
+  - area: Vision, Robotics, Multimodal, Grounding and Speech
+    people:
+      - name: Yoav Artzi
+        senior: true
+      - name: Shinji Watanabe
+      - name: Timothy Hospedales    
+  - area:   Word-level Semantics
+    people:
+      - name: Ekaterina Shutova
+      - name: Roberto Navigli
+        senior: true

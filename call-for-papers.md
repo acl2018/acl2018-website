@@ -148,7 +148,7 @@ without review.
 Submission is electronic, using the Softconf START conference management
 system. The submission site is open at:
 
-https://www.softconf.com/acl2018/papers/
+<https://www.softconf.com/acl2018/papers/>
 
 Long/short paper submissions must use the official ACL 2018 style
 templates. Long papers must not exceed eight (8) pages of content. Short
@@ -247,94 +247,28 @@ for ACL 2018 by the early registration deadline.
 
 ## Contact Information
 
--   General chair: Claire Cardie (Cornell University)
--   Program co-chairs: Iryna Gurevych (Technische Universität Darmstadt)
+-   *General chair*: Claire Cardie (Cornell University)
+-   *Program co-chairs*: Iryna Gurevych (Technische Universität Darmstadt)
     and Yusuke Miyao (National Institute of Informatics)
--   Email: acl2018pc@ukp.informatik.tu-darmstadt.de
+-   *Email*: <acl2018pc@ukp.informatik.tu-darmstadt.de>
 
 ## Area Chairs
 
 "*" indicates senior area chairs, who are responsible for maintaining the review process in each area.
 
-- Dialogue and Interactive Systems
-  - Asli Celikyilmaz *
-  - Verena Rieser
-- Discourse and Pragmatics
-  - Manfred Stede
-  - Ani Nenkova *
-- Document Analysis
-  - Hang Li *
-  - Yiqun Liu
-  - Eugene Agichtein
-- Generation
-  - Ioannis Konstas
-  - Claire Gardent *
-- Information Extraction and Text Mining
-  - Feiyu Xu
-  - Kevin Cohen
-  - Zhiyuan Liu
-  - Ralph Grishman *
-  - Yi Yang
-  - Nazli Goharian
-- Linguistic Theories, Cognitive Modeling and Psycholinguistics
-  - Shuly Wintner *
-  - Tim O'Donnell *
-- Machine Learning
-  - Andre Martins
-  - Ariadna Quattoni
-  - Jun Suzuki *
-- Machine Translation
-  - Yang Liu
-  - Matt Post *
-  - Lucia Specia
-  - Dekai Wu
-- Multidisciplinary (also for area chair COI)
-  - Yoav Goldberg
-  - Anders Søgaard
-  - Mirella Lapata
-- Multilinguality
-  - Bernardo Magnini *
-- Phonology, Morphology and Word Segmentation
-  - Graham Neubig
-  - Hai Zhao *
-- Question Answering
-  - Lluís Màrquez *
-  - Teruko Mitamura
-  - Zornitsa Kozareva
-  - Richard Socher
-- Resources and Evaluation
-  - Gerard de Melo
-  - Karën Fort *
-- Sentence-level Semantics
-  - Luke Zettlemoyer *
-  - Ellie Pavlick
-- Sentiment Analysis and Argument Mining
-  - Smaranda Muresan
-  - Benno Stein
-  - Yulan He *
-- Social Media
-  - David Jurgens
-  - Jing Jiang *
-- Summarization
-  - Kathleen McKeown *
-  - Xiaodan Zhu
-- Tagging, Chunking, Syntax and Parsing
-  - Liang Huang *
-  - Weiwei Sun
-  - Željko Agić
-  - Yue Zhang
-- Textual Inference and Other Areas of Semantics
-  - Michael Roth *
-  - Fabio Massimo Zanzotto *
-- Vision, Robotics, Multimodal, Grounding and Speech
-  - Yoav Artzi *
-  - Shinji Watanabe
-  - Timothy Hospedales
-- Word-level Semantics
-  - Ekaterina Shutova
-  - Roberto Navigli *
+<ul>
+{% for areainfo in site.data.area_chairs %}
+  <li>{{ areainfo.area }}:
+    <ul>
+      {% for person in areainfo.people %}
+      <li>{{ person.name }}{% if person.senior %} *{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>
 
-## Detailed desriptions of areas
+## Detailed descriptions of areas
 
 - Dialogue and Interactive Systems: dialogue control models, context modeling for dialogue, dialogue act, corpora, tools and evaluation methods for developing dialogue systems, multimodal, embodied, and situated dialogue, social chatbots, open-domain dialogue systems, task-oriented dialog, dialog policy learning, state tracking, conversational understanding, response generation, pragmatic and/or semantic modelling for dialogue
 - Discourse and Pragmatics: coreference/anaphora resolution, mention detection, discourse parsing, metonymy recognition
