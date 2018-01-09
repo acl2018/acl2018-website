@@ -1,7 +1,7 @@
 ---
 layout: news
 title: Submission site is open
-snippet: The submissions site is now open and the call for papers has been updated.
+snippet: The submissions site is now open and the call for papers has been updated
 ---
 
 The main conference [submission site](https://www.softconf.com/acl2018/papers/ "Submit paper via Softconf") is now open for short and long papers. 
