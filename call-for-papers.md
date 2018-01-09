@@ -14,7 +14,17 @@ accepted by the Transactions of the ACL journal.
 
 ### Important Note
 
-ACL 2018 adopts the [new policies for submission, review, and citation][new policies].
+ACL 2018 adopts the [new policies for submission, review, and citation][new policies].  Submissions that violate any of these policies will be rejected without review.  Most importantly, the policies refer to the *anonymity period*, which starts at *January 22nd, 2018* for ACL 2018.
+
+- You may not make a non-anonymized version of your paper available
+  online to the general community (for example, via a preprint
+  server) during the anonymity period.
+
+- You may not update the non-anonymized version during the anonymity
+  period, and we ask you not to advertise it on social media or take
+  other actions that would further compromise double-blind reviewing
+  during the anonymity period.
+
 The details are described in the section [ACL Author Guidelines](#acl-author-guidelines). For the
 background of the new policies, refer to the [online version][new policies].
 
@@ -26,7 +36,7 @@ background of the new policies, refer to the [online version][new policies].
 
 _All deadlines are: 11:59pm UTC-12_
 
-## Submissions
+## Submission Guidelines
 
 ACL 2018 has the goal of a broad technical program. Relevant topics for
 the conference include, but are not limited to, the following areas (in
@@ -45,7 +55,7 @@ alphabetical order):
 -   Phonology, Morphology and Word Segmentation
 -   Question Answering
 -   Resources and Evaluation
--   Sentence-level semantics
+-   Sentence-level Semantics
 -   Sentiment Analysis and Argument Mining
 -   Social Media
 -   Summarization
@@ -53,6 +63,8 @@ alphabetical order):
 -   Textual Inference and Other Areas of Semantics
 -   Vision, Robotics, Multimodal, Grounding and Speech
 -   Word-level Semantics
+
+Detailed descriptions of these areas are provided in the bottom of this document.
 
 ### Long Papers
 
@@ -95,7 +107,7 @@ While short papers will be distinguished from long papers in the
 proceedings, there will be no distinction in the proceedings between
 short papers presented orally and as posters.
 
-## General Notes
+### General Notes
 
 Papers should not refer, for further detail, to documents that are not
 available to the reviewers. Papers may be accompanied by a resource
@@ -131,10 +143,12 @@ Instead, use citations such as “Smith previously showed (Smith, 1991) …“
 Papers that do not conform to these requirements will be rejected
 without review.
 
-## Paper Submission and Templates
+### Paper Submission and Templates
 
 Submission is electronic, using the Softconf START conference management
-system. The submission site will be announced shortly.
+system. The submission site is open at:
+
+https://www.softconf.com/acl2018/papers/
 
 Long/short paper submissions must use the official ACL 2018 style
 templates. Long papers must not exceed eight (8) pages of content. Short
@@ -147,7 +161,7 @@ count against these limits.
 All submissions must be in PDF format and must conform to the official
 style guidelines, which are contained in these template files.
 
-## Multiple Submission Policy
+### Multiple Submission Policy
 
 Papers that have been or will be submitted to other meetings or
 publications must indicate this at submission time in the START
@@ -238,4 +252,108 @@ for ACL 2018 by the early registration deadline.
     and Yusuke Miyao (National Institute of Informatics)
 -   Email: acl2018pc@ukp.informatik.tu-darmstadt.de
 
+## Area Chairs
 
+"*" indicates senior area chairs, who are responsible for maintaining the review process in each area.
+
+- Dialogue and Interactive Systems
+  - Asli Celikyilmaz *
+  - Verena Rieser
+- Discourse and Pragmatics
+  - Manfred Stede
+  - Ani Nenkova *
+- Document Analysis
+  - Hang Li *
+  - Yiqun Liu
+  - Eugene Agichtein
+- Generation
+  - Ioannis Konstas
+  - Claire Gardent *
+- Information Extraction and Text Mining
+  - Feiyu Xu
+  - Kevin Cohen
+  - Zhiyuan Liu
+  - Ralph Grishman *
+  - Yi Yang
+  - Nazli Goharian
+- Linguistic Theories, Cognitive Modeling and Psycholinguistics
+  - Shuly Wintner *
+  - Tim O'Donnell *
+- Machine Learning
+  - Andre Martins
+  - Ariadna Quattoni
+  - Jun Suzuki *
+- Machine Translation
+  - Yang Liu
+  - Matt Post *
+  - Lucia Specia
+  - Dekai Wu
+- Multidisciplinary (also for area chair COI)
+  - Yoav Goldberg
+  - Anders Søgaard
+  - Mirella Lapata
+- Multilinguality
+  - Bernardo Magnini *
+- Phonology, Morphology and Word Segmentation
+  - Graham Neubig
+  - Hai Zhao *
+- Question Answering
+  - Lluís Màrquez *
+  - Teruko Mitamura
+  - Zornitsa Kozareva
+  - Richard Socher
+- Resources and Evaluation
+  - Gerard de Melo
+  - Karën Fort *
+- Sentence-level Semantics
+  - Luke Zettlemoyer *
+  - Ellie Pavlick
+- Sentiment Analysis and Argument Mining
+  - Smaranda Muresan
+  - Benno Stein
+  - Yulan He *
+- Social Media
+  - David Jurgens
+  - Jing Jiang *
+- Summarization
+  - Kathleen McKeown *
+  - Xiaodan Zhu
+- Tagging, Chunking, Syntax and Parsing
+  - Liang Huang *
+  - Weiwei Sun
+  - Željko Agić
+  - Yue Zhang
+- Textual Inference and Other Areas of Semantics
+  - Michael Roth *
+  - Fabio Massimo Zanzotto *
+- Vision, Robotics, Multimodal, Grounding and Speech
+  - Yoav Artzi *
+  - Shinji Watanabe
+  - Timothy Hospedales
+- Word-level Semantics
+  - Ekaterina Shutova
+  - Roberto Navigli *
+
+## Detailed desriptions of areas
+
+- Dialogue and Interactive Systems: dialogue control models, context modeling for dialogue, dialogue act, corpora, tools and evaluation methods for developing dialogue systems, multimodal, embodied, and situated dialogue, social chatbots, open-domain dialogue systems, task-oriented dialog, dialog policy learning, state tracking, conversational understanding, response generation, pragmatic and/or semantic modelling for dialogue
+- Discourse and Pragmatics: coreference/anaphora resolution, mention detection, discourse parsing, metonymy recognition
+- Document Analysis: language modeling and topic modeling, document classification and clustering, text mining and applications, recommender systems, information retrieval, query understanding and analysis, retrieval and ranking models, cross-lingual retrieval
+- Generation: sentence generation, surface realization, referring expression generation, content selection, data-to-text, concept-to-text, story generation, storytelling, evaluation and resources
+- Information Extraction and Text Mining: named entity recognition, named entity resolution,  relation extraction, event extraction, open information extraction, knowledge base population, knowledge graph acquisition and alignment, entity linking, entity disambiguation, temporal/spatial relation recognition, keyphrase extraction, text mining for formal or informal text (e.g. news, scientific text or social media text), text mining for specific domains (e.g. biomedical, clinical, chemistry, finance), cross-lingual information extraction, 
+- Linguistic Theories, Cognitive Modeling, and Psycholinguistics: formal theories of phonology/lexicon/syntax/semantics/pragmatics, computational models for linguistics, linguistic typology, experimental methods, language processing, neurolinguistics, language acquisition and loss, mathematical linguistics
+- Machine Learning: theoretical/empirical contributions to machine learning models for NLP/CL, Bayesian models, neural network models, online learning, reinforcement learning, transfer learning, embedding methods, relational learning, symbolic learning methods
+- Machine Translation: neural machine translation, machine translation models, machine translation evaluation, machine translation applications, word/phrase alignment models, transliteration, speech translation, domain adaptation for machine translation, low-resource machine translation, interactive and computer-assisted machine translation, tools for translators, decipherment, automatic post-editing, multimodal translation
+- Multidisciplinary and Area Chair COI: any NLP/CL related topics that are not categorized into other areas, papers with area chair COI
+- Multilinguality: multilingual dictionaries/corpora, analysis of translated texts, multilingual applications
+- Phonology, Morphology and Word Segmentation: morphological analysis, word segmentation models, theoretical models for phonology/morphology/word formation, multilingual morphology
+- Question Answering: factoid/non-factoid question answering, open-domain question answering, question interpretation, answer type classification, answer extraction, answer sentence selection, reading comprehension, community QA, cross-lingual question answering
+- Resources and Evaluation: development of linguistic resources such as corpora/treebanks/lexica/ontologies, corpus annotation methods, evaluation methodologies for NLP tasks
+- Sentence-level Semantics: semantic parsing, semantic role labelling, natural language interfaces for databases, parsing into logical forms, AMR parsing, sentence/document embeddings, program synthesis
+- Sentiment Analysis and Argument Mining: sentiment analysis, opinion mining, opinion representation, subjectivity analysis, argument analysis, argument evaluation, argumentation in discourse
+- Social Media: NLP in social media, NLP for noisy/informal text, event detection and social sensing, computational social science, trust evaluation and fake news, computational sociolinguistics, language and demographics, multilingual exchanges and code switching, sarcasm detection
+- Summarization: extractive summarization, abstractive summarization, evaluation methods for summarization, multi-document summarization, sentence simplification
+- Tagging, Chunking, Syntax and Parsing: part-of-speech tagging, shallow parsing, phrase chunking, phrase structure parsing, dependency parsing, deep parsing, semantic dependency parsing, grammar induction, formal grammar, string/tree/graph automata and transducers
+- Textual Inference and Other Areas of Semantics: recognizing textual entailment, semantic textual similarity, common-sense reasoning, story understanding, inference of implicit information, text-level semantic parsing/role labeling, metaphor analysis/generation
+- Vision, Robotics, Multimodal, Grounding and Speech: image/video captioning, multimodal QA, NLP for robotics, speech recognition, speech synthesis, language modeling for spoken language, instruction execution, language grounding, language and vision
+- Word-level Semantics: word sense disambiguation/induction, word/phrase embeddings, distributional similarity, lexical/phrasal entailment, paraphrasing, lexical knowledge acquisition, sense embeddings, sense tagging, lexical semantics, multiword expressions, selectional preferences
