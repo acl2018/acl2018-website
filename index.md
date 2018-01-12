@@ -26,7 +26,21 @@ the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 
 
 <table class='conf-dates'>
 {% for kd in site.key_dates %}
-  <tr><td class='conf-date-label'>{{ kd.date }}</td> <td>{{ kd.event }}</td></tr>
+  <tr>
+    <td class='conf-date-label'>
+      {% if kd.dates.show_tz %}
+        <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg={{ kd.event | cgi_escape }}&amp;iso={{ kd.dates.end | date: "%Y%m%dT%H%M" }}&amp;p1={{ kd.dates.tad_tzid }}" title="Show time in your timezone">
+          {{ kd.dates.end | date: "%d %B %Y, %H:%M UTC%z" }}
+        </a>
+      {% else %}
+        {% if kd.dates.start %}
+          {{ kd.dates.start | date: "%d %B %Y"}}–
+        {% endif %}
+        {{ kd.dates.end | date: "%d %B %Y"}}
+      {% endif %}
+    </td> 
+    <td>{{ kd.event }}</td>
+  </tr>
 {% endfor %}
 </table>
 
