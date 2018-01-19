@@ -111,8 +111,8 @@ committee:
   - rolename: Webmaster
     people: 
       - name: Andrew MacKinlay
-        affiliation: IBM Research
-        page: http://researcher.ibm.com/researcher/view.php?person=au1-admackin
+        affiliation: Culture Amp / University of Melbourne
+        page: https://www.linkedin.com/in/andrew-mackinlay-4a7ba43a/
 ---
 
 
