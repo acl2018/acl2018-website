@@ -3,11 +3,8 @@
     <a href="http://aclweb.org" title="Association for Computational Linguistics"><img src="{{ '/images/acl-logo.png' | prepend: site.github.url }}" alt="ACL"></a>
   </div>
   <nav class="site-nav">
-      {% assign sorted_pages = (site.pages | sort: 'top_index') %}
-      {% for my_page in sorted_pages %}
-        {% if my_page.top %}
-        <a class="page-link" href="{{ my_page.url | prepend: site.github.url }}">{{ my_page.title | escape }}</a>
-        {% endif %}
+      {% for nav in site.top_nav %}
+        <a class="page-link" href="{{ nav.url | prepend: site.github.url }}">{{ nav.title | escape }}</a>
       {% endfor %}
   </nav>
 </div>
