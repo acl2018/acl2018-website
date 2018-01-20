@@ -39,4 +39,8 @@ the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 
 [Full Area Chair List]({{ site.github.url }}/committee#area-chairs)
 
 
+### Contact
 
+For inquiries regarding the scientific program, please email <acl2018pc@ukp.informatik.tu-darmstadt.de>. 
+
+For general inquiries about the conference, please email <acl2018local@lists.unimelb.edu.au>.
