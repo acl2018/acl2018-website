@@ -31,4 +31,16 @@ key_dates:
   - date: "July 19th–20th, 2018"
     event: Tutorials and Workshops
 permalink: pretty
+collections:
+  call_for_papers:
+    output: true
+    layout: cfp
+    permalink: /call-for-papers/:name/
+defaults:
+  - scope:
+      path: ""
+      type: call_for_papers
+    values:
+      layout: cfp
+
 

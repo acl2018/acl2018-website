@@ -262,3 +262,27 @@
     font-weight: bold;
 }
 
+.current-sub {
+  font-weight: bold;
+}
+
+.cfp-nav {
+    background-color: #909090;
+    display: inline-block;
+    color: white;
+    margin-left: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+.cfp .site-nav {
+  .cfp-link {
+    margin-left: 10px;
+  }
+}
+
+.cfp.site-nav-wrapper {
+  margin-bottom: 20px
+}
+

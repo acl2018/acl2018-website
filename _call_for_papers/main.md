@@ -1,8 +1,9 @@
 ---
-layout: page
-title: Call for Papers
+title: Main Conference
 top_index: 3
 top: true
+layout: cfp
+permalink: /call-for-papers/
 ---
 
 The ACL 2018 conference invites the submission of long and short papers
