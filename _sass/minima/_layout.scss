@@ -266,23 +266,44 @@
   font-weight: bold;
 }
 
-.cfp-nav {
-    background-color: #909090;
-    display: inline-block;
-    color: white;
-    margin-left: 1em;
+.tabs {
+  width: 100%;
+  border-bottom:2px solid #888;
+  margin-bottom: 25px;
+  margin-left: 0px;
+
+  list-style: none;
+
+  li {
+    float:left;
+    width: 50%;
+  }
+  a, span {
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    text-transform:uppercase;
+    color:#888;
+    padding:20px 0;
+    background:#f7f7f7;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 5px;
-}
+    
+    &.active {
+      background:#ddd;
+    }
 
-.cfp .site-nav {
-  .cfp-link {
-    margin-left: 10px;
+    &:hover {
+      background:#eee;
+    }
   }
 }
 
-.cfp.site-nav-wrapper {
-  margin-bottom: 20px
+.clearfix:after {
+  content:"";
+  display:table;
+  clear:both;
 }
+
+
 
