@@ -1,8 +1,6 @@
 ---
 layout: page
 title: About
-top_index: 50
-top: true
 ---
 
 The 56th Annual Meeting of the Association for Computational Linguistics will be held in [Melbourne, Australia](https://www.melbourne.org/?utm_source=Microsite&utm_campaign=Computational%20Linguistics) at

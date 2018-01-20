@@ -1,7 +1,6 @@
 ---
-title: Main Conference
-top_index: 3
-top: true
+nav_title: Main Conference
+title: Call for Papers – Main Conference
 layout: cfp
 permalink: /call-for-papers/
 ---
