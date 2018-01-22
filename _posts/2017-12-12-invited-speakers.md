@@ -1,7 +1,7 @@
 ---
 layout: news
 title: Invited Speakers
-snippet: The invited speakers are Caroline Penstein Rose and Anton van den Hengel
+snippet: The invited speakers are Carolyn Penstein Rose and Anton van den Hengel
 ---
 
 The ACL 2018 committee is pleased to announce the following invited speakers:
