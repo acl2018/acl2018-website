@@ -16,6 +16,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
 key_dates:
+<<<<<<< Updated upstream
   - date: "February 22nd, 2018"
     event: Submission Deadline
   - date: "March 26th–28th, 2018"

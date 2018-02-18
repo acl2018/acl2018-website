@@ -116,6 +116,8 @@ overall evaluation score, and the potential impact of the software and
 data will be taken into account when making the acceptance/rejection
 decisions.
 
+#### Supplementary Material 
+
 ACL 2018 also encourages the submission of supplementary material to
 report preprocessing decisions, model parameters, and other details
 necessary for the replication of the experiments reported in the paper.
@@ -134,6 +136,15 @@ they will not be asked to review or even download the supplementary
 material. Authors should refer to the contents of the supplementary
 material in the paper submission, so that reviewers interested in these
 supplementary details will know where to look.
+
+**Note**: The supplementary material does not form part of the paper,
+does not count towards page limit and should not be included in the 
+"Appendix" section of the ACL template (despite the unfortunate wording).
+The "container" for supplementary materials is a separate document, 
+and these materials should be submitted using an appropriate field on 
+the review form. 
+
+#### Anonymity
 
 As the reviewing will be blind, papers must not include authors’ names
 and affiliations. Furthermore, self-references that reveal the author’s
