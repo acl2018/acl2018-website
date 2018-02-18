@@ -141,8 +141,8 @@ supplementary details will know where to look.
 does not count towards page limit and should not be included in the 
 "Appendix" section of the ACL template (despite the unfortunate wording).
 The "container" for supplementary materials is a separate document, 
-and these materials should be submitted using an appropriate field on 
-the review form. 
+and these materials should be submitted separately to the paper 
+using the appropriate field on the review form. 
 
 #### Anonymity
 
