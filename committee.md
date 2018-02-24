@@ -113,7 +113,6 @@ committee:
         page: https://www.linkedin.com/in/andrew-mackinlay-4a7ba43a/
 ---
 
-
 ### Organising Committee
 
 {% for role in page.committee %}
@@ -129,7 +128,8 @@ committee:
   <li><strong>{{ areainfo.area }}</strong>:
     <ul>
       {% for person in areainfo.people %}
-      <li>{{ person.name }}{% if person.senior %}<div class="text-label">Senior Chair</div>{% endif %}</li>
+      <li>
+        {% if person.link %}<a href="{{ person.link }}">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}{% if person.senior %}<div class="text-label">Senior Chair</div>{% endif %}</li>
       {% endfor %}
     </ul>
   </li>
