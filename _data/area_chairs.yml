@@ -2,120 +2,176 @@
     people: 
       - name: Asli Celikyilmaz
         senior: true
+        link: https://www.microsoft.com/en-us/research/people/aslicel/
       - name: Verena Rieser
         senior: true      
+        link: https://www.hw.ac.uk/schools/mathematical-computer-sciences/staff-directory/verena-rieser.htm
   - area:   Discourse and Pragmatics
     people:
       - name: Manfred Stede
+        link: http://www.ling.uni-potsdam.de/~stede/
       - name: Ani Nenkova
         senior: true
+        link: http://www.cis.upenn.edu/~nenkova/
   - area:   Document Analysis
     people:
       - name: Hang Li
         senior: true
+        link: http://www.hangli-hl.com/index.html
       - name: Yiqun Liu
+        link: http://www.thuir.cn/group/~YQLiu/
       - name: Eugene Agichtein
+        link: http://www.mathcs.emory.edu/~eugene/
   - area:   Generation
     people:
       - name: Ioannis Konstas
+        link: http://www.ikonstas.net/
       - name: Claire Gardent
         senior: true
+        link: https://members.loria.fr/CGardent/
   - area:   Information Extraction and Text Mining
     people:
       - name: Feiyu Xu
+        link: http://www.dfki.de/~feiyu/
       - name: Kevin Cohen
+        link: https://www.colorado.edu/linguistics/kevin-cohen
       - name: Zhiyuan Liu
+        link: http://nlp.csai.tsinghua.edu.cn/~lzy/
       - name: Ralph Grishman
         senior: true
+        link: https://cs.nyu.edu/grishman/
       - name: Yi Yang
+        link: https://yiyangnlp.github.io/
       - name: Nazli Goharian
+        link: http://people.cs.georgetown.edu/~nazli/
   - area:   Linguistic Theories, Cognitive Modeling and Psycholinguistics
     people: 
       - name: Shuly Wintner
         senior: true
+        link: http://cs.haifa.ac.il/~shuly/Shuly_Wintner/Home.html
       - name: Tim O'Donnell
         senior: true
+        link: https://www.mcgill.ca/linguistics/people/faculty/timothy-j-odonnell
   - area:   Machine Learning
     people:
       - name: Andre Martins
+        link: https://andre-martins.github.io/
       - name: Ariadna Quattoni
+        link: http://www.lsi.upc.edu/~aquattoni/
       - name: Jun Suzuki
         senior: true
+        link: http://www.kecl.ntt.co.jp/icl/lirg/members/jun/
   - area:   Machine Translation
     people:
       - name: Yang Liu
+        link: http://nlp.csai.tsinghua.edu.cn/~ly/
       - name: Matt Post
         senior: true
+        link: https://www.clsp.jhu.edu/faculty/matt-post/
       - name: Lucia Specia
+        link: http://staffwww.dcs.shef.ac.uk/people/L.Specia/
       - name: Dekai Wu
+        link: http://www.cs.ust.hk/~dekai/
   - area:   Multidisciplinary (also for AC COI)
     people:
       - name: Yoav Goldberg
+        link: https://www.cs.bgu.ac.il/~yoavg/uni/
       - name: Anders Søgaard
+        link: https://cst.dk/anders/
       - name: Mirella Lapata
+        link: http://homepages.inf.ed.ac.uk/mlap/
   - area:   Multilinguality
     people:
       - name: Bernardo Magnini
         senior: true
+        link: https://hlt-nlp.fbk.eu/people/profile/magnini
   - area: Phonology, Morphology and Word Segmentation
     people:
       - name: Graham Neubig
+        link: http://www.phontron.com/
       - name: Hai Zhao
         senior: true
+        link: http://bcmi.sjtu.edu.cn/~zhaohai/
   - area:   Question Answering
     people:
       - name: Lluís Màrquez
         senior: true
+        link: http://www.lsi.upc.edu/~lluism/
       - name: Teruko Mitamura
+        link: https://www.cs.cmu.edu/~teruko/
       - name: Zornitsa Kozareva
+        link: http://www.kozareva.com/
       - name: Richard Socher
+        link: http://www.socher.org/
   - area:   Resources and Evaluation
     people:
       - name: Gerard de Melo
+        link: http://gerard.demelo.org/
       - name: Karën Fort
         senior: true
+        link: http://www.schplaf.org/kf/index_en.php
   - area:   Sentence-level Semantics
     people:
       - name: Luke Zettlemoyer
         senior: true
+        link: https://www.cs.washington.edu/people/faculty/lsz
       - name: Ellie Pavlick
+        link: https://cs.brown.edu/people/epavlick/
   - area:   Sentiment Analysis and Argument Mining
     people:
       - name: Smaranda Muresan
+        link: http://www.cs.columbia.edu/~smara/
       - name: Benno Stein
+        link: https://www.uni-weimar.de/en/media/chairs/computer-science-and-media/webis/people/benno-stein/
       - name: Yulan He
         senior: true
+        link: http://www.aston.ac.uk/eas/staff/a-z/dr-yulan-he/
   - area:   Social Media
     people:
       - name: David Jurgens
+        link: http://jurgens.people.si.umich.edu/
       - name: Jing Jiang
         senior: true
+        link: http://www.mysmu.edu/faculty/jingjiang/
   - area:   Summarization
     people:
       - name: Kathleen McKeown
         senior: true
+        link: http://www.cs.columbia.edu/~kathy/
       - name: Xiaodan Zhu
+        link: http://www.xiaodanzhu.com/about.html
   - area: Tagging, Chunking, Syntax and Parsing
     people: 
       - name: Liang Huang
         senior: true
+        link: http://web.engr.oregonstate.edu/~huanlian/
       - name: Weiwei Sun
+        link: http://www.icst.pku.edu.cn/lcwm/wsun/
       - name: Željko Agić
+        link: http://zeljkoagic.github.io/
       - name: Yue Zhang
+        link: http://people.sutd.edu.sg/~yue_zhang/
   - area:   Textual Inference and Other Areas of Semantics
     people:
       - name: Michael Roth
         senior: true
+        link: http://www.coli.uni-saarland.de/~mroth/
       - name: Fabio Massimo Zanzotto
         senior: true
+        link: http://art.uniroma2.it/zanzotto/
   - area: Vision, Robotics, Multimodal, Grounding and Speech
     people:
       - name: Yoav Artzi
         senior: true
+        link: http://yoavartzi.com/
       - name: Shinji Watanabe
+        link: https://engineering.jhu.edu/ece/faculty/shinji-watanabe/
       - name: Timothy Hospedales    
+        link: https://www.inf.ed.ac.uk/people/staff/Timothy_Hospedales.html
   - area:   Word-level Semantics
     people:
       - name: Ekaterina Shutova
+        link: https://www.cl.cam.ac.uk/~es407/
       - name: Roberto Navigli
         senior: true
+        link: http://wwwusers.di.uniroma1.it/~navigli/
