@@ -17,7 +17,9 @@ exclude:
   - Gemfile.lock
 key_dates:
   - date: "February 22nd, 2018"
-    event: Submission Deadline
+    event: Submission Deadline (<a href="/call-for-papers/">Main Conference</a>)
+  - date: "March 23nd, 2018"
+    event: Submission Deadline (<a href="/call-for-papers/sys-demos">System Demonstrations</a>)
   - date: "March 26th–28th, 2018"
     event: Author Response Period
   - date: "April 20th, 2018"

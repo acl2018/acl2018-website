@@ -27,6 +27,8 @@ the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 
 {% endfor %}
 </table>
 
+_Deadlines refer to submissions to the main conference unless otherwise indicated._
+
 
 ### Committee
 
