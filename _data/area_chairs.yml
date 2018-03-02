@@ -6,6 +6,10 @@
       - name: Verena Rieser
         senior: true      
         link: https://www.hw.ac.uk/schools/mathematical-computer-sciences/staff-directory/verena-rieser.htm
+      - name: Milica Gasic
+        link: http://mi.eng.cam.ac.uk/~mg436/
+      - name: Jason Williams
+        link: https://www.microsoft.com/en-us/research/people/jawillia/
   - area:   Discourse and Pragmatics
     people:
       - name: Manfred Stede
@@ -107,6 +111,8 @@
     people:
       - name: Gerard de Melo
         link: http://gerard.demelo.org/
+      - name: Sara Tonelli
+        link: http://dh.fbk.eu/people/profile/satonelli
       - name: Karën Fort
         senior: true
         link: http://www.schplaf.org/kf/index_en.php
@@ -117,6 +123,8 @@
         link: https://www.cs.washington.edu/people/faculty/lsz
       - name: Ellie Pavlick
         link: https://cs.brown.edu/people/epavlick/
+      - name: Jacob Uszkoreit 
+        link: http://jakob.uszkoreit.net
   - area:   Sentiment Analysis and Argument Mining
     people:
       - name: Smaranda Muresan
