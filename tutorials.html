@@ -9,14 +9,23 @@ title: Tutorials
 {% capture tute_id %}{{ tute.title | truncate:30 | slugify }}{% endcapture %}
 {% capture tute_info_id %}info_{{ tute_id }}{% endcapture %}
 
-<a class="tute-title" onclick="javascript:toggleDisplay('{{ tute_info_id }}', 'tute-details')"><h3 id="{{ tute_id }}" title="{{ tute.description | normalize_whitespace }}">{{ tute.title }}</h3></a>
+<a class="tute-title" onclick="javascript:toggleDisplay('{{ tute_info_id }}', 'tute-details')" href="#{{ tute_id }}"><h3 id="{{ tute_id }}" title="{{ tute.description | normalize_whitespace }}">{{ tute.title }}</h3></a>
 
 <div id="{{ tute_info_id }}" class="tute-details" style="display: none;">
     <div class="tutorial-presenters">{{ tute.presenters | markdownify }}</div>
 
-    {{ tute.description | markdownify }}
+    <p>{{ tute.description | markdownify }}</p>
 
     {% if tute.materials %}<div class="further-info"><a href="{{ tute.materials }}" target="_blank" title="Additional Information about '{{ tute.title }}' (opens in external site)">Further Information</a></div>{% endif %}
 </div>
 
 {% endfor %}
+
+<script type="text/javascript">
+    function showFromHash() {
+        if (document.location.hash) {
+            toggleDisplay('info_' + document.location.hash.slice(1), 'tute-details');
+        }        
+    }
+    window.onload = showFromHash;
+</script>

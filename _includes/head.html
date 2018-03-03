@@ -17,16 +17,17 @@
   {% endif %}
   <script type="text/javascript">
     function toggleDisplay(elemId, categoryClassName) {
+      var elem = document.getElementById(elemId);     
       var allElems = document.getElementsByClassName(categoryClassName);
       for (var i = 0; i < allElems.length; i++) {
-        if (allElems[i].id !== elemId)
+        if (allElems[i].id !== elemId )
           allElems[i].style.display = "none";
-      }
-      var elem = document.getElementById(elemId);
-      if (elem.style.display === "none")
+      }  
+      if (elem.style.display === "none") {
         elem.style.display = "block";
-      else 
+      } else {
         elem.style.display = "none";
+      }
     }
   </script>
 </head>
