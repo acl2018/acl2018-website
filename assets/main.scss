@@ -139,3 +139,27 @@ $banner-height: 250px;
 .date {
     font-style: italic;
 }
+
+.post-content {
+    h3 {
+        margin-top: 20px;
+    }
+}
+
+.tutorial-presenters {
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.further-info {
+    text-transform: uppercase;
+    ::before {
+        content: "[ ";
+    }
+    ::after {
+        content: " ]";
+    }
+    
+    text-align: right;
+    font-size: 0.8em;
+}

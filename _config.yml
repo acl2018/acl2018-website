@@ -48,7 +48,9 @@ defaults:
     values:
       layout: cfp
 top_nav:
-  - url: /workshops
+  - url: /tutorials/
+    title: Tutorials
+  - url: /workshops/
     title: Workshops
   - url: /committee/
     title: Committee
