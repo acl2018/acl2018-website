@@ -61,10 +61,14 @@ $banner-height: 250px;
     border: none;
 }
 
+.site-nav-wrapper, .footer-wrapper {
+    max-width: $content-width - 2 * $spacing-unit;
+    margin: 10px auto;
+}
+
 .site-nav-wrapper {
     max-width: $content-width - 2 * $spacing-unit;
     float: none;
-    margin: 10px auto;
     height: $top-nav-height; 
     padding: 0 $spacing-unit;   
 }
@@ -171,4 +175,31 @@ $banner-height: 250px;
 .page-link.active {
     font-weight: bold;
     text-color: #333;
+}
+
+.site-footer {
+    background-color: #eee;
+}
+
+.footer-links {
+    list-style-type: none;
+    text-align: right;
+
+    li {
+        display: inline;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-left: 10px;
+        margin-right: 10px;
+        a:link, a:visited {
+            color: #888;
+        }
+        font-size: 0.9em;
+
+        .icon {
+            font-size: 1.4em;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    }
 }
