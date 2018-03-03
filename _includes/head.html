@@ -15,4 +15,18 @@
   {% if jekyll.environment == 'production' and site.google_analytics %}
   {% include google-analytics.html %}
   {% endif %}
+  <script type="text/javascript">
+    function toggleDisplay(elemId, categoryClassName) {
+      var allElems = document.getElementsByClassName(categoryClassName);
+      for (var i = 0; i < allElems.length; i++) {
+        if (allElems[i].id !== elemId)
+          allElems[i].style.display = "none";
+      }
+      var elem = document.getElementById(elemId);
+      if (elem.style.display === "none")
+        elem.style.display = "block";
+      else 
+        elem.style.display = "none";
+    }
+  </script>
 </head>
