@@ -179,6 +179,7 @@ $banner-height: 250px;
 
 .site-footer {
     background-color: #eee;
+    padding: 10px 0;
 }
 
 .footer-links {
@@ -193,13 +194,15 @@ $banner-height: 250px;
         margin-right: 10px;
         a:link, a:visited {
             color: #888;
+            vertical-align: middle;
         }
         font-size: 0.9em;
 
         .icon {
-            font-size: 1.4em;
+            font-size: 1.3em;
             margin-right: 8px;
             vertical-align: middle;
         }
     }
 }
+
