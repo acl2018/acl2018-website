@@ -167,3 +167,8 @@ $banner-height: 250px;
 .tute-details {
     display: none;
 }
+
+.page-link.active {
+    font-weight: bold;
+    text-color: #333;
+}

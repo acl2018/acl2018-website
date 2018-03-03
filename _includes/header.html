@@ -4,8 +4,9 @@
   </div>
   <nav class="site-nav">
       {% for nav in site.top_nav %}
-        <a class="page-link" href="{{ nav.url | prepend: site.github.url }}">{{ nav.title | escape }}</a>
-      {% endfor %}
+        {% capture active_class %}{% if (page.title == nav.title or page.top_nav_category == nav.title) %}active{% endif %}{% endcapture %}
+        <a class="page-link {{ active_class }}" href="{{ nav.url | prepend: site.github.url }}">{{ nav.title | escape }}</a>
+        {% endfor %}
   </nav>
 </div>
 
