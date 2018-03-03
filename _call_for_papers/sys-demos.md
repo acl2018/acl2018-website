@@ -16,7 +16,7 @@ Areas of interest include all topics related to theoretical and applied computat
 * Tools for data visualization and annotation
 * Development tools
 
-Accepted submissions will be published in a companion volume of the ACL 2017 conference proceedings.
+Accepted submissions will be published in a companion volume of the ACL 2018 conference proceedings.
 
 **Please note**: Commercial sales and marketing activities are not appropriate in the Demonstrations Program and should be arranged as part of the Exhibit Program.
 
