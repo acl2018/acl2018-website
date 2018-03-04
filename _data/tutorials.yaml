@@ -14,6 +14,7 @@
 
   - title: Neural Semantic Parsing
     presenters: Luke Zettlemoyer, Matt Gardner, Pradeep Dasigi, Srinivasan Iyer and Alane Suhr
+    materials: https://github.com/allenai/acl2018-semantic-parsing-tutorial
     description: |
       Semantic parsing, the study of  translating natural language utterances into machine-executable programs, is a well-established research area and has applications in question answering, instruction following, voice assistants, and code generation. In the last two years, the models used for semantic parsing have changed dramatically with the introduction of neural encoder-decoder methods that allow us to rethink many of the previous assumptions underlying semantic parsing. We aim to inform those already interested in semantic parsing research of these new developments in the field, as well as introduce the topic as an exciting research area to those who are unfamiliar with it.
 
