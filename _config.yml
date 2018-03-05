@@ -48,6 +48,8 @@ defaults:
     values:
       layout: cfp
 top_nav:
+  - url: /attendees/
+    title: Attendees
   - url: /tutorials/
     title: Tutorials
   - url: /workshops/
