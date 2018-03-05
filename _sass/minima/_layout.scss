@@ -276,8 +276,10 @@
 
   li {
     float:left;
-    width: 50%;
+    width: 33%;
+    hyphens: auto;
   }
+
   a, span {
     display:block;
     text-align:center;
