@@ -11,8 +11,9 @@ title: Tutorials
 
 <a class="tute-title" onclick="javascript:toggleDisplay('{{ tute_info_id }}', 'tute-details')" href="#{{ tute_id }}"><h3 id="{{ tute_id }}" title="{{ tute.description | normalize_whitespace }}">{{ tute.title }}</h3></a>
 
+<div class="tutorial-presenters">{{ tute.presenters | markdownify }}</div>
+
 <div id="{{ tute_info_id }}" class="tute-details" style="display: none;">
-    <div class="tutorial-presenters">{{ tute.presenters | markdownify }}</div>
 
     <p>{{ tute.description | markdownify }}</p>
 
