@@ -215,3 +215,10 @@ $banner-height: 250px;
         margin-bottom: 5px;
     }
 }
+
+.post-content {
+    td, th {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
