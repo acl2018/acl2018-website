@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+news_posts: 8
 ---
 
 The 56th Annual Meeting of the Association for Computational Linguistics will be held in [Melbourne, Australia](https://www.melbourne.org/?utm_source=Microsite&utm_campaign=Computational%20Linguistics) at
@@ -11,13 +12,15 @@ the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 
 
 <ul>
   {% for post in site.posts %}
+  {% if forloop.index < page.news_posts %}
     <li>
       {{ post.date | date: "%Y-%m-%d" }}: <a href="{{ post.url }}">{{ post.snippet }}</a>
     </li>
+  {% endif %}
   {% endfor %}
 </ul>
 
-<p class="feed-link"><a href="{{ site.github_url }}/feed.xml">Atom Feed</a></p>
+<p class="news-archive"><a href="{{ site.github_url }}/news">All News Items</a></p>
 
 ### Key Dates
 
