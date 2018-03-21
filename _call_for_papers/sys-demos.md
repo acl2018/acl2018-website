@@ -26,7 +26,7 @@ This year we will follow the convention to provide a Best Demo Award. We hope to
 
 ### Important Dates
 
-* **Paper submission deadline**: March 23rd, 2018
+* **Paper submission deadline**: March 27th, 2018
 * **Notification of acceptance**: April 30th, 2018
 * **Camera-ready submission**: May 25th, 2018
 
