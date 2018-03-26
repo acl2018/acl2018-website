@@ -56,6 +56,10 @@ Eligible passports are issued by:
 - United States
 - Vatican City
 
+#### Support Letters for Visa applications
+
+Some classes of visa may require support letters from the conference organizers. If you require such a letter, please [email the local organizers](mailto:acl2018local@lists.unimelb.edu.au?subject=visa support letter&body=Can you please provide a visa support letter for attending ACL 2018? %0A%0D My passport number is: %0A%0D My home address is: %0A%0D) with subject line "visa support letter", and include your home address and passport number. If you are not a known participant (e.g. ACL member, Tutorial presenter, Workshop organiser or Presenter), please also provide a CV to support the request and an indication of how you plan to participate in the conference for our reference.
+
 
 ### Contact
 
