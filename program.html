@@ -15,7 +15,7 @@ title: Program
             <div class="session-name shared-session-name">{{ session.name }}</div>
             <div class="session-location shared-session-location">{{ session.location }}</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
-            <a href="javascript:calendarDownloadSingle('{{ session.name }}', '{{ session.speakers | join ", " }}', '{{ session.location }}', '{{ session.start | date: "%Y-%m-%dT%H:%M:00%z" }}', '{{ session.end | date: "%Y-%m-%dT%H:%M:00%z" }}')"><i class="fas fa-calendar-plus"></i></a>
+            <a href="javascript:calendarDownloadSingle('{{ session.name }}', '{{ session.speakers | join: ", " }}', '{{ session.location }}', '{{ session.start | date: "%Y-%m-%dT%H:%M:00%z" }}', '{{ session.end | date: "%Y-%m-%dT%H:%M:00%z" }}')"><i class="fas fa-calendar-plus"></i></a>
           </td>
       {% else %}
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-name-row">
@@ -37,7 +37,7 @@ title: Program
             {% for talk in conc_sess.talks %}
               <div class="talk">
                 <div class="times talk-time">{{ talk.start | date: "%H:%M" }}
-                  <a href="javascript:calendarDownloadSingle('{{ talk.title }}', 'Talk: {{ talk.speakers | join ", " }}', '{{ conc_sess.location }}', '{{ talk.start | date: "%Y-%m-%dT%H:%M:00%z" }}', '{{ talk.end | date: "%Y-%m-%dT%H:%M:00%z" }}')"><i class="fas fa-calendar-plus"></i></a>
+                  <a href="javascript:calendarDownloadSingle('{{ talk.title }}', 'Talk: {{ talk.speakers | join: ", " }}', '{{ conc_sess.location }}', '{{ talk.start | date: "%Y-%m-%dT%H:%M:00%z" }}', '{{ talk.end | date: "%Y-%m-%dT%H:%M:00%z" }}')"><i class="fas fa-calendar-plus"></i></a>
                 </div>
                 <div class="talk-title">{{ talk.title }}</div>
                 <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>
