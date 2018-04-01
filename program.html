@@ -18,10 +18,14 @@ title: Program
           </td>
       {% else %}
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-name-row">
-        <td class="times session-times" rowspan="3">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
+        <td class="times session-times" rowspan="4">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
+            <td class="conc-session-shared-name session-name" colspan="3">{{ session.name }}</div>
+            </td>
+      </tr>
+      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-name-row">
           {% for conc_sess in session.concurrent_sessions %}
-            <td class="session track-session">
-              <div class="session-name conc-session-name"><a class="cal-link" href='javascript:calendarDownloadMultipleTalks({{ conc_sess | jsonify }})'><i class="fas fa-calendar-plus"></i></a>{{ session.name }}</div>{{ conc_sess.name }}</div>
+            <td class="session conc-session">
+              <div class="conc-session-name"><a class="cal-link" href='javascript:calendarDownloadMultipleTalks({{ conc_sess | jsonify }})'><i class="fas fa-calendar-plus"></i></a>{{ conc_sess.name }}</div>
             </td>
           {% endfor %}
       </tr>
@@ -36,10 +40,9 @@ title: Program
             {% for talk in conc_sess.talks %}
               <div class="talk">
                 <div class="times talk-time">
-                  <a class="cal-link small" href='javascript:calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}")'><i class="fas fa-calendar-plus"></i></a>
                   {{ talk.start | date: "%H:%M" }}
                 </div>
-                <div class="talk-title">{{ talk.title }}</div>
+                <div class="talk-title"><a class="cal-link" href='javascript:calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}")'><i class="fas fa-calendar-plus"></i></a>{{ talk.title }}</div>
                 <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>
               </div>
             {% endfor %}

@@ -229,7 +229,7 @@ $banner-height: 250px;
     text-transform: uppercase;
 }
 
-.track-session {
+.conc-session {
     width: (85%/{{ site.data.program.num_concurrent }});
 }
 
