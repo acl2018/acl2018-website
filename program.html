@@ -9,20 +9,20 @@ title: Program
   <table class="day-program">
     {% for session in day.sessions %}
       {% if session.shared %}
-      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row shared-session-name-row">
+      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row shared-session-name-row">
         <td class="times session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
-          <td class="session shared-session" colspan="{{ site.data.program.num_concurrent }}">
+          <td class="session shared-session session-name-cell shared-name" colspan="{{ site.data.program.num_concurrent }}">
             <div class="session-name shared-session-name"><a class="cal-link" href='javascript:calendarDownloadSharedSession({{ session | jsonify }})'><i class="fas fa-calendar-plus"></i></a>{{ session.name }}</div>
             <div class="session-location shared-session-location">{{ session.location }}</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
           </td>
       {% else %}
-      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-name-row">
+      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row conc-session-name-row">
         <td class="times session-times" rowspan="4">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
-            <td class="conc-session-shared-name session-name" colspan="3">{{ session.name }}</div>
+            <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.data.program.num_concurrent }}"><div class="session-name">{{ session.name }}</div>
             </td>
       </tr>
-      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-name-row">
+      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-indiv-row">
           {% for conc_sess in session.concurrent_sessions %}
             <td class="session conc-session">
               <div class="conc-session-name"><a class="cal-link" href='javascript:calendarDownloadMultipleTalks({{ conc_sess | jsonify }})'><i class="fas fa-calendar-plus"></i></a>{{ conc_sess.name }}</div>
