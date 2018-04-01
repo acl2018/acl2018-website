@@ -9,15 +9,16 @@ title: Program
   <table class="day-program">
     {% for session in day.sessions %}
       {% if session.shared %}
-      <tr class="session-row session-name-row shared-session-name-row">
+      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row shared-session-name-row">
         <td class="times session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
           <td class="session shared-session" colspan="{{ site.data.program.num_concurrent }}">
             <div class="session-name shared-session-name">{{ session.name }}</div>
             <div class="session-location shared-session-location">{{ session.location }}</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
+            <a href="javascript:calendarDownloadSingle('{{ session.name }}', '{{ session.speakers | join ", " }}', '{{ session.location }}', '{{ session.start | date: "%Y-%m-%dT%H:%M:00%z" }}', '{{ session.end | date: "%Y-%m-%dT%H:%M:00%z" }}')"><i class="fas fa-calendar-plus"></i></a>
           </td>
       {% else %}
-      <tr class="session-row session-name-row conc-session-name-row">
+      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-name-row">
         <td class="times session-times" rowspan="3">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
           {% for conc_sess in session.concurrent_sessions %}
             <td class="session track-session">
@@ -35,7 +36,9 @@ title: Program
           <td class="session-details">
             {% for talk in conc_sess.talks %}
               <div class="talk">
-                <div class="times talk-time">{{ talk.start | date: "%H:%M" }}</div>
+                <div class="times talk-time">{{ talk.start | date: "%H:%M" }}
+                  <a href="javascript:calendarDownloadSingle('{{ talk.title }}', 'Talk: {{ talk.speakers | join ", " }}', '{{ conc_sess.location }}', '{{ talk.start | date: "%Y-%m-%dT%H:%M:00%z" }}', '{{ talk.end | date: "%Y-%m-%dT%H:%M:00%z" }}')"><i class="fas fa-calendar-plus"></i></a>
+                </div>
                 <div class="talk-title">{{ talk.title }}</div>
                 <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>
               </div>
@@ -48,5 +51,14 @@ title: Program
   </table>
 {% endfor %}
   
-      
+
+<script type="text/javascript" src="{{ site.github.url }}/downloads/ics.deps.min.js"></script>
+<script type="text/javascript">
+  function calendarDownloadSingle(name, description, location, start, end) {
+    var nameSlug = name.replace(/\s+/g, '_').replace(/[^\w+]/g, '').toLowerCase();
+    var cal = ics(nameSlug);
+    cal.addEvent(name + " (ACL18)", description, location, start, end);
+    cal.download('ACL18-' + nameSlug, '.ics');
+  };
+</script>
       
