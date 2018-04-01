@@ -15,7 +15,7 @@ title: Program
             <div class="session-name shared-session-name">{{ session.name }}</div>
             <div class="session-location shared-session-location">{{ session.location }}</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
-            <a href="javascript:calendarDownloadSingle('{{ session.name }}', '{{ session.speakers | join: ", " }}', '{{ session.location }}', '{{ session.start | date: "%Y-%m-%dT%H:%M:00%z" }}', '{{ session.end | date: "%Y-%m-%dT%H:%M:00%z" }}')"><i class="fas fa-calendar-plus"></i></a>
+            <a href='javascript:calendarDownloadSharedSession({{ session | jsonify }})'><i class="fas fa-calendar-plus"></i></a>
           </td>
       {% else %}
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-name-row">
@@ -37,7 +37,7 @@ title: Program
             {% for talk in conc_sess.talks %}
               <div class="talk">
                 <div class="times talk-time">{{ talk.start | date: "%H:%M" }}
-                  <a href="javascript:calendarDownloadSingle('{{ talk.title }}', 'Talk: {{ talk.speakers | join: ", " }}', '{{ conc_sess.location }}', '{{ talk.start | date: "%Y-%m-%dT%H:%M:00%z" }}', '{{ talk.end | date: "%Y-%m-%dT%H:%M:00%z" }}')"><i class="fas fa-calendar-plus"></i></a>
+                  <a href='javascript:calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, {{ conc_sess.location }}")'><i class="fas fa-calendar-plus"></i></a>
                 </div>
                 <div class="talk-title">{{ talk.title }}</div>
                 <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>
@@ -54,6 +54,14 @@ title: Program
 
 <script type="text/javascript" src="{{ site.github.url }}/downloads/ics.deps.min.js"></script>
 <script type="text/javascript">
+  function calendarDownloadSharedSession(sharedSess) {
+    calendarDownloadSingle(sharedSess.name, sharedSess.speakers.join(', '), sharedSess.location, sharedSess.start, sharedSess.end);
+  }
+  
+  function calendarDownloadConcurrentSingleTalk(talk, location) {
+    calendarDownloadSingle(talk.title, talk.speakers.join(', '), location, talk.start, talk.end);
+  }
+  
   function calendarDownloadSingle(name, description, location, start, end) {
     var nameSlug = name.replace(/\s+/g, '_').replace(/[^\w+]/g, '').toLowerCase();
     var cal = ics(nameSlug);
