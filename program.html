@@ -1,0 +1,40 @@
+---
+layout: page
+title: Program
+---
+
+
+{% for day in site.data.program.days %}    
+  <h3 class="day">{{ day.name }}: {{ day.date | date: "%B %-d" }}</h3>
+  <table class="day-program">
+    {% for session in day.sessions %}
+      <tr class="session-row">
+        <td class="times session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
+        {% if session.shared %}
+          <td class="session shared-session" colspan="{{ site.data.program.num_concurrent }}">
+            <div class="session-name shared-session-name">{{ session.name }}</div>
+            <div class="session-location shared-session-location">{{ session.location }}</div>
+            <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
+          </td>
+        {% else %}
+          {% for conc_sess in session.concurrent_sessions %}
+            <td class="session track-session">
+              <div class="session-name conc-session-name">{{ conc_sess.name }}</div>
+              <div class="session-location conc-session-location">{{ conc_sess.location }}</div>
+              {% for talk in conc_sess.talks %}
+                <div class="talk">
+                  <div class="times talk-times">{{ talk.start | date: "%H:%M" }}</div>
+                  <div class="talk-title">{{ talk.title }}</div>
+                  <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>
+                </div>
+              {% endfor %}
+            </td>
+          {% endfor %}
+        {% endif %}
+      </tr>
+    {% endfor %}
+  </table>
+{% endfor %}
+  
+      
+      

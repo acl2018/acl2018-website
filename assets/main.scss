@@ -228,3 +228,11 @@ $banner-height: 250px;
     font-size: 80%;
     text-transform: uppercase;
 }
+
+.track-session {
+    width: (80%/{{ site.data.program.num_concurrent }});
+}
+
+.day-program td {
+    vertical-align: top;
+}
