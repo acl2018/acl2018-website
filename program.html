@@ -12,10 +12,9 @@ title: Program
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row shared-session-name-row">
         <td class="times session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
           <td class="session shared-session" colspan="{{ site.data.program.num_concurrent }}">
-            <div class="session-name shared-session-name">{{ session.name }}</div>
+            <div class="session-name shared-session-name"><a class="cal-link" href='javascript:calendarDownloadSharedSession({{ session | jsonify }})'><i class="fas fa-calendar-plus"></i></a>{{ session.name }}</div>
             <div class="session-location shared-session-location">{{ session.location }}</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
-            <a href='javascript:calendarDownloadSharedSession({{ session | jsonify }})'><i class="fas fa-calendar-plus"></i></a>
           </td>
       {% else %}
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-name-row">
@@ -28,7 +27,7 @@ title: Program
       </tr>
       <tr class="session-row conc-session-loc-row">
           {% for conc_sess in session.concurrent_sessions %}
-            <td class="conc-session-location">{{ conc_sess.location }}</td>
+            <td class="session-location conc-session-location">{{ conc_sess.location }}</td>
           {% endfor %}
       </tr>
       <tr class="session-row conc-session-details-row">
@@ -36,8 +35,9 @@ title: Program
           <td class="session-details">
             {% for talk in conc_sess.talks %}
               <div class="talk">
-                <div class="times talk-time">{{ talk.start | date: "%H:%M" }}
-                  <a href='javascript:calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, {{ conc_sess.location }}")'><i class="fas fa-calendar-plus"></i></a>
+                <div class="times talk-time">
+                  <a class="cal-link small" href='javascript:calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, {{ conc_sess.location }}")'><i class="fas fa-calendar-plus"></i></a>
+                  {{ talk.start | date: "%H:%M" }}
                 </div>
                 <div class="talk-title">{{ talk.title }}</div>
                 <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>

@@ -254,3 +254,26 @@ div.talk {
 table.day-program {
     font-size: 14px;
 }
+
+.cal-link {
+    margin-right: 5px;
+}
+
+.cal-link.small {
+    margin-right: 3px;
+}
+
+.session-location {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.session-name {
+    font-weight: bold;
+}
+
+.conc-session-location {
+    padding-bottom: 8px;
+}
