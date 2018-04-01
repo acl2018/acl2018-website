@@ -12,7 +12,7 @@ title: Program
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row shared-session-name-row">
         <td class="times session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
           <td class="session shared-session session-name-cell shared-name" colspan="{{ site.data.program.num_concurrent }}">
-            <div class="session-name shared-session-name"><a class="cal-link ical" href='javascript:calendarDownloadSharedSession({{ session | jsonify }})'><i class="fas fa-calendar-alt"></i><a class="cal-link googlecal" href='javascript:gcalAddSharedSession({{ session | jsonify }})'><i class="fas fa-calendar-plus"></i></a>{{ session.name }}</div>
+            <div class="session-name shared-session-name"><a class="cal-link ical" href='#' onclick='calendarDownloadSharedSession({{ session | jsonify }}); return false;'><i class="fas fa-calendar-alt"></i><a class="cal-link googlecal" href='#' onclick='gcalAddSharedSession({{ session | jsonify }}); return false;'><i class="fas fa-calendar-plus"></i></a>{{ session.name }}</div>
             <div class="session-location shared-session-location">{{ session.location }}</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
           </td>
@@ -25,7 +25,7 @@ title: Program
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-indiv-row">
           {% for conc_sess in session.concurrent_sessions %}
             <td class="session conc-session">
-              <div class="conc-session-name"><a class="cal-link ical" href='javascript:calendarDownloadMultipleTalks({{ conc_sess | jsonify }})'><i class="fas fa-calendar-alt"></i><a class="cal-link googlecal" href='javascript:gcalAddMultipleTalks({{ conc_sess | jsonify }})'><i class="fas fa-calendar-plus"></i></a></a>{{ conc_sess.name }}</div>
+              <div class="conc-session-name"><a class="cal-link ical" href='#' onclick='calendarDownloadMultipleTalks({{ conc_sess | jsonify }}); return false;'><i class="fas fa-calendar-alt"></i><a class="cal-link googlecal" href='#' onclick='gcalAddMultipleTalks({{ conc_sess | jsonify }}); return false;'><i class="fas fa-calendar-plus"></i></a></a>{{ conc_sess.name }}</div>
             </td>
           {% endfor %}
       </tr>
@@ -42,7 +42,7 @@ title: Program
                 <div class="times talk-time">
                   {{ talk.start | date: "%H:%M" }}
                 </div>
-                <div class="talk-title"><a class="cal-link ical" href='javascript:calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}")'><i class="fas fa-calendar-alt"></i></a><a class="cal-link googlecal" href='javascript:gcalAddConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}")'><i class="fas fa-calendar-plus"></i></a>{{ talk.title }}</div>
+                <div class="talk-title"><a class="cal-link ical" href='#' onclick='calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-alt"></i></a><a class="cal-link googlecal" href='#' onclick='gcalAddConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-plus"></i></a>{{ talk.title }}</div>
                 <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>
               </div>
             {% endfor %}
@@ -64,8 +64,16 @@ title: Program
     return text.replace(/\s+/g, '_').replace(/[^\w+]/g, '').toLowerCase();
   }
   
+  function sessionDesc(sharedSess) {
+    return typeof sharedSess.speakers === 'undefined' ? '' : sharedSess.speakers.join(', ');
+  }
+  
+  function sessionLoc(sharedSess) {
+    return typeof sharedSess.location === 'undefined' ? '' : sharedSess.location;    
+  }
+  
   function calendarDownloadSharedSession(sharedSess) {
-    calendarDownloadSingle(sharedSess.name, sharedSess.speakers.join(', '), sharedSess.location, sharedSess.start, sharedSess.end);
+    calendarDownloadSingle(sharedSess.name, sessionDesc(sharedSess), sessionLoc(sharedSess), sharedSess.start, sharedSess.end);
   }
   
   function calendarDownloadConcurrentSingleTalk(talk, location) {
@@ -133,7 +141,7 @@ title: Program
   }
   
   function gcalAddSharedSession(sharedSess) {
-      gcalAddSingle(sharedSess.name, sharedSess.speakers.join(', '), sharedSess.location, sharedSess.start, sharedSess.end);
+      gcalAddSingle(sharedSess.name, sessionDesc(sharedSess), sharedSess.location, sharedSess.start, sharedSess.end);
   }
   
   function gcalAddMultipleTalks(concSess) {
