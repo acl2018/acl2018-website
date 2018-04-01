@@ -230,9 +230,27 @@ $banner-height: 250px;
 }
 
 .track-session {
-    width: (80%/{{ site.data.program.num_concurrent }});
+    width: (85%/{{ site.data.program.num_concurrent }});
 }
 
 .day-program td {
     vertical-align: top;
+}
+
+.talk-title {
+    font-style: italic;
+}
+
+.talk-time {
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+div.talk {
+    height: 10em;
+    overflow: hidden:
+}
+
+table.day-program {
+    font-size: 14px;
 }
