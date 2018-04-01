@@ -21,7 +21,7 @@ title: Program
         <td class="times session-times" rowspan="3">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
           {% for conc_sess in session.concurrent_sessions %}
             <td class="session track-session">
-              <div class="session-name conc-session-name">{{ conc_sess.name }}</div>
+              <div class="session-name conc-session-name"><a class="cal-link" href='javascript:calendarDownloadMultipleTalks({{ conc_sess | jsonify }})'><i class="fas fa-calendar-plus"></i></a>{{ session.name }}</div>{{ conc_sess.name }}</div>
             </td>
           {% endfor %}
       </tr>
@@ -36,7 +36,7 @@ title: Program
             {% for talk in conc_sess.talks %}
               <div class="talk">
                 <div class="times talk-time">
-                  <a class="cal-link small" href='javascript:calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, {{ conc_sess.location }}")'><i class="fas fa-calendar-plus"></i></a>
+                  <a class="cal-link small" href='javascript:calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}")'><i class="fas fa-calendar-plus"></i></a>
                   {{ talk.start | date: "%H:%M" }}
                 </div>
                 <div class="talk-title">{{ talk.title }}</div>
@@ -54,6 +54,10 @@ title: Program
 
 <script type="text/javascript" src="{{ site.github.url }}/downloads/ics.deps.min.js"></script>
 <script type="text/javascript">
+  function slugify(text) {
+    return text.replace(/\s+/g, '_').replace(/[^\w+]/g, '').toLowerCase();
+  }
+  
   function calendarDownloadSharedSession(sharedSess) {
     calendarDownloadSingle(sharedSess.name, sharedSess.speakers.join(', '), sharedSess.location, sharedSess.start, sharedSess.end);
   }
@@ -62,8 +66,19 @@ title: Program
     calendarDownloadSingle(talk.title, talk.speakers.join(', '), location, talk.start, talk.end);
   }
   
+  function calendarDownloadMultipleTalks(concSess) {
+    var nameSlug = slugify(concSess.name);
+    var cal = ics(nameSlug);
+    var talks = concSess.talks;
+    for (var i = 0; i < talks.length; ++i) {
+      var talk = talks[i];
+      cal.addEvent(talk.title + " (ACL18)", talk.speakers.join(', '), concSess.location, talk.start, talk.end);
+    }
+    cal.download('ACL18-' + nameSlug, '.ics');
+  }
+  
   function calendarDownloadSingle(name, description, location, start, end) {
-    var nameSlug = name.replace(/\s+/g, '_').replace(/[^\w+]/g, '').toLowerCase();
+    var nameSlug = slugify(name);
     var cal = ics(nameSlug);
     cal.addEvent(name + " (ACL18)", description, location, start, end);
     cal.download('ACL18-' + nameSlug, '.ics');
