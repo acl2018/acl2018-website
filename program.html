@@ -2,9 +2,14 @@
 layout: page
 title: Program
 ---
+<div class="select-cal-protocol">
+  <div class="name">Calendar Links:</div>
+  <div class="cal-protocol" id="calmode-ical"><a onclick="selectCalMode('ical'); return false;" href="#" title="Downloadable as .ics (Apple Calendar, Outlook etc)"><i class="fas fa-download" ></i>Download ICS</a></div>
+  <div class="cal-protocol" id="calmode-googlecal"><a onclick="selectCalMode('googlecal'); return false;" href="#" title="Add to Google Calendar"><i class="fab fa-google" ></i>Google Calendar</a></div>
+</div>
 
-
-{% for day in site.data.program.days %}    
+{% for day in site.data.program.days %}
+<div id="schedule"
   <h3 class="day">{{ day.name }}: {{ day.date | date: "%B %-d" }}</h3>
   <table class="day-program">
     {% for session in day.sessions %}
@@ -42,7 +47,8 @@ title: Program
                 <div class="times talk-time">
                   {{ talk.start | date: "%H:%M" }}
                 </div>
-                <div class="talk-title"><a class="cal-link ical" href='#' onclick='calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-alt"></i></a><a class="cal-link googlecal" href='#' onclick='gcalAddConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-plus"></i></a>{{ talk.title }}</div>
+                <div class="talk-title"><a class="cal-link ical" href='#' onclick='calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-alt"></i></a><a class="cal-link googlecal" href='#' onclick='gcalAddConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;]
+                  \]'><i class="fas fa-calendar-plus"></i></a>{{ talk.title }}</div>
                 <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>
               </div>
             {% endfor %}
@@ -52,12 +58,13 @@ title: Program
       </tr>
     {% endfor %}
   </table>
+</div>
   <button id="signin-button" onclick="googleHandleSignInClick()">Sign In</button>
   <button id="signout-button" onclick="googleHandleSignOutClick()">Sign Out</button>
   
 {% endfor %}
   
-
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script type="text/javascript" src="{{ site.github.url }}/downloads/ics.deps.min.js"></script>
 <script type="text/javascript">
   function slugify(text) {
@@ -178,4 +185,39 @@ title: Program
   }
   
   gapi.load('client:auth2', googleInitClient);
+</script>
+  
+<script type="text/javascript">
+  var KNOWN_CAL_MODES = ['ical', 'googlecal'];  
+  var CAL_MODE;
+
+  function initCalMode() {
+    selectCalMode('ical');
+  }
+
+  function syncCalMode() {
+    var schedule = document.getElementById('schedule');
+    for (var i = 0; i < KNOWN_CAL_MODES.length; ++i) {
+      var mode = KNOWN_CAL_MODES[i];
+      var toShow = mode === CAL_MODE;
+      var matchingLinks = schedule.getElementsByClassName(['cal-link ' + mode]);
+      for (var j = 0; j < matchingLinks.length; ++j) {
+        var elem = matchingLinks[j];
+        elem.hidden = !toShow;
+      }
+      var selector = document.getElementById('calmode-' + mode);
+      if (toShow) {
+        selector.classList.add('selected');
+      } else {
+        selector.classList.remove('selected');
+      }
+    }
+  }
+  
+  
+  function selectCalMode(className) {
+    CAL_MODE = className;
+    syncCalMode();
+  }
+  
 </script>
