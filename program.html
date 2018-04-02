@@ -2,14 +2,23 @@
 layout: page
 title: Program
 ---
-<div class="select-cal-protocol">
+<!-- <div class="select-cal-protocol">
   <div class="name">Calendar Links:</div>
   <div class="cal-protocol" id="calmode-ical"><a onclick="selectCalMode('ical'); return false;" href="#" title="Downloadable as .ics (Apple Calendar, Outlook etc)"><i class="fas fa-download" ></i>Download ICS</a></div>
   <div class="cal-protocol" id="calmode-googlecal"><a onclick="selectCalMode('googlecal'); return false;" href="#" title="Add to Google Calendar"><i class="fab fa-google" ></i>Google Calendar</a></div>
+</div> -->
+
+<div class="select-cal-protocol">
+  <div class="name">Calendar Setting</div>
+  <div class="cal-options">
+    <span id="wrapper-ical"><input type="radio" class="cal-protocol" id="calmode-ical" onclick="selectCalMode('ical')" title="Downloadable as .ics (Apple Calendar, Outlook etc)" value="Download ICS" checked></input><label class='calendarmode' for="calmode-ical"><i class="fas fa-download" ></i>Download as ICS</label></span>
+    <span id="wrapper-googlecal"><input type="radio" class="cal-protocol" id="calmode-googlecal" onclick="selectCalMode('googlecal')" href="#" title="Add to Google Calendar"></input><label class='calendarmode' for="calmode-googlecal"><i class="fab fa-google" ></i>Google Calendar</label></span>
+  </div>
 </div>
 
+
 {% for day in site.data.program.days %}
-<div id="schedule"
+<div id="schedule">
   <h3 class="day">{{ day.name }}: {{ day.date | date: "%B %-d" }}</h3>
   <table class="day-program">
     {% for session in day.sessions %}
@@ -47,8 +56,7 @@ title: Program
                 <div class="times talk-time">
                   {{ talk.start | date: "%H:%M" }}
                 </div>
-                <div class="talk-title"><a class="cal-link ical" href='#' onclick='calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-alt"></i></a><a class="cal-link googlecal" href='#' onclick='gcalAddConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;]
-                  \]'><i class="fas fa-calendar-plus"></i></a>{{ talk.title }}</div>
+                <div class="talk-title"><a class="cal-link ical" href='#' onclick='calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-alt"></i></a><a class="cal-link googlecal" href='#' onclick='gcalAddConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-plus"></i></a>{{ talk.title }}</div>
                 <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>
               </div>
             {% endfor %}
@@ -205,7 +213,10 @@ title: Program
         var elem = matchingLinks[j];
         elem.hidden = !toShow;
       }
-      var selector = document.getElementById('calmode-' + mode);
+      document.getElementById('calmode-' + mode).checked = toShow;
+      
+      var selector = document.getElementById('wrapper-' + mode);
+      selector.checked = toShow;
       if (toShow) {
         selector.classList.add('selected');
       } else {
@@ -219,5 +230,7 @@ title: Program
     CAL_MODE = className;
     syncCalMode();
   }
+  
+  initCalMode();
   
 </script>

@@ -279,9 +279,38 @@ table.day-program {
 }
 
 .shared-name {
-    background-color: #e0e0e0;
+    background-color: #e8e8e8;
 }
 
 .session-details {
     font-size: 0.9em;
+}
+
+.select-cal-protocol {
+    font-size: 13px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.selected .calendarmode {
+//    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+#schedule {
+    clear: both;
+}
+
+.select-cal-protocol .name {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.calendarmode i {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.cal-protocol {
+    margin-left: 8px;
 }
