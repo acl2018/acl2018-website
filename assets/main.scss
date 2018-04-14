@@ -21,7 +21,7 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    800px;
+$content-width:    900px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
@@ -70,12 +70,19 @@ $banner-height: 250px;
     max-width: $content-width - 2 * $spacing-unit;
     float: none;
     height: $top-nav-height; 
-    padding: 0 $spacing-unit;   
+    padding: 0 $spacing-unit;
+    z-index: 80;
 }
 
 .site-nav {
     line-height: $top-nav-height;
     vertical-align: middle;
+    z-index: 90;
+    .page-link {
+        z-index: 100;
+    }
+    position: absolute;
+    right: 15px;
 }
 
 .site-title {
@@ -228,3 +235,45 @@ $banner-height: 250px;
     font-size: 80%;
     text-transform: uppercase;
 }
+
+
+
+@include media-query($on-palm) {
+    .site-nav {
+        line-height: 20px;
+        margin-top: $top-nav-height + 15px;
+        .page-link {
+            color: white;
+            line-height: 1;
+        }
+        right: 5px;
+        background-color: #00000080;
+        border: 0px;
+    }
+
+    .site-title {
+        float: left;
+        font-size: 40px;
+        width: 50%;
+    }
+
+    .site-sub-title {
+        .sub-title-main {
+            font-size: 16px;
+        }
+
+        .sub-title-extra {
+            font-size: 12px;
+        }
+    }
+
+    .site-nav-wrapper {
+        height: $top-nav-height - 10px;
+    }
+
+    .banner {
+        padding: 10px 10px 50px 10px;
+    }
+}
+
+
