@@ -87,6 +87,8 @@
       - name: Bernardo Magnini
         senior: true
         link: https://hlt-nlp.fbk.eu/people/profile/magnini
+      - name: Tristan Miller
+        link: https://www.ukp.tu-darmstadt.de/people/postdoctoral-researchers/dr-tristan-miller/
   - area: Phonology, Morphology and Word Segmentation
     people:
       - name: Graham Neubig
