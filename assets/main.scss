@@ -48,7 +48,7 @@ $banner-height: 250px;
 }
 
 .banner {
-    padding: 30px 15px;
+    padding: 20px 15px;
     /* margin-bottom: 30px; */
 //    height: 300px;
     margin: 5px auto;
@@ -81,8 +81,6 @@ $banner-height: 250px;
     .page-link {
         z-index: 100;
     }
-    position: absolute;
-    right: 15px;
 }
 
 .site-title {
@@ -124,6 +122,7 @@ $banner-height: 250px;
 .org-logo {
     float: left; 
     vertical-align: middle;
+    padding-top: 5px;
     img {   
         max-height: $top-nav-height - 10px;
     }
@@ -274,6 +273,24 @@ $banner-height: 250px;
     .banner {
         padding: 10px 10px 50px 10px;
     }
+
+    .image-credit {
+        display: none;
+    }
+}
+
+.image-credit {
+    // position: absolute;
+    bottom: 3px;
+    float: right;
+    color: #ccc;
+    font-size: 10px;
+
+    a:link, a:visited, a:hover {
+        color: #ccc;
+        font-style: italic;
+    }
+    text-shadow: #222 1px 1px;
 }
 
 

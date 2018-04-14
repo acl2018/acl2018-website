@@ -1,13 +1,13 @@
 <div class="site-nav-wrapper">
-  <div class="org-logo">
-    <a href="http://aclweb.org" title="Association for Computational Linguistics"><img src="{{ '/images/acl-logo.png' | prepend: site.github.url }}" alt="ACL"></a>
-  </div>
   <nav class="site-nav">
       {% for nav in site.top_nav %}
         {% capture active_class %}{% if (page.title == nav.title or page.top_nav_category == nav.title) %}active{% endif %}{% endcapture %}
         <a class="page-link {{ active_class }}" href="{{ nav.url | prepend: site.github.url }}">{{ nav.title | escape }}</a>
         {% endfor %}
   </nav>
+  <div class="org-logo">
+    <a href="http://aclweb.org" title="Association for Computational Linguistics"><img src="{{ '/images/acl-logo.png' | prepend: site.github.url }}" alt="ACL"></a>
+  </div>
 </div>
 
 <header class="site-header">
@@ -19,6 +19,7 @@
         <div class="sub-title-extra">15-20 July 2018&nbsp;&nbsp;&nbsp;Melbourne</div>
       </div>
     </div>
+    <div class="image-credit">Image from <a href="http://www.acanvasoflight.com" target="_blank">A Canvas of Light</a></div>
   </div>
 
 </header>
