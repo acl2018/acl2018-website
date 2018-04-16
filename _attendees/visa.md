@@ -2,9 +2,8 @@
 title: Visa Information for Attendees
 nav_title: Visas
 top_nav_category: Attendees
+tab_index: 1
 ---
-
-### Visas for International Attendees
 
 The [visa information site](http://www.homeaffairs.gov.au/trav/visi/visi) of the Australian Department of Home Affairs is the authoritative source of information about visa requirements for visitors to Australia, including the application process. The [Home Affairs travel site](http://www.homeaffairs.gov.au/trav/) also contains additional information about travelling to Australia. Any further information in this section is provided for convenience only, and you should check the Home Affairs site for the most comprehensive and up-to-date information.
 

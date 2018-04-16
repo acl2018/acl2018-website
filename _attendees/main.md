@@ -4,6 +4,7 @@ layout: attendees
 nav_title: General
 top_nav_category: Attendees
 permalink: /attendees/
+tab_index: -1
 ---
 
 The conference will be held in [Melbourne, Australia](https://www.melbourne.org/?utm_source=Microsite&utm_campaign=Computational%20Linguistics) at
