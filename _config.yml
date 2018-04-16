@@ -41,12 +41,23 @@ collections:
     title: Call for Papers
     top_index: 3
     top: true
+  attendees:
+    output: true
+    layout: attendees
+    permalink: /attendees/:name/
+    title: Attendees
+    top: true
 defaults:
   - scope:
       path: ""
       type: call_for_papers
     values:
       layout: cfp
+  - scope:
+      path: ""
+      type: attendees
+    values:
+      layout: attendees
 top_nav:
   - url: /attendees/
     title: Attendees

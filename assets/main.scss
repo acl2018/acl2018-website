@@ -279,6 +279,12 @@ $banner-height: 250px;
     }
 }
 
+.tabs {
+    a, span {
+        border-radius: 6px 6px 0 0;
+    }
+}
+
 .image-credit {
     // position: absolute;
     bottom: 3px;
