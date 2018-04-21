@@ -41,6 +41,16 @@ _Deadlines refer to submissions to the main conference unless otherwise indicate
 
 [Full Area Chair List]({{ site.github.url }}/committee#area-chairs)
 
+### Sponsors
+
+#### Student Volunteers Sponsor
+
+<a href="https://www.data61.csiro.au/" title="Data 61" target="_blank">
+    <span class="sponsor-image-wrapper">
+        <img class="sponsor-image" alt="Data 61" src="{{ site.github.url }}/images/sponsors/data61.png"/>
+        <img class="sponsor-image" alt="CSIRO" src="{{ site.github.url }}/images/sponsors/csiro.png"/>
+    </span>
+</a>
 
 ### Contact
 
