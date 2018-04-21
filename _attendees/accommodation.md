@@ -45,10 +45,10 @@ Participants who confirm an accommodation booking with a credit card and who can
 Late bookings can be made through the Conference Secretariat after Friday 1 June 2018 but are subject to availability, and credit card details are required to secure the reservation.
 
 ### Early arrival
-As check in is at 1400 at most hotels, your room may not be ready for immediate occupation if you arrive early. Whilst hotels will do everything possible to accommodate early arrivals, if you wish to be guaranteed immediate occupation you can pay an extra day's tariff for the night before you are due to arrive. If you wish to take this precaution, please advise the Conference Secretariat on the registration form so that we can notify the hotel.
+As check in is at 2pm at most hotels, your room may not be ready for immediate occupation if you arrive early. Whilst hotels will do everything possible to accommodate early arrivals, if you wish to be guaranteed immediate occupation you can pay an extra day's tariff for the night before you are due to arrive. If you wish to take this precaution, please advise the Conference Secretariat on the registration form so that we can notify the hotel.
 
 ### Late arrival
-Please indicate if you will arrive at your hotel after 1800 on the day of check in. Failure to do so might result in your booking being cancelled and your room given to someone else.
+Please indicate if you will arrive at your hotel after 6pm on the day of check in. Failure to do so might result in your booking being cancelled and your room given to someone else.
 
 ### Change of booking
 Any change in booking must be made in writing to the Conference Secretariat and not directly to the hotel. Please note charges may apply after Friday 1 June 2018.
