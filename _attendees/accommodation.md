@@ -16,7 +16,7 @@ Rates quoted are:
 
 {% for hotel in site.data.hotels_negotiated %}
 <section id="hotel-{{ hotel.name | slugify }}">
-<h3 class="hotel-name">{{ hotel.name }}</h3>
+<a class="hotel-site-link" target="_blank" href="{{ hotel.link }}"><h3 class="hotel-name">{{ hotel.name }}</h3></a>
 <a class="hotel-address" href="{{ hotel.map_link }}" target="_blank">{{ hotel.address }}</a>
 <table class="hotel-rates">
 {% for room in hotel.rooms %}
