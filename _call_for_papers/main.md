@@ -4,6 +4,7 @@ title: Call for Papers – Main Conference
 layout: cfp
 permalink: /call-for-papers/
 top_nav_category: Call for Papers
+tab_index: -1
 ---
 
 The ACL 2018 conference invites the submission of long and short papers
