@@ -2,6 +2,7 @@
 nav_title: Student Research
 title: Call for Papers – Student Research Workshop
 top_nav_category: Call for Papers
+tab_index: 1
 ---
 
 [Student Research Workshop][srwmain] collocated with ACL 2018, Melbourne, Australia
