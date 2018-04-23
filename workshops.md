@@ -3,7 +3,13 @@ layout: page
 title: Workshops
 ---
 
-The following workshops will take place on July 19th and 20th.  Workshops are one day long, except where noted.
+The following workshops are scheduled alongside ACL.
 
-{% for ws in site.data.workshops %}
-* [{{ ws.Title }}]({{ ws.WorkshopURL }}) {% if ws.Title == "BioNLP 2018" %}(Two day workshop){% endif %}{% endfor %}
+{% assign dates = '2018-07-19|2018-07-20' | split: '|' %}
+{% for date in dates %}
+**{{ date | date: "%A %-d %B" }}**
+{% assign for_date = site.data.workshops | where: "date", date | sort: "name" %}
+{% for ws in for_date %}
+* [{{ ws.name }} ({{ ws.abbreviation }})]({{ ws.url }}){% endfor %}
+{% endfor %}
+
