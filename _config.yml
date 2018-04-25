@@ -39,14 +39,15 @@ collections:
     layout: cfp
     permalink: /call-for-papers/:name/
     title: Call for Papers
-    top_index: 3
-    top: true
   attendees:
     output: true
     layout: attendees
     permalink: /attendees/:name/
     title: Attendees
-    top: true
+  conference:
+    output: true
+    permalink: /conference/:name/
+    title: Conference
 defaults:
   - scope:
       path: ""
@@ -67,6 +68,8 @@ top_nav:
     title: Workshops
   - url: /committee/
     title: Committee
+  - url: /conference/accepted-papers
+    title: Conference
   - url: /call-for-papers/
     title: Call for Papers
   - url: /
