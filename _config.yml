@@ -31,7 +31,7 @@ key_dates:
   - date: "July 16th–18th, 2018"
     event: Main Conference
   - date: "July 19th–20th, 2018"
-    event: Tutorials and Workshops
+    event: Workshops
 permalink: pretty
 collections:
   call_for_papers:
