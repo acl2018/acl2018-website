@@ -1,7 +1,7 @@
 ---
 layout: news
 title: Information about registration
-snippet: Registration will be available soon.
+snippet: Registration will be available soon
 ---
 
 We know that you are all excited to join us at ACL2018 and are hoping to register soon! ACL will welcome registration from anyone who is interested, whether or not you are presenting a paper at the conference.
