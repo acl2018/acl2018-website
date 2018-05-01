@@ -120,7 +120,7 @@ committee:
 #### {{ role.rolename }}
 
   {% for person in role.people %}
-  * [{{ person.name }}]({{ person.page }}){% if person.email %} ([{{ person.email }}](mailto:{{ person.email }})){% endif %}, {{ person.affiliation }}{% endfor %}
+  * [{{ person.name }}]({{ person.page }}){% if person.email %}([{{ person.email }}](mailto:{{ person.email }})){% endif %}, {{ person.affiliation }}{% endfor %}
 {% endfor %}
 
 ### Area Chairs
