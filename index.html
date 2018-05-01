@@ -1,0 +1,75 @@
+---
+layout: page
+title: About
+news_posts: 8
+---
+
+<p>The 56th Annual Meeting of the Association for Computational Linguistics will be held in <a href="https://www.melbourne.org/?utm_source=Microsite&utm_campaign=Computational%20Linguistics">Melbourne, Australia]</a> at
+the <a href="http://mcec.com.au/">Melbourne Convention and Exhibition Centre</a> from July 15th to 20th, 2018.</p>
+
+
+<h3 id="latest-news">Latest News</h3>
+
+<ul>
+  {% for post in site.posts %}
+  {% if forloop.index < page.news_posts %}
+    <li>
+      {{ post.date | date: "%Y-%m-%d" }}: <a href="{{ post.url }}">{{ post.snippet }}</a>
+    </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+<p class="news-archive"><a href="{{ site.github_url }}/news">All News Items</a></p>
+
+<h3 id="key-dates">Key Dates</h3>
+
+<table class='conf-dates'>
+{% for kd in site.key_dates %}
+  <tr><td class='conf-date-label'>{{ kd.date }}</td> <td>{{ kd.event }}</td></tr>
+{% endfor %}
+</table>
+
+<em class="extra-note">Deadlines refer to submissions to the main conference unless otherwise indicated.</em>
+
+
+<h3>Committee</h3>
+
+<p><strong>General Chair:</strong> <a href="http://www.cs.cornell.edu/home/cardie/">Claire Cardie</a></p>
+
+<p><a href="{{ site.github.url }}/committee#organising-committee">Full Organising Committee List</a></p>
+
+<p><a href="{{ site.github.url }}/committee#area-chairs">Full Area Chair List</a></p>
+
+<h3 id="sponsors">Sponsors</h3>
+
+<span class="sponsor-section">
+{% for level in site.data.sponsors %}
+
+<h4 id="sponsors-level-{{level.name }}">{{ level.name }}</h4>
+
+<div class="sponsor-level-list level-{{ level.name | lower }}">
+{% for sponsor in level.sponsors %}
+{% if sponsor.url %}<a href="{{ sponsor.url }}" title="{{ sponsor.name }}" target="_blank">{% endif %}
+    <div class="sponsor-image-wrapper">
+    	<div class="sponsor-image-helper"></div>
+        {% if sponsor.image %}
+        <img class="sponsor-inner sponsor-image" title="{{ sponsor.name }}" alt="{{ sponsor.name }}" src="{{ site.github.url }}/images/sponsors/{{ sponsor.image }}"/>
+        {% else %}
+        <span class="sponsor-inner sponsor-name">{{ sponsor.name }}</span>
+        {% endif %}
+    </div>
+{% if sponsor.url %}</a>{% endif %}
+{% endfor %}
+</div>
+{% endfor %}
+</span>
+
+
+<h3 id="contact">Contact</h3>
+
+<ul class="contact-list">
+	<li>For inquiries regarding the scientific program, please email <a href="mailto:acl2018pc@ukp.informatik.tu-darmstadt.de">acl2018pc@ukp.informatik.tu-darmstadt.de</a>.</li>
+	<li>For general inquiries about the conference, please email <a href="mailto:acl2018local@lists.unimelb.edu.au">acl2018local@lists.unimelb.edu.au</a>.</li>
+	<li>For comments regarding the website, please contact <a href="mailto:acl2018web@gmail.com">acl2018web@gmail.com</a>.</li>
+</ul>

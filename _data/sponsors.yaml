@@ -1,0 +1,48 @@
+  - name: Diamond
+    sponsors:
+      - name: Apple
+      - name: Google
+        image: google.png
+      - name: Toutiao/Bytedance
+        image: bytedance-toutiao.png
+  - name: Platinum
+    sponsors:
+      - name: Amazon
+        image: amazon.png
+      - name: Baidu
+        image: baidu.png
+      - name : Facebook
+        image: facebook.png
+      - name: Jingdong
+        url: http://www.jd.com
+        image: jingdong.png
+      - name: Recruit Institute of Technology
+        image: rit.png
+      - name: Tencent
+        image: tencent.png
+  - name: Gold
+    sponsors:
+      - name: IBM Research
+      - name: Microsoft
+        image: microsoft.png
+      - name : Naver
+        image: naver.png
+  - name: Silver
+    sponsors:
+      - name: Nuance
+        image: nuance.png
+  - name: Bronze
+    sponsors:
+      - name: ISI
+        url: https://www.isi.edu/technology_groups/insy/joining_us/researchers
+        image: isi-nlp.jpg
+  - name: Supporter
+    sponsors:
+      - name: Roam Analytics
+      - name: SAP
+        image: sap.png
+  - name: Student Volunteers Sponsor
+    sponsors:
+      - name: Data 61
+        image: data61.png
+        url: https://www.data61.csiro.au

@@ -307,6 +307,37 @@ table.hotel-rates {
     }
 }
 
+.sponsor-image-wrapper {
+    width: 180px;
+    height: 90px;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+
+    .sponsor-image-helper {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    .sponsor-image {
+        max-width: 160px;
+        max-height: 70px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    .sponsor-name {
+        font-size: 24px;
+    }
+}
+
+.sponsor-section h4 {
+    background-color: lightgray;
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+}
 
 .accepted-papers {
     font-size: 85%;
