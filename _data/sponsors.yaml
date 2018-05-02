@@ -1,6 +1,5 @@
   - name: Diamond
     sponsors:
-      - name: Apple
       - name: Google
         image: google.png
       - name: Toutiao/Bytedance
