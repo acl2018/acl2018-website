@@ -7,6 +7,8 @@ top_nav_category: Call for Papers
 tab_index: -1
 ---
 
+_**Update, 5th May 2018**: Authors of accepted papers should read the [instructions for camera-ready submissions]({{ site.github.url }}/2018/05/05/author-instructions)_
+
 The ACL 2018 conference invites the submission of long and short papers
 on substantial, original, and unpublished research in all aspects of
 Computational Linguistics and Natural Language Processing. As in recent
