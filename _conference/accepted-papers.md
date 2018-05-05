@@ -1,5 +1,5 @@
 ---
-title: Accepted Papers
+title: Programme
 top_nav_category: Conference
 layout: page
 ---
