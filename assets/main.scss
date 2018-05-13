@@ -23,7 +23,7 @@ $grey-color-dark:  darken($grey-color, 25%);
 // Width of the content area
 $content-width:    900px;
 
-$on-palm:          600px;
+$on-palm:          670px;
 $on-laptop:        800px;
 
 // Minima also includes a mixin for defining media queries.
@@ -81,6 +81,24 @@ $banner-height: 250px;
     .page-link {
         z-index: 100;
     }
+
+    @media screen and (max-width: 900px) {
+        font-size: 85%;
+    }    
+
+    .page-link:not(:last-child) {
+        margin-right: 15px;
+        @media screen and (max-width: 900px) and (min-width: 670px) {
+            margin-right: 12px;
+        }
+
+    }
+    .page-link {
+        @include media-query($on-palm) {
+            margin-right: 0px !important
+        }
+    }
+
 }
 
 .site-title {

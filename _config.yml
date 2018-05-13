@@ -60,18 +60,20 @@ defaults:
     values:
       layout: attendees
 top_nav:
+  - url: /registration/
+    title: Registration
   - url: /attendees/
     title: Attendees
+  - url: /committee/
+    title: Committee
   - url: /tutorials/
     title: Tutorials
   - url: /workshops/
     title: Workshops
-  - url: /committee/
-    title: Committee
   - url: /conference/accepted-papers
     title: Conference
   - url: /call-for-papers/
-    title: Call for Papers
+    title: CFP
   - url: /
     title: About
 
