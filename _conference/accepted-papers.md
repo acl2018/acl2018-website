@@ -9,6 +9,15 @@ Congratulations to all authors for their fine work, and thanks to all the area c
 
 _Authors of accepted papers should read the [instructions for camera-ready submissions]({{ site.github.url }}/2018/05/05/author-instructions)_
 
+<nav class="table-contents">
+    <h4>Jump to…</h4>
+    <ul>
+    <li><a href='#long-papers'>Long Papers</a></li>
+    <li><a href='#short-papers'>Short Papers</a></li>
+    <li><a href='#demo-papers'>Demo Papers</a></li>
+    </ul>
+</nav>
+
 ### Long Papers
 
 <ul class="accepted-papers">
