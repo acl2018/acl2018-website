@@ -24,3 +24,11 @@ _Authors of accepted papers should read the [instructions for camera-ready submi
     <li class="listing"><span class="paper-title">{{ paper.Title }}</span>. <span class="paper-authors">{{ paper.Authors }}</span>.</li>
 {% endfor %}
 </ul>
+
+### Demo Papers
+
+<ul class="accepted-papers">
+{% for paper in site.data.papers_demo %}
+    <li class="listing"><span class="paper-title">{{ paper.Title }}</span>. <span class="paper-authors">{{ paper.Authors }}</span>.</li>
+{% endfor %}
+</ul>
