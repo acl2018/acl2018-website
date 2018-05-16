@@ -4,7 +4,10 @@ title: Call for Papers – Main Conference
 layout: cfp
 permalink: /call-for-papers/
 top_nav_category: Call for Papers
+tab_index: -1
 ---
+
+_**Update, 5th May 2018**: Authors of accepted papers should read the [instructions for camera-ready submissions]({{ site.github.url }}/2018/05/05/author-instructions)_
 
 The ACL 2018 conference invites the submission of long and short papers
 on substantial, original, and unpublished research in all aspects of
@@ -166,9 +169,10 @@ templates. Long papers must not exceed eight (8) pages of content. Short
 papers must not exceed four (4) pages of content. References do not
 count against these limits.
 
--   [LaTeX]({{ site.github.url }}/downloads/acl18-latex.zip) ([acl_natbib.bst]({{ site.github.url }}/downloads/acl_natbib.bst) updated 18th February)
+-   [LaTeX]({{ site.github.url }}/downloads/acl18-latex.zip)  ([acl_natbib.bst]({{ site.github.url }}/downloads/acl_natbib.bst) updated 18th February)
 -   [Microsoft Word]({{ site.github.url }}/downloads/acl18-word.zip)
 
+**Style files were updated on 14th April, 2018 to clarify the location of supplementary material**. 
 All submissions must be in PDF format and must conform to the official
 style guidelines, which are contained in these template files.
 

@@ -1,0 +1,79 @@
+- name: Crown Metropol
+  link: https://www.crownhotels.com.au/crown-metropol-melbourne/en
+  address: 8 Whiteman St, Southbank 
+  map_link: https://goo.gl/maps/Hh1rgBWNoPM2
+  rooms:
+    - description: Luxe Room
+      rate: 295
+    - description: Luxe Room incl. breakfast for one
+      rate: 328
+    - description: Luxe Room incl. breakfast for two
+      rate: 361
+- name: Crowne Plaza
+  link: https://www.melbourne.crowneplaza.com/
+  address: 1-5 Spencer Street, Melbourne
+  map_link: https://goo.gl/maps/fr8TRgzkmeE2 
+  rooms:
+    - description: Standard Room
+      rate: 250
+- name: Aria Apartments
+  link: https://www.staywitharia.com.au/
+  address: 285 City Road, Southbank
+  map_link: https://goo.gl/maps/jpxmKvN1GmR2 
+  rooms:
+    - description: One Bedroom Apartment
+      rate: 159
+    - description: Two Bedroom
+      rate: 259
+    - description: Two Bedroom Two Bathroom Apartment
+      rate: 279
+- name: Pensione Hotel
+  link: http://www.pensione.com.au/melbourne
+  address: 16 Spencer Street, Melbourne
+  map_link: https://goo.gl/maps/Atsah83DrFz
+  rooms:
+    - description: Matchbox Room incl 1 breakfast
+      rate: 130
+    - description: Shoebox room incl 1 breakfast
+      rate: 150
+    - description: Penione Double Room incl 1 breakfast
+      rate: 160
+- name: Batman’s Hill on Collins
+  link: https://www.batmanshill.com.au/
+  address: 623 Collins Street, Melbourne 
+  map_link: https://goo.gl/maps/QtfWiJ8a8d82 
+  rooms:
+    - description: Economy Double
+      rate: 129
+    - description: Economy Twin
+      rate: 129
+    - description: Premium Economy Queen
+      rate: 154
+    - description: Premium Economy Twin
+      rate: 154
+    - description: Premiere King Split Room
+      rate: 179
+- name: Holiday Inn on Flinders    
+  link: https://holidayinnmelbourne.com.au/
+  address: 575 Flinder Lane, Melbourne
+  map_link: https://goo.gl/maps/NBLwKwt65s12
+  rooms:
+    - description: Superior Room
+      rate: 230
+- name: Ibis Melbourne Little Bourke Street
+  link: http://www.ibismelbourne.com.au/
+  address: 600 Little Bourke Street, Melbourne 
+  map_link: https://goo.gl/maps/3pbBcQhSaiB2 
+  rooms:
+    - description: Standard Twin
+      rate: 130
+    - description: Standard Double
+      rate: 130
+    - description: Standard Queen
+      rate: 140
+- name: Pan Pacific Melbourne
+  link: https://www.panpacific.com/en/hotels-resorts/australia/melbourne/stay/rooms.html   
+  address: 2 Convention Centre Place, South Wharf (Direct access to Conference venue)
+  rooms:
+    - description: Deluxe King
+      rate: 289

@@ -21,9 +21,9 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    800px;
+$content-width:    900px;
 
-$on-palm:          600px;
+$on-palm:          670px;
 $on-laptop:        800px;
 
 // Minima also includes a mixin for defining media queries.
@@ -48,7 +48,7 @@ $banner-height: 250px;
 }
 
 .banner {
-    padding: 30px 15px;
+    padding: 20px 15px;
     /* margin-bottom: 30px; */
 //    height: 300px;
     margin: 5px auto;
@@ -70,12 +70,35 @@ $banner-height: 250px;
     max-width: $content-width - 2 * $spacing-unit;
     float: none;
     height: $top-nav-height; 
-    padding: 0 $spacing-unit;   
+    padding: 0 $spacing-unit;
+    z-index: 80;
 }
 
 .site-nav {
     line-height: $top-nav-height;
     vertical-align: middle;
+    z-index: 90;
+    .page-link {
+        z-index: 100;
+    }
+
+    @media screen and (max-width: 900px) {
+        font-size: 85%;
+    }    
+
+    .page-link:not(:last-child) {
+        margin-right: 15px;
+        @media screen and (max-width: 900px) and (min-width: 670px) {
+            margin-right: 12px;
+        }
+
+    }
+    .page-link {
+        @include media-query($on-palm) {
+            margin-right: 0px !important
+        }
+    }
+
 }
 
 .site-title {
@@ -117,6 +140,7 @@ $banner-height: 250px;
 .org-logo {
     float: left; 
     vertical-align: middle;
+    padding-top: 5px;
     img {   
         max-height: $top-nav-height - 10px;
     }
@@ -313,4 +337,141 @@ table.day-program {
 
 .cal-protocol {
     margin-left: 8px;
+}
+
+
+@include media-query($on-palm) {
+    .site-nav {
+        line-height: 20px;
+        margin-top: $top-nav-height + 15px;
+        .page-link {
+            color: white;
+            line-height: 1;
+        }
+        right: 5px;
+        background-color: #00000080;
+        border: 0px;
+    }
+
+    .site-title {
+        float: left;
+        font-size: 40px;
+        width: 50%;
+    }
+
+    .site-sub-title {
+        .sub-title-main {
+            font-size: 16px;
+        }
+
+        .sub-title-extra {
+            font-size: 12px;
+        }
+    }
+
+    .site-nav-wrapper {
+        height: $top-nav-height - 10px;
+    }
+
+    .banner {
+        padding: 10px 10px 50px 10px;
+    }
+
+    .image-credit {
+        display: none;
+    }
+}
+
+.tabs {
+    a, span {
+        border-radius: 6px 6px 0 0;
+    }
+}
+
+.image-credit {
+    // position: absolute;
+    bottom: 3px;
+    float: right;
+    color: #ccc;
+    font-size: 10px;
+
+    a:link, a:visited, a:hover {
+        color: #ccc;
+        font-style: italic;
+    }
+    text-shadow: #222 1px 1px;
+}
+
+table.hotel-rates {
+    width: 50%;
+
+    .room-rate {
+        width: 20%;
+    }
+}
+
+.sponsor-image-wrapper {
+    width: 180px;
+    height: 90px;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+
+    .sponsor-image-helper {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    .sponsor-image {
+        max-width: 160px;
+        max-height: 70px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    .sponsor-name {
+        font-size: 24px;
+    }
+}
+
+.sponsor-section h4 {
+    background-color: lightgray;
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.accepted-papers {
+    font-size: 85%;
+    .paper-title {
+        font-style: italic;
+    }
+}
+
+
+.price-list {
+    text-align: right;
+}
+
+
+.table-contents {
+    border: 1px solid #bbb;
+    width: 20%;
+    font-size: 85%;
+
+    ul {
+        list-style: none;
+        margin: 10px;
+    }
+
+    h4 {
+        color: white;
+        background-color: #bbb;
+        padding-left: 10px;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
 }

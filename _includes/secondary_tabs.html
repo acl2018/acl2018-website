@@ -1,0 +1,10 @@
+  <nav class="tabs clearfix">
+   {% assign tab_pages = include.tab_pages | sort: 'tab_index' %}
+   {% for item in tab_pages %}
+      {% if item.url == page.url %}
+         <li><span class="active">{{ item.nav_title }}</span></li>
+      {% else %}
+         <li><a class="" href="{{ item.url }}">{{ item.nav_title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </nav>
