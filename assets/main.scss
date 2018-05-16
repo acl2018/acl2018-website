@@ -255,11 +255,12 @@ $banner-height: 250px;
 }
 
 .conc-session {
-    width: (85%/{{ site.data.program.num_concurrent }});
+    width: (85%/{{ site.data.program.num_concurrent }}) !important;
 }
 
 .day-program td {
     vertical-align: top;
+    hyphens: auto;
 }
 
 .talk-title {
@@ -278,6 +279,13 @@ div.talk {
 
 table.day-program {
     font-size: 14px;
+
+    @include media-query($on-laptop) {
+        font-size: 12px;
+    }
+    @include media-query($on-palm) {
+        font-size: 10px;
+    }
 }
 
 .cal-link {
