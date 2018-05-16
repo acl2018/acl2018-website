@@ -21,7 +21,7 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    900px;
+$content-width:    980px;
 
 $on-palm:          670px;
 $on-laptop:        800px;
@@ -52,7 +52,7 @@ $banner-height: 250px;
     /* margin-bottom: 30px; */
 //    height: 300px;
     margin: 5px auto;
-    max-width: 911px;
+    max-width: $content-width * 1.02;
     height: $banner-height;
     background-image: url({{ "/images/yarra-panorama.jpg" | prepend: site.github.url }});
     background-repeat: no-repeat;
@@ -81,15 +81,16 @@ $banner-height: 250px;
     .page-link {
         z-index: 100;
     }
+    font-size: 16px;
 
-    @media screen and (max-width: 900px) {
-        font-size: 85%;
+    @media screen and (max-width: 800px) {
+        font-size: 13px;
     }    
 
     .page-link:not(:last-child) {
-        margin-right: 15px;
+        margin-right: 13px;
         @media screen and (max-width: 900px) and (min-width: 670px) {
-            margin-right: 12px;
+            margin-right: 11px;
         }
 
     }
