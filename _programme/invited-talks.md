@@ -9,7 +9,8 @@ tab_index: 2
 <div class="invited-talk">
     <h3>{{ talk.title }}</h3>
     <p class="speaker">{{ talk.speaker }}</p>
-    <div class="talk-abstract">{{ talk.abstract }}</div>
+    <div class="talk-abstract">{{ talk.abstract | markdownify }}</div>
+    <img class="speaker-pic" src="{{ site.github.url }}/images/{{ talk.image }}" title="{{ talk.speaker }}">
     <div class="bio"><strong>Bio: </strong>{{ talk.bio }}</div>
 </div>
 {% endfor %}

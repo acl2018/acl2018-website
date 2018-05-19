@@ -1,6 +1,6 @@
 - speaker: Anton van den Hengel
   title: Deep Neural Networks, and what they’re not very good at
-  abstract: >
+  abstract: |
       Deep Neural Networks have had an incredible impact in a variety of areas 
       within machine learning, including computer vision and natural language 
       processing. Deep Neural Networks use implicit representations that are 
@@ -25,7 +25,7 @@
   image: van-den-hengel.jpg
 - speaker: Carolyn Penstein Rosé
   title: Who is the Bridge Between the What and the How
-  abstract: >
+  abstract: |
       This talk reports on over a decade of research where theoretical foundations 
       motivate computational models that produce real world impact in online spaces.
       Both the earliest philosophers of language and the most recent researchers in
@@ -40,7 +40,9 @@
       approaches to real time monitoring of discussion processes and on the other
       hand the design of interventions that support interactions in online spaces
       with the goal of increasing desired outcomes, including learning, health, and 
-      wellbeing. As an example, in this talk we probe into a specific quality of 
+      wellbeing. 
+
+      As an example, in this talk we probe into a specific quality of 
       discussion referred to as Transactivity. Transactivity is the extent to which 
       a contribution articulates the reasoning of the speaker, that of an interlocutor, 
       and the relation between them. In different contexts, and within very distinct 
