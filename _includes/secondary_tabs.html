@@ -1,10 +1,11 @@
+  {% capture tabstyle %}width: {{ 100. | divided_by: include.tab_pages.size }}%;{% endcapture %}
   <nav class="tabs clearfix">
    {% assign tab_pages = include.tab_pages | sort: 'tab_index' %}
    {% for item in tab_pages %}
       {% if item.url == page.url %}
-         <li><span class="active">{{ item.nav_title }}</span></li>
+         <li style="{{ tabstyle }}"><span class="active">{{ item.nav_title }}</span></li>
       {% else %}
-         <li><a class="" href="{{ item.url }}">{{ item.nav_title }}</a></li>
+         <li style="{{ tabstyle }}"><a class="" href="{{ item.url }}">{{ item.nav_title }}</a></li>
       {% endif %}
     {% endfor %}
   </nav>

@@ -1,0 +1,66 @@
+- speaker: Anton van den Hengel
+  title: Deep Neural Networks, and what they’re not very good at
+  abstract: >
+      Deep Neural Networks have had an incredible impact in a variety of areas 
+      within machine learning, including computer vision and natural language 
+      processing. Deep Neural Networks use implicit representations that are 
+      very high-dimensional, however, and are thus particularly well suited to 
+      problems that can be solved by associative recall of previous solutions. 
+      They are ill-suited to problems that require human-interpretable 
+      representations, explicit manipulation of symbols, or reasoning. The 
+      dependency of Deep Neural Networks on large volumes of training data, 
+      also means that they are typically only applicable when the problem 
+      itself, and the nature of the test data, are predictable long in advance.
+      
+      The application of Deep Neural Networks to Visual Question Answering has 
+      achieved results that would have been thought impossible only a few years 
+      ago. It has also thrown a spotlight on the shortcomings of current Deep Nets
+      in solving problems that require explicit reasoning, the use of a knowledge
+      base, or the ability to learn on the fly. In this talk I will illustrate 
+      some of the steps being taken to address these problems, and a new 
+      learning-to-learn approach that we hope will combine the power of Deep 
+      Learning with the significant benefits of explicit-reasoning-based methods.
+
+  bio: Anton van den Hengel is a Professor in the School of Computer Science at the University of Adelaide, the Director of the Australian Institute for Machine Learning, and a Chief Investigator of the Australian Centre for Robotic Vision. Prof. van den Hengel has been a CI on over $60m in external research funding from sources including Google, Canon, BHP Billiton and the ARC, and has won a number of awards, including the Pearcey Foundation Entrepreneur Award, the SA Science Excellence Award for Research Collaboration, and the CVPR Best Paper prize in 2010. He has authored over 300 publications, had 8 patents commercialised, formed 2 start-ups, and has recently had a medical technology achieve first-in-class FDA approval. Current research interests include Deep Learning, vison and language problems, interactive image-based modelling, large-scale video surveillance, and learning from large image databases.
+  image: van-den-hengel.jpg
+- speaker: Carolyn Penstein Rosé
+  title: Who is the Bridge Between the What and the How
+  abstract: >
+      This talk reports on over a decade of research where theoretical foundations 
+      motivate computational models that produce real world impact in online spaces.
+      Both the earliest philosophers of language and the most recent researchers in
+      computational approaches to social media analysis have acknowledged the 
+      distinction between the what of language, namely its propositional content, 
+      and the how of language, or its form, style, or framing. What bridges between 
+      these realms are social processes that motivate the linguistic choices that 
+      result in specific realizations of propositional content situated within social 
+      interactions, designed to achieve social goals. These insights allow researchers
+      to make sense of the connection between discussion processes and outcomes from 
+      those discussions. These findings motivate on the one hand design of computational
+      approaches to real time monitoring of discussion processes and on the other
+      hand the design of interventions that support interactions in online spaces
+      with the goal of increasing desired outcomes, including learning, health, and 
+      wellbeing. As an example, in this talk we probe into a specific quality of 
+      discussion referred to as Transactivity. Transactivity is the extent to which 
+      a contribution articulates the reasoning of the speaker, that of an interlocutor, 
+      and the relation between them. In different contexts, and within very distinct 
+      theoretical frameworks, this construct has been associated with solidarity, 
+      influence, expertise transfer, and learning. Within the construct of Transactivity,
+      the cognitive and social underpinnings are inextricably linked such that modeling 
+        the who enables prediction of the connection between the what and the how.
+  bio: >
+      Dr. Carolyn Rosé is a Professor of Language Technologies and Human-Computer Interaction 
+      in the School of Computer Science at Carnegie Mellon University. Her research program 
+      is focused on better understanding the social and pragmatic nature of conversation, 
+      and using this understanding to build computational systems that can improve the efficacy 
+      of conversation between people, and between people and computers. In order to pursue these
+      goals, she invokes approaches from computational discourse analysis and text mining, 
+      conversational agents, and computer supported collaborative learning. Her research group’s
+      highly interdisciplinary work, published in 200 peer reviewed publications, is represented 
+      in the top venues in 5 fields: namely, Language Technologies, Learning Sciences, Cognitive 
+      Science, Educational Technology, and Human-Computer Interaction, with awards in 3 of these 
+      fields. She serves as Past President and Inaugural Fellow of the International Society of 
+      the Learning Sciences, Chair of the International Alliance to Advance Learning in the 
+      Digital Era, and Executive Editor of the International Journal of Computer-Supported 
+      Collaborative Learning.
+  image: rose.jpg

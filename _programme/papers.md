@@ -1,7 +1,9 @@
 ---
-title: Programme
-top_nav_category: Conference
-layout: page
+title: Accepted Papers
+nav_title: Papers
+top_nav_category: Programme
+redirect_from: /conference/accepted-papers/
+tab_index: 1
 ---
 
 This year, the ACL conference was super-competitive: We accepted 258 out of 1018 submitted long papers and 126 out of 526 short papers, with an overall acceptance rate of 24.9%.  The details of the review process will be published soon on the homepage. 
@@ -17,6 +19,7 @@ _Authors of accepted papers should read the [instructions for camera-ready submi
     <li><a href='#demo-papers'>Demo Papers</a></li>
     </ul>
 </nav>
+
 
 ### Long Papers
 
