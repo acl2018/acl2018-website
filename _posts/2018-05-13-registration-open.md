@@ -1,7 +1,7 @@
 ---
 layout: news
 title: Registration is now open
-snippet: The registration site is now open
+snippet: The registration site is now open, with early bird registration until 4th June
 redirect_to: /registration
 ---
 
