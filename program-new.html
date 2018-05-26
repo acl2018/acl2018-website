@@ -15,7 +15,6 @@ title: Program
     <span id="wrapper-googlecal"><input type="radio" class="cal-protocol" id="calmode-googlecal" onclick="selectCalMode('googlecal')" href="#" title="Add to Google Calendar"></input><label class='calendarmode' for="calmode-googlecal"><i class="fab fa-google" ></i>Google Calendar</label></span>
   </div>
 </div>
-<pre>{{ site.main_schedule.days }}</pre>
 {% for day in site.main_schedule.days %}
 <div id="schedule">
   <h3 class="day">{{ day.name }}: {{ day.date | date: "%B %-d" }}</h3>
