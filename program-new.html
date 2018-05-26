@@ -16,8 +16,7 @@ title: Program
   </div>
 </div>
 
-
-{% for day in site.data.program.days %}
+{% for day in site.main_schedule.days %}
 <div id="schedule">
   <h3 class="day">{{ day.name }}: {{ day.date | date: "%B %-d" }}</h3>
   <table class="day-program">
@@ -67,11 +66,11 @@ title: Program
     {% endfor %}
   </table>
 </div>
-  <button id="signin-button" onclick="googleHandleSignInClick()">Sign In</button>
-  <button id="signout-button" onclick="googleHandleSignOutClick()">Sign Out</button>
-  
+ 
 {% endfor %}
-  
+<button id="signin-button" onclick="googleHandleSignInClick()">Sign In</button>
+<button id="signout-button" onclick="googleHandleSignOutClick()">Sign Out</button>
+ 
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script type="text/javascript" src="{{ site.github.url }}/downloads/ics.deps.min.js"></script>
 <script type="text/javascript">
