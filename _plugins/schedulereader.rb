@@ -27,15 +27,12 @@ module ScheduleReader
 	  			'name' => "Day #{day_num}",
 	  		}
 	  		all_days.push(day)
-      	elsif line.start_with?('+ ') # shared session
-      		if !date 
-      			print("No date known for line #{line}")
-      		end
+      	elsif line.start_with?('+ ') or line.start_with?('= ')
       		conts = line[2..-1]
       		time_chunk = conts[0..12]
       		start_str, end_str = time_chunk.split('--')
       		start_time = Time.parse(start_str, date.to_time)
-      		end_time = Time.parse(start_str, date.to_time)
+      		end_time = Time.parse(end_str, date.to_time)
       		session_title = conts[12..-1]
       		current_session = {
       			'name' => session_title,
