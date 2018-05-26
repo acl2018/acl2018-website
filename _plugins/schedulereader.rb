@@ -20,7 +20,7 @@ module ScheduleReader
       		in_multiline_session = false
       		papers = []
       	end
-         if (line.match(/^[+*] /) and current_parallel_sessions.size > 0
+         if (line.match(/^[+*] /)) and current_parallel_sessions.size > 0
             sessions_by_start = {}
             parallel_session_top = {
                'name' => "Presentations #{par_ses_num}",
