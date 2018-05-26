@@ -7,6 +7,9 @@ tab_index: 2
 
 Accommodation has been reserved for delegates and their guests at highly competitive rates. You are encouraged to secure your accommodation through the Conference Secretariat to ensure that you receive the negotiated competitive rates. Accommodation can be booked via the [online registration form](https://icmsaust.eventsair.com/acl-2018/acl-accomodation-link) or by [contacting](mailto:acl2018@icmsaust.com.au) the Conference Secretariat.
 
+If you would like to link up with another attendee to share accomodation costs,
+please use the [NLP roommate matching forum](https://groups.google.com/forum/#!forum/nlp-roommates).
+
 Rates quoted are:
 
 * Per room per night
