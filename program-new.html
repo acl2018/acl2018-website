@@ -15,7 +15,7 @@ title: Program
     <span id="wrapper-googlecal"><input type="radio" class="cal-protocol" id="calmode-googlecal" onclick="selectCalMode('googlecal')" href="#" title="Add to Google Calendar"></input><label class='calendarmode' for="calmode-googlecal"><i class="fab fa-google" ></i>Google Calendar</label></span>
   </div>
 </div>
-
+<pre>{{ site.main_schedule.days }}</pre>
 {% for day in site.main_schedule.days %}
 <div id="schedule">
   <h3 class="day">{{ day.name }}: {{ day.date | date: "%B %-d" }}</h3>
@@ -24,7 +24,7 @@ title: Program
       {% if session.shared %}
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row shared-session-name-row">
         <td class="times session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
-          <td class="session shared-session session-name-cell shared-name" colspan="{{ site.data.program.num_concurrent }}">
+          <td class="session shared-session session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
             <div class="session-name shared-session-name"><a class="cal-link ical" href='#' onclick='calendarDownloadSharedSession({{ session | jsonify }}); return false;'><i class="fas fa-calendar-alt"></i><a class="cal-link googlecal" href='#' onclick='gcalAddSharedSession({{ session | jsonify }}); return false;'><i class="fas fa-calendar-plus"></i></a>{{ session.name }}</div>
             <div class="session-location shared-session-location">{{ session.location }}</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
@@ -32,7 +32,7 @@ title: Program
       {% else %}
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row conc-session-name-row">
         <td class="times session-times" rowspan="4">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
-            <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.data.program.num_concurrent }}"><div class="session-name">{{ session.name }}</div>
+            <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}"><div class="session-name">{{ session.name }}</div>
             </td>
       </tr>
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-indiv-row">

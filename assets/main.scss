@@ -255,7 +255,7 @@ $banner-height: 250px;
 }
 
 .conc-session {
-    width: (85%/{{ site.data.program.num_concurrent }}) !important;
+    width: (85%/{{ site.main_schedule.num_concurrent }}) !important;
 }
 
 .day-program td {

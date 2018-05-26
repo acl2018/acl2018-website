@@ -10,13 +10,32 @@ module ScheduleReader
       in_multiline_session = false
       date = nil
       day_sessions = nil
+      current_parallel_sessions = []
+      par_ses_num = 1
+      max_concurrent = 0
       # date = DateTime.new(2018, 5, 1)
       # day_sessions = []
       File.open("_data/softconf-schedule-raw.txt").each do |line|
       	if line.match(/^[*+=] /)
       		in_multiline_session = false
       		papers = []
-      	end	
+      	end
+         if (line.match(/^[+*] /) and current_parallel_sessions.size > 0
+            sessions_by_start = {}
+            parallel_session_top = {
+               'name' => "Presentations #{par_ses_num}",
+               'start' => current_parallel_sessions[0]['start'],
+               'end' => current_parallel_sessions[0]['end'],
+               'shared' => false,
+               'concurrent_sessions' => current_parallel_sessions,
+            }
+            if current_parallel_sessions.size > max_concurrent
+               max_concurrent = current_parallel_sessions.size
+            end
+            day_sessions.push(parallel_session_top)
+            current_parallel_sessions = []
+            par_ses_num += 1
+         end
       	if line.start_with?('* ')
       		day_num += 1
 	  		day_sessions = []
@@ -34,20 +53,25 @@ module ScheduleReader
       		start_time = Time.parse(start_str, date.to_time)
       		end_time = Time.parse(end_str, date.to_time)
       		session_title = conts[12..-1]
-      		current_session = {
+      		session = {
       			'name' => session_title,
       			'start' => start_time,
       			'end' => end_time,
       			'shared' => true,
       		}
-      		day_sessions.push(current_session)
       		papers = []
       		in_multiline_session = true
+            if line.start_with?('+ ') # shared
+               day_sessions.push(session)
+            else #parallel
+               current_parallel_sessions.push(session)
+            end
       	end
       end
 
       schedule = {
-      	'days' => all_days
+      	'days' => all_days,
+         'num_concurrent' => max_concurrent,
       }
 
       site.config['main_schedule'] = schedule
