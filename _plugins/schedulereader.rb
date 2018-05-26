@@ -21,23 +21,28 @@ module ScheduleReader
       		papers = []
       	end
          if (line.match(/^[+*] /)) and current_parallel_sessions.size > 0
-            sessions_by_start = {}
-            # START HERE - need to split up if multiple start times appear in here
-            #current_parallel_sessions.each do |sess|
-            #   sessions_by_start[sess['start']] 
-            parallel_session_top = {
-               'name' => "Presentations #{par_ses_num}",
-               'start' => current_parallel_sessions[0]['start'],
-               'end' => current_parallel_sessions[0]['end'],
-               'shared' => false,
-               'concurrent_sessions' => current_parallel_sessions,
-            }
-            if current_parallel_sessions.size > max_concurrent
-               max_concurrent = current_parallel_sessions.size
+            by_start = Hash.new {[]}
+            # need to split up if multiple start times appear in here
+            current_parallel_sessions.each do |sess|
+               by_start[sess['start']] = by_start[sess['start']].push(sess)
             end
-            day_sessions.push(parallel_session_top)
+            all_starts = by_start.keys.sort
+            all_starts.each do |start|
+               par_sessions = by_start[start]  
+               parallel_session_top = {
+                  'name' => "Presentations #{par_ses_num}",
+                  'start' => par_sessions[0]['start'],
+                  'end' => par_sessions[0]['end'],
+                  'shared' => false,
+                  'concurrent_sessions' => par_sessions,
+               }
+               if par_sessions.size > max_concurrent
+                  max_concurrent = par_sessions.size
+               end
+               day_sessions.push(parallel_session_top)
+               par_ses_num += 1
+            end
             current_parallel_sessions = []
-            par_ses_num += 1
          end
       	if line.start_with?('* ')
       		day_num += 1
