@@ -13,8 +13,7 @@ module ScheduleReader
       current_parallel_sessions = []
       par_ses_num = 1
       max_concurrent = 0
-      # date = DateTime.new(2018, 5, 1)
-      # day_sessions = []
+
       File.open("_data/softconf-schedule-raw.txt").each do |line|
       	if line.match(/^[*+=] /)
       		in_multiline_session = false
@@ -62,11 +61,21 @@ module ScheduleReader
       		end_time = Time.parse(end_str, date.to_time)
       		session_title = conts[12..-1]
       		session = {
-      			'name' => session_title,
       			'start' => start_time,
       			'end' => end_time,
       			'shared' => true,
       		}
+            chair_match = session_title.match(/ %chair (.*)$/)
+            if chair_match
+               session['chair'] = chair_match[1]
+               session_title = session_title[0..-(chair_match[0].size + 1)]
+            end
+            by_match = session_title.match(/ %by (.*)$/)
+            if by_match
+               session['speakers'] = by_match[1]
+               session_title = session_title[0..-(by_match[0].size + 1)]
+            end
+            session['name'] = session_title
       		papers = []
       		in_multiline_session = true
             if line.start_with?('+ ') # shared

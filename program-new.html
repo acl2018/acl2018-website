@@ -8,6 +8,7 @@ title: Program
   <div class="cal-protocol" id="calmode-googlecal"><a onclick="selectCalMode('googlecal'); return false;" href="#" title="Add to Google Calendar"><i class="fab fa-google" ></i>Google Calendar</a></div>
 </div> -->
 
+
 <div class="select-cal-protocol">
   <div class="name">Calendar Setting</div>
   <div class="cal-options">
@@ -38,6 +39,7 @@ title: Program
           {% for conc_sess in session.concurrent_sessions %}
             <td class="session conc-session">
               <div class="conc-session-name"><a class="cal-link ical" href='#' onclick='calendarDownloadMultipleTalks({{ conc_sess | jsonify }}); return false;'><i class="fas fa-calendar-alt"></i><a class="cal-link googlecal" href='#' onclick='gcalAddMultipleTalks({{ conc_sess | jsonify }}); return false;'><i class="fas fa-calendar-plus"></i></a></a>{{ conc_sess.name }}</div>
+            <div class="speakers session-speakers"><span class="session-chair-label">Chair:</span> {{ conc_sess.chair }}</div>
             </td>
           {% endfor %}
       </tr>
@@ -232,3 +234,7 @@ title: Program
   initCalMode();
   
 </script>
+
+<!--
+  {{ site.main_schedule | jsonify }}
+-->
