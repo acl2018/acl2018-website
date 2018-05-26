@@ -22,6 +22,9 @@ module ScheduleReader
       	end
          if (line.match(/^[+*] /)) and current_parallel_sessions.size > 0
             sessions_by_start = {}
+            # START HERE - need to split up if multiple start times appear in here
+            #current_parallel_sessions.each do |sess|
+            #   sessions_by_start[sess['start']] 
             parallel_session_top = {
                'name' => "Presentations #{par_ses_num}",
                'start' => current_parallel_sessions[0]['start'],
