@@ -37,7 +37,16 @@ module ScheduleReader
 					end
 					all_starts = by_start.keys.sort
 					all_starts.each do |start|
-						par_sessions = by_start[start]  
+						par_sessions = by_start[start]
+						stream_num = 1
+						par_sessions.each do |ps|
+							ps['talks'].each do |talk|
+								session_id = "#{day_num}_#{talk['start'].strftime('%H%M')}-#{stream_num}"
+								talk['sess_id'] = session_id
+							end
+							stream_num += 1
+						end
+						# print(par_sessions)
 						parallel_session_top = {
 							'name' => "Presentations #{par_ses_num}",
 							'start' => par_sessions[0]['start'],
@@ -71,6 +80,7 @@ module ScheduleReader
 						'start' => start_time,
 						'end' => end_time,
 						'shared' => true,
+						'sess_id' => "#{day_num}_#{start_time.strftime('%H%M')}"
 					}
 					chair_match = session_title.match(/ %chair (.*)$/)
 					if chair_match
@@ -91,7 +101,6 @@ module ScheduleReader
 						current_parallel_sessions.push(session)
 					end
 				elsif line.chomp.size > 0 and line.match(/ \d\d:\d\d--\d\d:\d\d /) # talk
-					print(line)
 					talk_id = line.split()[0]
 					conts = line[(talk_id.size + 1)..-1]
 					start_time, end_time = times_from_chunk[conts]

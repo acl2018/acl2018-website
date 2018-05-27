@@ -22,10 +22,11 @@ title: Program
   <table class="day-program">
     {% for session in day.sessions %}
       {% if session.shared %}
-      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row shared-session-name-row">
+      <tr id="shared-{{ session.sess_id }}" onclick="toggleSharedSession('{{ session.sess_id }}')"
+          class="session-row shared session-name-row shared-session-name-row">
         <td class="times session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
           <td class="session shared-session session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
-            <div class="session-name shared-session-name"><a class="cal-link ical" href='#' onclick='calendarDownloadSharedSession({{ session | jsonify }}); return false;'><i class="fas fa-calendar-alt"></i><a class="cal-link googlecal" href='#' onclick='gcalAddSharedSession({{ session | jsonify }}); return false;'><i class="fas fa-calendar-plus"></i></a>{{ session.name }}</div>
+            <div class="session-name shared-session-name">{{ session.name }}</div>
             <div class="session-location shared-session-location">{{ session.location }}</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
           </td>
@@ -38,7 +39,7 @@ title: Program
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-indiv-row">
           {% for conc_sess in session.concurrent_sessions %}
             <td class="session conc-session">
-              <div class="conc-session-name"><a class="cal-link ical" href='#' onclick='calendarDownloadMultipleTalks({{ conc_sess | jsonify }}); return false;'><i class="fas fa-calendar-alt"></i><a class="cal-link googlecal" href='#' onclick='gcalAddMultipleTalks({{ conc_sess | jsonify }}); return false;'><i class="fas fa-calendar-plus"></i></a></a>{{ conc_sess.name }}</div>
+              <div class="conc-session-name">{{ conc_sess.name }}</div>
             <div class="speakers session-speakers"><span class="session-chair-label">Chair:</span> {{ conc_sess.chair }}</div>
             </td>
           {% endfor %}
@@ -52,11 +53,11 @@ title: Program
         {% for conc_sess in session.concurrent_sessions %}
           <td class="session-details">
             {% for talk in conc_sess.talks %}
-              <div class="talk">
+              <div class="talk" id="talk-{{ talk.sess_id }}" onclick="toggleSingleTalk('{{ talk.sess_id }}');">
                 <div class="times talk-time">
                   {{ talk.start | date: "%H:%M" }}
                 </div>
-                <div class="talk-title"><a class="cal-link ical" href='#' onclick='calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-alt"></i></a><a class="cal-link googlecal" href='#' onclick='gcalAddConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-plus"></i></a>{{ talk.title }}</div>
+                <div class="talk-title">{{ talk.title }}</div>
                 <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>
               </div>
             {% endfor %}
@@ -75,6 +76,46 @@ title: Program
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script type="text/javascript" src="{{ site.github.url }}/downloads/ics.deps.min.js"></script>
 <script type="text/javascript">
+  var rawScheduleData = {{ site.main_schedule | jsonify }};
+
+  var selectedShared = new Set();
+  var selectedTalks = new Set()
+
+  function extractSharedSessSchedule() {
+    byId = {};
+    days = rawScheduleData['days'];
+    for (var i = 0; i < days.length; i++) {
+      sessions = days[i]['sessions'];
+      for (var j = 0; j < sessions.length; j++) {
+        sess = sessions[j];
+        byId[sess.sess_id] = sess;
+      }
+    }
+    return byId;
+  }
+
+  function toggleSingleTalk(sessId) {
+    var elem = document.getElementById('talk-' + sessId);
+    if (selectedTalks.has(sessId)) {
+      selectedTalks.delete(sessId);
+      elem.classList.remove("selected");
+    } else {
+      selectedTalks.add(sessId);
+      elem.classList.add("selected");
+    }
+  }
+
+  function toggleSharedSession(sessId) {
+    var elem = document.getElementById('shared-' + sessId);
+    if (selectedShared.has(sessId)) {
+      selectedShared.delete(sessId);
+      elem.classList.remove("selected");
+    } else {
+      selectedShared.add(sessId);
+      elem.classList.add("selected");
+    }
+  }
+
   function slugify(text) {
     return text.replace(/\s+/g, '_').replace(/[^\w+]/g, '').toLowerCase();
   }

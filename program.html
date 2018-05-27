@@ -8,6 +8,7 @@ title: Program
   <div class="cal-protocol" id="calmode-googlecal"><a onclick="selectCalMode('googlecal'); return false;" href="#" title="Add to Google Calendar"><i class="fab fa-google" ></i>Google Calendar</a></div>
 </div> -->
 
+
 <div class="select-cal-protocol">
   <div class="name">Calendar Setting</div>
   <div class="cal-options">
@@ -15,9 +16,7 @@ title: Program
     <span id="wrapper-googlecal"><input type="radio" class="cal-protocol" id="calmode-googlecal" onclick="selectCalMode('googlecal')" href="#" title="Add to Google Calendar"></input><label class='calendarmode' for="calmode-googlecal"><i class="fab fa-google" ></i>Google Calendar</label></span>
   </div>
 </div>
-
-
-{% for day in site.data.program.days %}
+{% for day in site.main_schedule.days %}
 <div id="schedule">
   <h3 class="day">{{ day.name }}: {{ day.date | date: "%B %-d" }}</h3>
   <table class="day-program">
@@ -25,21 +24,22 @@ title: Program
       {% if session.shared %}
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row shared-session-name-row">
         <td class="times session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
-          <td class="session shared-session session-name-cell shared-name" colspan="{{ site.data.program.num_concurrent }}">
+          <td class="session shared-session session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
             <div class="session-name shared-session-name"><a class="cal-link ical" href='#' onclick='calendarDownloadSharedSession({{ session | jsonify }}); return false;'><i class="fas fa-calendar-alt"></i><a class="cal-link googlecal" href='#' onclick='gcalAddSharedSession({{ session | jsonify }}); return false;'><i class="fas fa-calendar-plus"></i></a>{{ session.name }}</div>
-            <div class="session-location shared-session-location">{{ session.location }}</div>
+            <div class="session-location shared-session-location">{{ session.location }}({{ session.sess_id }})</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
           </td>
       {% else %}
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row conc-session-name-row">
         <td class="times session-times" rowspan="4">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
-            <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.data.program.num_concurrent }}"><div class="session-name">{{ session.name }}</div>
+            <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}"><div class="session-name">{{ session.name }}</div>
             </td>
       </tr>
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-indiv-row">
           {% for conc_sess in session.concurrent_sessions %}
             <td class="session conc-session">
               <div class="conc-session-name"><a class="cal-link ical" href='#' onclick='calendarDownloadMultipleTalks({{ conc_sess | jsonify }}); return false;'><i class="fas fa-calendar-alt"></i><a class="cal-link googlecal" href='#' onclick='gcalAddMultipleTalks({{ conc_sess | jsonify }}); return false;'><i class="fas fa-calendar-plus"></i></a></a>{{ conc_sess.name }}</div>
+            <div class="speakers session-speakers"><span class="session-chair-label">Chair:</span> {{ conc_sess.chair }}</div>
             </td>
           {% endfor %}
       </tr>
@@ -54,7 +54,7 @@ title: Program
             {% for talk in conc_sess.talks %}
               <div class="talk">
                 <div class="times talk-time">
-                  {{ talk.start | date: "%H:%M" }}
+                  {{ talk.start | date: "%H:%M" }} ({{ talk.sess_id }})
                 </div>
                 <div class="talk-title"><a class="cal-link ical" href='#' onclick='calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-alt"></i></a><a class="cal-link googlecal" href='#' onclick='gcalAddConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-plus"></i></a>{{ talk.title }}</div>
                 <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>
@@ -67,11 +67,11 @@ title: Program
     {% endfor %}
   </table>
 </div>
-  <button id="signin-button" onclick="googleHandleSignInClick()">Sign In</button>
-  <button id="signout-button" onclick="googleHandleSignOutClick()">Sign Out</button>
-  
+ 
 {% endfor %}
-  
+<button id="signin-button" onclick="googleHandleSignInClick()">Sign In</button>
+<button id="signout-button" onclick="googleHandleSignOutClick()">Sign Out</button>
+ 
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script type="text/javascript" src="{{ site.github.url }}/downloads/ics.deps.min.js"></script>
 <script type="text/javascript">
@@ -234,3 +234,21 @@ title: Program
   initCalMode();
   
 </script>
+
+<script src="js/knockout-3.4.2.js"></script>
+
+// This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
+function AppViewModel() {
+    this.firstName = ko.observable("Bert");
+    this.lastName = ko.observable("Bertington");
+    this.fullName = ko.computed(function() {
+        return this.firstName() + " " + this.lastName();    
+    }, this);
+}
+
+// Activates knockout.js
+ko.applyBindings(new AppViewModel());
+
+<!--
+  {{ site.main_schedule | jsonify }}
+-->
