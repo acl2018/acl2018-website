@@ -27,8 +27,8 @@
       rate: 259
     - description: Two Bedroom Two Bathroom Apartment
       rate: 279
-- name: Pensione Hotel
-  link: http://www.pensione.com.au/melbourne
+- name: Best Western Melbourne (formerly Pensione Hotel)
+  link: http://www.bestwesternmelbourne.com.au/
   address: 16 Spencer Street, Melbourne
   map_link: https://goo.gl/maps/Atsah83DrFz
   rooms:
@@ -36,7 +36,7 @@
       rate: 130
     - description: Shoebox room incl 1 breakfast
       rate: 150
-    - description: Penione Double Room incl 1 breakfast
+    - description: Double Room incl 1 breakfast
       rate: 160
 - name: Batman’s Hill on Collins
   link: https://www.batmanshill.com.au/
