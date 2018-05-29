@@ -10,6 +10,7 @@ author: The ACL 2018 Organising Committee
 plugins:
   - jekyll-redirect-from
   - jekyll-feed
+  - jekyll-pwa-plugin
 markdown: kramdown
 theme: minima
 exclude:
@@ -83,4 +84,12 @@ top_nav:
   - url: /
     title: About
 timezone: Australia/Melbourne
+pwa: # see https://github.com/lavas-project/jekyll-pwa
+  sw_filename: service-worker.js # Required
+  dest_js_directory: assets/js # Required
+  # cache_name: my-cache # Optional
+  precache_glob_directory: / # Optional
+  precache_glob_patterns: # Optional
+    - /program-new/index.html
+    - "{js,assets}/**/*.{js,css}"
 
