@@ -5,7 +5,7 @@ top_nav_category: Attendees
 tab_index: 2
 ---
 
-Accommodation has been reserved for delegates and their guests at highly competitive rates. You are encouraged to secure your accommodation through the Conference Secretariat to ensure that you receive the negotiated competitive rates. **Accommodation can be booked at negotiated rates via the [online registration form](https://icmsaust.eventsair.com/acl-2018/acl-accomodation-link) or by [contacting](mailto:acl2018@icmsaust.com.au) the Conference Secretariat**.
+Accommodation has been reserved for delegates and their guests at highly competitive rates. You are encouraged to secure your accommodation through the Conference Secretariat to ensure that you receive the negotiated competitive rates. **Accommodation can be booked at negotiated rates as part of the [conference registration process](https://icmsaust.eventsair.com/acl-2018/registration-form/Site/Register) or by [contacting](mailto:acl2018@icmsaust.com.au) the Conference Secretariat**.
 
 If you would like to link up with another attendee to share accomodation costs,
 please use the [NLP roommate matching forum](https://groups.google.com/forum/#!forum/nlp-roommates).
@@ -29,7 +29,6 @@ Rates quoted are:
 </tr>
 {% endfor %}
 </table>
-<a class="book-hotel" href="https://icmsaust.eventsair.com/acl-2018/acl-accomodation-link" target="_blank">Book rooms at {{ hotel.name }}</a>
 </section>
 {% endfor %}
 
