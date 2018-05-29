@@ -275,6 +275,8 @@ $banner-height: 250px;
 div.talk {
     height: 10em;
     overflow: hidden;
+    padding: 4px;
+    margin-top: 2px;
 }
 
 table.day-program {
@@ -317,6 +319,8 @@ table.day-program {
 
 .session-details {
     font-size: 0.9em;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 .select-cal-protocol {
@@ -499,7 +503,6 @@ table.hotel-rates {
 .selected td.shared-session, .selected.talk {
     background-color: hsl(225, 100%, 75%);
 }
-
 
 p.speaker {
     font-style: italic;
