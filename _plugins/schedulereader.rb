@@ -116,7 +116,7 @@ module ScheduleReader
 						talk['speakers'] = [by_match[1]]
 						title = title[0..-(by_match[0].size + 1)]
 					end
-					talk['title'] = title
+					talk['name'] = title
 					current_talks.push(talk)
 				end
 			end
