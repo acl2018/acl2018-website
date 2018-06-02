@@ -93,6 +93,6 @@ pwa: # see https://github.com/lavas-project/jekyll-pwa
     # - /program-new/index.html
     - "{js,assets}/**/*.{js,css}"
     - "images/*.{png,jpg,jpeg}"
-    - "{program-new,attendees,tutorials,workshops}/index.html"
+    - "{program-new,attendees,tutorials,workshops,programme/papers}/index.html"
 ios_icon_sizes: [20, 29, 40, 57, 60, 72, 76]
 
