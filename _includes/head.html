@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" href="{{ site.github.url }}/images/favicon-16x16.png" sizes="16x16">
   <link rel="manifest" href="/manifest.json">
   {% for size in site.ios_icon_sizes %}
-    {% for scale in (1..3) %}<link rel="apple-touch-icon" sizes="{{ size * scale }} x {{ size * scale }}" href="{{ site.github.url }}/images/ios-icons/Icon-App-{{size }}x{{ size }}@{{ scale }}x.png">
+    {% for scale in (1..3) %}<link rel="apple-touch-icon" sizes="{{ size * scale }}x{{ size * scale }}" href="{{ site.github.url }}/images/ios-icons/Icon-App-{{ size }}x{{ size }}@{{ scale }}x.png">
     {% endfor %}
   {% endfor %}
   <link href="blah">
