@@ -72,12 +72,18 @@ tab_index: 2
 </div>
 {% endfor %}
 
-<a href="#" onclick="calendarDownloadSelectedSessions()">Download Selected as iCal files</a>
+<div class="calendar-sync">
+  <ul>
+    <li><a href="#" onclick="calendarDownloadSelectedSessions(); return false;">Download Selected as iCal files</a></li>
+    <li><a href="#" onclick="gcalSyncSelectedSessions(); return false;">Upload Selected to Google Calendar</a>
+      <button id="signin-button" onclick="googleHandleSignInClick()">Sign In</button>
+      <button id="signout-button" onclick="googleHandleSignOutClick()">Sign Out</button>
+    </li>
+  </ul>
+</div>
 
-<!-- 
-<button id="signin-button" onclick="googleHandleSignInClick()">Sign In</button>
-<button id="signout-button" onclick="googleHandleSignOutClick()">Sign Out</button>
- --> 
+
+
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script type="text/javascript" src="{{ site.github.url }}/downloads/ics.deps.min.js"></script>
 <script type="text/javascript">
@@ -149,16 +155,17 @@ tab_index: 2
   }
 
   function calendarDownloadByIds(sessIds) {
-    calendarDownloadSessions(sessIds.map(function(si) { 
+    var sessions = sessIds.map(function(si) { 
       return schedulable[si].item; 
-    }));
+    });
+    calendarDownloadSessions(sessions);
   }
 
   function calendarDownloadSessions(sessions) {
     var cal = ics('ACL18');
     for (var i = 0; i < sessions.length; ++i) {
       var sess = sessions[i];
-      cal.addEvent(sess.name + " (ACL18)", sessionDesc(sess), sessionDesc(sess), sess.start, sess.end);
+      cal.addEvent(sess.name + " (ACL18)", sessionDesc(sess), sessionLoc(sess), sess.start, sess.end);
     }
     cal.download('ACL18');
   }
@@ -200,36 +207,43 @@ tab_index: 2
       googleUpdateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
     });
   }
-  
-  function gcalAddConcurrentSingleTalk(talk, location) {
-      gcalAddSingle(talk.title, talk.speakers.join(', '), location, talk.start, talk.end);
+
+  function gcalSyncSelectedSessions() {
+    gcalSyncByIds(Array.from(selected));
   }
-  
-  function gcalAddSharedSession(sharedSess) {
-      gcalAddSingle(sharedSess.name, sessionDesc(sharedSess), sharedSess.location, sharedSess.start, sharedSess.end);
+
+  function gcalSyncByIds(sessIds) {
+    var sessions = sessIds.map(function(si) { 
+      return schedulable[si].item; 
+    });
+    gcalSyncSessions(sessions);
   }
-  
-  function gcalAddMultipleTalks(concSess) {
-    var talks = concSess.talks;
-    for (var i = 0; i < talks.length; ++i) {
-      var talk = talks[i];
-      gcalAddSingle(talk.title + " (ACL18)", talk.speakers.join(', '), concSess.location, talk.start, talk.end);
+
+  function gcalSyncSessions(sessions) {
+    var cal = ics('ACL18');
+    for (var i = 0; i < sessions.length; ++i) {
+      var sess = sessions[i];
+      gcalAddSingle(sess.name, sessionDesc(sess), sessionLoc(sess), sess.start, sess.end, sess.sess_id);
     }
   }
-  
   
   function fixDate(rawDateString) {
     return rawDateString.replace(/(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}:\d{2}) ([+-]\d+)/, '$1T$2$3');
   }
+
+  function getIcalUid(sess_id) {
+    return sess_id + "@" + location.hostname + ":" + location.port;
+  }
   
-  function gcalAddSingle(name, description, location, start, end) {
+  function gcalAddSingle(name, description, location, start, end, sess_id) {
     var event = {
       'summary': name + " (ACL18)",
       'location': location,
       'description': description,
       'start': {'dateTime': fixDate(start)},
       'end': {'dateTime': fixDate(end)},
-      'reminders': {}
+      'reminders': {},
+      'iCalUID': getIcalUid(sess_id)
     };
 
     var request = gapi.client.calendar.events.insert({
@@ -238,7 +252,7 @@ tab_index: 2
     });
     
     request.execute(function() {
-      console.log("added event " + name);
+      console.log("added event " + name + " @ " + event['start']['dateTime']);
     })
   }
   
