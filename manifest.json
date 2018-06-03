@@ -1,7 +1,7 @@
 {
   "name": "ACL 2018",
   "scope": "/",
-  "start_url": "/program-new/",
+  "start_url": "/programme/schedule/",
   "display": "minimal-ui",
   "orientation": "landscape-primary"
 }

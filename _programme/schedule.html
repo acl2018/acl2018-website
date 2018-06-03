@@ -1,6 +1,8 @@
 ---
-layout: page
-title: Program
+title: Schedule
+nav_title: Schedule
+top_nav_category: Programme
+tab_index: 2
 ---
 <!-- <div class="select-cal-protocol">
   <div class="name">Calendar Links:</div>
@@ -9,24 +11,25 @@ title: Program
 </div> -->
 
 
-<div class="select-cal-protocol">
+<!-- <div class="select-cal-protocol">
   <div class="name">Calendar Setting</div>
   <div class="cal-options">
     <span id="wrapper-ical"><input type="radio" class="cal-protocol" id="calmode-ical" onclick="selectCalMode('ical')" title="Downloadable as .ics (Apple Calendar, Outlook etc)" value="Download ICS" checked></input><label class='calendarmode' for="calmode-ical"><i class="fas fa-download" ></i>Download as ICS</label></span>
     <span id="wrapper-googlecal"><input type="radio" class="cal-protocol" id="calmode-googlecal" onclick="selectCalMode('googlecal')" href="#" title="Add to Google Calendar"></input><label class='calendarmode' for="calmode-googlecal"><i class="fab fa-google" ></i>Google Calendar</label></span>
   </div>
-</div>
+</div> -->
 {% for day in site.main_schedule.days %}
 <div id="schedule">
   <h3 class="day">{{ day.name }}: {{ day.date | date: "%B %-d" }}</h3>
   <table class="day-program">
     {% for session in day.sessions %}
       {% if session.shared %}
-      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row shared-session-name-row">
+      <tr id="shared-{{ session.sess_id }}" onclick="toggleSharedSession('{{ session.sess_id }}')"
+          class="session-row shared session-name-row shared-session-name-row">
         <td class="times session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
           <td class="session shared-session session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
-            <div class="session-name shared-session-name"><a class="cal-link ical" href='#' onclick='calendarDownloadSharedSession({{ session | jsonify }}); return false;'><i class="fas fa-calendar-alt"></i><a class="cal-link googlecal" href='#' onclick='gcalAddSharedSession({{ session | jsonify }}); return false;'><i class="fas fa-calendar-plus"></i></a>{{ session.name }}</div>
-            <div class="session-location shared-session-location">{{ session.location }}({{ session.sess_id }})</div>
+            <div class="session-name shared-session-name">{{ session.name }}</div>
+            <div class="session-location shared-session-location">{{ session.location }}</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
           </td>
       {% else %}
@@ -38,7 +41,7 @@ title: Program
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-indiv-row">
           {% for conc_sess in session.concurrent_sessions %}
             <td class="session conc-session">
-              <div class="conc-session-name"><a class="cal-link ical" href='#' onclick='calendarDownloadMultipleTalks({{ conc_sess | jsonify }}); return false;'><i class="fas fa-calendar-alt"></i><a class="cal-link googlecal" href='#' onclick='gcalAddMultipleTalks({{ conc_sess | jsonify }}); return false;'><i class="fas fa-calendar-plus"></i></a></a>{{ conc_sess.name }}</div>
+              <div class="conc-session-name">{{ conc_sess.name }}</div>
             <div class="speakers session-speakers"><span class="session-chair-label">Chair:</span> {{ conc_sess.chair }}</div>
             </td>
           {% endfor %}
@@ -52,11 +55,11 @@ title: Program
         {% for conc_sess in session.concurrent_sessions %}
           <td class="session-details">
             {% for talk in conc_sess.talks %}
-              <div class="talk">
+              <div class="talk" id="talk-{{ talk.sess_id }}" onclick="toggleSingleTalk('{{ talk.sess_id }}');">
                 <div class="times talk-time">
-                  {{ talk.start | date: "%H:%M" }} ({{ talk.sess_id }})
+                  {{ talk.start | date: "%H:%M" }}
                 </div>
-                <div class="talk-title"><a class="cal-link ical" href='#' onclick='calendarDownloadConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-alt"></i></a><a class="cal-link googlecal" href='#' onclick='gcalAddConcurrentSingleTalk({{ talk | jsonify }}, "{{ conc_sess.location }}"); return false;'><i class="fas fa-calendar-plus"></i></a>{{ talk.title }}</div>
+                <div class="talk-title">{{ talk.name }}</div>
                 <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>
               </div>
             {% endfor %}
@@ -67,51 +70,98 @@ title: Program
     {% endfor %}
   </table>
 </div>
- 
 {% endfor %}
+
+<a href="#" onclick="calendarDownloadSelectedSessions()">Download Selected as iCal files</a>
+
+<!-- 
 <button id="signin-button" onclick="googleHandleSignInClick()">Sign In</button>
 <button id="signout-button" onclick="googleHandleSignOutClick()">Sign Out</button>
- 
+ --> 
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script type="text/javascript" src="{{ site.github.url }}/downloads/ics.deps.min.js"></script>
 <script type="text/javascript">
+  var rawScheduleData = {{ site.main_schedule | jsonify }};
+
+  var selected = new Set();
+
+  function extractSchedulable() {
+    byId = {};
+    days = rawScheduleData.days;
+    for (var i = 0; i < days.length; i++) {
+      sessions = days[i].sessions;
+      for (var j = 0; j < sessions.length; j++) {
+        sess = sessions[j];
+        byId[sess.sess_id] = {'shared': true, 'item': sess};
+        concurrent = sess.concurrent_sessions;
+        if (typeof concurrent === 'undefined') 
+          continue;
+
+        for (var k = 0; k < concurrent.length; k++) {
+          talks = concurrent[k].talks;
+          for (var l = 0; l < talks.length ; l++) {
+            talk = talks[l];
+            byId[talk.sess_id] = {'shared': false, 'item': talk}
+          }
+        }
+      }
+    }
+    return byId;
+  }
+
+  var schedulable = extractSchedulable();
+
+
+  function toggleSingleTalk(sessId) {
+    toggleSession(sessId, 'talk-')
+  }
+
+  function toggleSharedSession(sessId) {
+    toggleSession(sessId, 'shared-')
+  }
+
+  function toggleSession(sessId, domIdPrefix) {
+    var elem = document.getElementById(domIdPrefix + sessId);
+    if (selected.has(sessId)) {
+      selected.delete(sessId);
+      elem.classList.remove("selected");
+    } else {
+      selected.add(sessId);
+      elem.classList.add("selected");
+    }    
+  }
+
   function slugify(text) {
     return text.replace(/\s+/g, '_').replace(/[^\w+]/g, '').toLowerCase();
   }
   
-  function sessionDesc(sharedSess) {
-    return typeof sharedSess.speakers === 'undefined' ? '' : sharedSess.speakers.join(', ');
+  function sessionDesc(sess) {
+    return typeof sess.speakers === 'undefined' ? '' : sess.speakers.join(', ');
   }
   
-  function sessionLoc(sharedSess) {
-    return typeof sharedSess.location === 'undefined' ? '' : sharedSess.location;    
+  function sessionLoc(sess) {
+    return typeof sess.location === 'undefined' ? '' : sess.location;    
   }
   
-  function calendarDownloadSharedSession(sharedSess) {
-    calendarDownloadSingle(sharedSess.name, sessionDesc(sharedSess), sessionLoc(sharedSess), sharedSess.start, sharedSess.end);
+
+  function calendarDownloadSelectedSessions() {
+    calendarDownloadByIds(Array.from(selected));
   }
-  
-  function calendarDownloadConcurrentSingleTalk(talk, location) {
-    calendarDownloadSingle(talk.title, talk.speakers.join(', '), location, talk.start, talk.end);
+
+  function calendarDownloadByIds(sessIds) {
+    calendarDownloadSessions(sessIds.map(function(si) { 
+      return schedulable[si].item; 
+    }));
   }
-  
-  function calendarDownloadMultipleTalks(concSess) {
-    var nameSlug = slugify(concSess.name);
-    var cal = ics(nameSlug);
-    var talks = concSess.talks;
-    for (var i = 0; i < talks.length; ++i) {
-      var talk = talks[i];
-      cal.addEvent(talk.title + " (ACL18)", talk.speakers.join(', '), concSess.location, talk.start, talk.end);
+
+  function calendarDownloadSessions(sessions) {
+    var cal = ics('ACL18');
+    for (var i = 0; i < sessions.length; ++i) {
+      var sess = sessions[i];
+      cal.addEvent(sess.name + " (ACL18)", sessionDesc(sess), sessionDesc(sess), sess.start, sess.end);
     }
-    cal.download('ACL18-' + nameSlug);
+    cal.download('ACL18');
   }
-  
-  function calendarDownloadSingle(name, description, location, start, end) {
-    var nameSlug = slugify(name);
-    var cal = ics(nameSlug);
-    cal.addEvent(name + " (ACL18)", description, location, start, end);
-    cal.download('ACL18-' + nameSlug);
-  };
 </script>
 <script src="https://apis.google.com/js/api.js"></script>
 <script type="text/javascript">
@@ -194,7 +244,7 @@ title: Program
   
   gapi.load('client:auth2', googleInitClient);
 </script>
-  
+<!--   
 <script type="text/javascript">
   var KNOWN_CAL_MODES = ['ical', 'googlecal'];  
   var CAL_MODE;
@@ -233,21 +283,7 @@ title: Program
   
   initCalMode();
   
-</script>
-
-<script src="js/knockout-3.4.2.js"></script>
-
-// This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
-function AppViewModel() {
-    this.firstName = ko.observable("Bert");
-    this.lastName = ko.observable("Bertington");
-    this.fullName = ko.computed(function() {
-        return this.firstName() + " " + this.lastName();    
-    }, this);
-}
-
-// Activates knockout.js
-ko.applyBindings(new AppViewModel());
+</script> -->
 
 <!--
   {{ site.main_schedule | jsonify }}

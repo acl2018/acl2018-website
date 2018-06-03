@@ -2,7 +2,7 @@
 title: Invited Talks
 nav_title: Invited Talks
 top_nav_category: Programme
-tab_index: 2
+tab_index: 3
 ---
 
 {% for talk in site.data.invited_speakers %}
