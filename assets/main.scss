@@ -178,6 +178,9 @@ $banner-height: 250px;
 .tutorial-presenters {
     font-style: italic;
     margin-top: 5px;
+    p {
+        margin-bottom: 9px;
+    }
 }
 
 .further-info {
@@ -412,4 +415,10 @@ p.speaker {
     text-transform: uppercase;
     font-size: 85%;
     font-weight: bold;
+}
+
+.tutorial-time {
+    margin-top: 0px;
+    font-weight: bold;
+    color: #555;
 }

@@ -1,5 +1,7 @@
   - title: Neural Approaches to Conversational AI
     presenters: "[Jianfeng Gao](https://www.microsoft.com/en-us/research/people/jfgao/), Michel Galley and Lihong Li"
+    id: T2
+    time: morning
     description: |
       Developing an intelligent dialogue system that not only emulates human conversation, but also can answer questions of topics ranging from latest news of a movie star to Einstein's theory of relativity, and fulfill complex tasks such as travel planning, has been one of the longest running goals in AI. The goal remains elusive until recently when we started observing promising results in both the research community and industry as the large amount of conversation data is available for training and the breakthroughs in deep learning (DL) and reinforcement learning (RL) are applied to conversational AI. 
 
@@ -9,12 +11,16 @@
   - title: Deep Reinforcement Learning for NLP
     presenters: William Yang Wang, Jiwei Li and Xiaodong He
     materials: http://www.cs.ucsb.edu/~william/DRL4NLP.html
+    id: T7
+    time: afternoon
     description: |
       Many Natural Language Processing (NLP) tasks (including generation, language grounding, reasoning, information extraction, coreference resolution, and dialog) can be formulated as Deep Reinforcement Learning (DRL) problems. However, since language is often discrete and the space for all sentences is infinite, there are many challenges for formulating reinforcement learning problems of NLP tasks. In this tutorial, we provide a gentle introduction to the foundation of Deep Reinforcement Learning, as well as some practical DRL solutions in NLP. We will show how DRL is different from traditional learning settings in NLP, and different ways of interpreting DRL models. We then introduce recent advances in designing deep reinforcement learning for NLP, with a special focus on generation, dialogue, and information extraction. Finally, we discuss the challenges going forward, including why they succeed, and when they may fail, aiming at providing some practical advice about deep reinforcement learning for solving real-world NLP problems.
 
   - title: Neural Semantic Parsing
     presenters: Luke Zettlemoyer, Matt Gardner, Pradeep Dasigi, Srinivasan Iyer and Alane Suhr
     materials: https://github.com/allenai/acl2018-semantic-parsing-tutorial
+    id: T6
+    time: afternoon
     description: |
       Semantic parsing, the study of  translating natural language utterances into machine-executable programs, is a well-established research area and has applications in question answering, instruction following, voice assistants, and code generation. In the last two years, the models used for semantic parsing have changed dramatically with the introduction of neural encoder-decoder methods that allow us to rethink many of the previous assumptions underlying semantic parsing. We aim to inform those already interested in semantic parsing research of these new developments in the field, as well as introduce the topic as an exciting research area to those who are unfamiliar with it.
 
@@ -23,6 +29,8 @@
   - title: "Beyond Multiword Expressions: Processing Idioms and Metaphors"
     presenters: Valia Kordoni
     materials: https://www.angl.hu-berlin.de/department/staff-faculty/other/kordoni/acl18_tutorial
+    id: T5
+    time: afternoon
     description: |
       Idioms and metaphors are characteristic to all areas of human activity and to all types of discourse. Their processing is a rapidly growing area in NLP, since they have become a big challenge for NLP systems, with their automatic identification and interpretation being indispensable for any semantics-oriented NLP application.
 
@@ -32,6 +40,8 @@
   - title: Connecting Language and Vision to Actions
     presenters: Peter Anderson, Abhishek Das and Qi Wu
     materials: https://lvatutorial.github.io/
+    id: T4
+    time: morning
     description: |
 
       Recent advances at the intersection of language and vision have made incredible progress in tasks such as image captioning, visual question answering and visual dialog. The challenge now is to extend this progress to embodied agents that move and interact with their visual environments. This tutorial will provide a comprehensive yet accessible introduction to the key innovations that have driven progress in language and vision modeling (such as multi-modal pooling, visual and co-attention, dynamic network composition, methods for incorporating external knowledge and cooperative/adversarial games). We will then discuss some of the current and upcoming challenges of combining language, vision, and actions, and discuss some recently-released interactive 3D simulation environments that can be used for this purpose (such as House3D, Home, Minos, Matterport3D Simulator, Gibson, Thor, and Chalet).
@@ -39,6 +49,8 @@
 
   - title: 100 Things You Always Wanted to Know about Semantics & Pragmatics But Were Afraid to Ask
     presenters: Emily M. Bender
+    id: T1
+    time: morning
     materials: http://faculty.washington.edu/ebender/100things-sem_prag.html
     description: |
       Meaning is a fundamental concept in Natural Language Processing (NLP), given its aim to build systems that mean what they say to you, and understand what you say to them. In order for NLP to scale beyond partial, task-specific solutions, it must be informed by what is known about how humans use language to express and understand communicative intents. The purpose of this tutorial is to present a selection of useful information about semantics and pragmatics, as understood in linguistics, in a way that’s accessible to and useful for NLP practitioners with minimal (or even no) prior training in linguistics.
@@ -58,6 +70,8 @@
   - title: Multi-lingual Entity Discovery and Linking
     presenters: Avirup Sil, Heng Ji, Dan Roth and Silviu-Petru Cucerzan
     materials: https://sites.google.com/view/xlingedl/home
+    id: T8
+    time: afternoon
     description: |
       The primary goals of this tutorial are to review the framework of cross-lingual EL and motivate it as a broad paradigm for the Information Extraction task. We will start by discussing the traditional EL techniques and metrics and address questions relevant to the adequacy of these to across domains and languages. We will then present more recent approaches such as Neural EL, discuss the basic building blocks of a state-of-the-art neural EL system and analyze some of the current results on English EL. We will then proceed to Cross-lingual EL and discuss methods that work across languages. In particular, we will discuss and compare multiple methods that make use of multi-lingual word embeddings. We will also present EL methods that work for both name tagging and linking in very low resource languages. Finally, we will discuss the uses of cross-lingual EL in a variety of applications like search engines and commercial product selling applications. Also, contrary to the 2014 EL tutorial, we will  also  focus on Entity Discovery which is an essential component of EL.
 
@@ -66,6 +80,8 @@
 
   - title: Variational Inference and Deep Generative Models
     presenters: Wilker Aziz and Philip Schulz
+    id: T3
+    time: morning
     materials: https://github.com/philschulz/VITutorial
     description: |
       Neural networks are taking NLP by storm. Yet they are mostly applied to fully supervised tasks. Many real-world NLP problems require unsupervised or semi-supervised models, however, because annotated data is hard to obtain. This is where generative models shine. Through the use of latent variables they can be applied in missing data settings. Furthermore they can complete missing entries in partially annotated data sets.

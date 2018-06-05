@@ -3,15 +3,18 @@ layout: page
 title: Tutorials
 ---
 
-<p>Tutorials will be held on July 15th, 2018. All tutorials will run for a half-day and the full schedule will be updated shortly.</p>
+<p>Tutorials will be held on July 15th, 2018. All tutorials will run for a half-day at the times noted below</p>
 
-{% for tute in site.data.tutorials %}
+{% assign tutorials = site.data.tutorials | sort: 'id' %}
+{% for tute in tutorials %}
 {% capture tute_id %}{{ tute.title | truncate:30 | slugify }}{% endcapture %}
 {% capture tute_info_id %}info_{{ tute_id }}{% endcapture %}
 
-<a class="tute-title" onclick="javascript:toggleDisplay('{{ tute_info_id }}', 'tute-details')" href="#{{ tute_id }}"><h3 id="{{ tute_id }}" title="{{ tute.description | normalize_whitespace }}">{{ tute.title }}</h3></a>
+<a class="tute-title" onclick="javascript:toggleDisplay('{{ tute_info_id }}', 'tute-details')" href="#{{ tute_id }}"><h3 id="{{ tute_id }}" title="{{ tute.description | normalize_whitespace }}">{{ tute.id }}: {{ tute.title }}</h3></a>
 
 <div class="tutorial-presenters">{{ tute.presenters | markdownify }}</div>
+
+<div class="tutorial-time">{% if tute.time == 'morning' %}09:00 – 12:30{% else %}13:30 – 17:00{% endif %}</div>
 
 <div id="{{ tute_info_id }}" class="tute-details" style="display: none;">
 
