@@ -26,10 +26,16 @@
         image: microsoft.png
       - name : Naver
         image: naver.png
+      - name: CVTE
+        image: cvte.jpg
   - name: Silver
     sponsors:
       - name: Nuance
         image: nuance.png
+      - name: Huawei Noah's Ark Lab
+        image: huawei.png
+      - name: Elsevier
+        image: elsevier.png
   - name: Bronze
     sponsors:
       - name: ISI
