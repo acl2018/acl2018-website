@@ -61,17 +61,21 @@ module ScheduleReader
 						if par_sessions.size > max_concurrent
 							max_concurrent = par_sessions.size
 						end
-						day_sessions.push(parallel_session_top)
+						start = parallel_session_top['start']
+						if not day_sessions.has_key?(start)
+							day_sessions[start] = []
+						end
+						day_sessions[start].push(parallel_session_top)
 						par_ses_num += 1
 					end
 					current_parallel_sessions = []
 				end
 				if line.start_with?('* ')
 					day_num += 1
-					day_sessions = []
+					day_sessions = {}
 					date = DateTime.parse(line[2..-1])
 					day = {
-						'sessions' => day_sessions, 
+						'sessions_by_time' => day_sessions, 
 						'date' => date.to_s, 
 						'name' => "Day #{day_num}",
 					}
@@ -97,7 +101,7 @@ module ScheduleReader
 					# end
 					session = {
 						'name' => session_title,
-						'shared' => true
+						'shared' => false
 					}
 					papers = []
 					in_multiline_session = true
@@ -115,28 +119,60 @@ module ScheduleReader
 					session['name'] = session_title
 					papers = []
 					in_multiline_session = true
-					day_sessions.push(session)
+					if !day_sessions.has_key?(start_time)
+						day_sessions[start_time] = []
+					end
+					day_sessions[start_time].push(session)
 				elsif line.chomp.size > 0 and line.match(/ \d\d:\d\d--\d\d:\d\d /) # talk
 					talk_id = line.split()[0]
 					conts = line[(talk_id.size + 1)..-1]
 					start_time, end_time = times_from_chunk[conts]
 					remainder = conts[12..-1]
-					title = remainder.sub(/^  # /, '')
+					puts remainder
+					title_author_match = remainder.match(/^ # ([^#]+) # ([^#]+)/)
 					talk = {
 						'id' => talk_id,
 						'start' => start_time,
 						'end' => end_time,
-					}
-					by_match = title.match(/ %by (.*)$/)
-					if by_match
-						talk['speakers'] = [by_match[1]]
-						title = title[0..-(by_match[0].size + 1)]
+					}					
+					if title_author_match
+						talk['speakers'] = [title_author_match[2]]
+						title = title_author_match[1]
+					else
+						title = ''
 					end
 					talk['name'] = title
 					current_talks.push(talk)
 				end
 			end
 
+			all_days.each do |day|
+				sessions = []
+				sessions_by_time = day['sessions_by_time']
+				all_starts = sessions_by_time.keys.sort
+				all_starts.each do |start|
+					sessions_at_time = sessions_by_time[start]
+					if sessions_at_time.size == 1
+						sessions.push(sessions_at_time[0])
+					else
+						stream_num = 1
+						sessions_at_time.each do |sess|
+							sess['shared'] = false
+							sess['sess_id'] = "#{sess['sess_id']}-#{stream_num}"
+							stream_num += 1
+						end
+						par_sess = {
+							'shared' => false,
+							'name' => 'Poster Session',
+							'start' => sessions_at_time[0]['start'],
+							'end' => sessions_at_time[0]['end'],
+							'concurrent_sessions' => sessions_at_time
+						}
+						sessions.push(par_sess)
+					end
+				end
+				day['sessions'] = sessions
+			end
 			schedule = {
 				'days' => all_days,
 				'num_concurrent' => max_concurrent,
