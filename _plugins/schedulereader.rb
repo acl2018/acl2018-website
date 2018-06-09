@@ -25,8 +25,12 @@ module ScheduleReader
 			end			
 
 			File.open("_data/softconf-schedule-raw.txt").each do |line|
-				if (line.match(/^[*+=] /) or line.chomp.size == 0) and current_talks.size > 0 and current_parallel_sessions.size > 0
-					current_parallel_sessions[-1]['talks'] = current_talks
+				if (line.match(/^[*+=] /) or line.chomp.size == 0) \
+						and current_talks.size > 0 and current_parallel_sessions.size > 0
+					most_recent_par_session = current_parallel_sessions[-1]
+					most_recent_par_session['talks'] = current_talks
+					most_recent_par_session['start'] = current_talks[0]['start']
+					most_recent_par_session['end'] = current_talks[-1]['end']
 					current_talks = []
 				end
 				if (line.match(/^[+*] /)) and current_parallel_sessions.size > 0
@@ -72,7 +76,33 @@ module ScheduleReader
 						'name' => "Day #{day_num}",
 					}
 					all_days.push(day)
-				elsif line.start_with?('+ ') or line.start_with?('= ')
+				elsif line.start_with?('= ')
+					conts = line[2..-1]
+					session_title = conts
+					# session = {
+					# 	'start' => start_time,
+					# 	'end' => end_time,
+					# 	'shared' => true,
+					# 	'sess_id' => "#{day_num}_#{start_time.strftime('%H%M')}"
+					# }
+					# chair_match = session_title.match(/ %chair (.*)$/)
+					# if chair_match
+					# 	session['chair'] = chair_match[1]
+					# 	session_title = session_title[0..-(chair_match[0].size + 1)]
+					# end
+					# by_match = session_title.match(/ %by (.*)$/)
+					# if by_match
+					# 	session['speakers'] = [by_match[1]]
+					# 	session_title = session_title[0..-(by_match[0].size + 1)]
+					# end
+					session = {
+						'name' => session_title,
+						'shared' => true
+					}
+					papers = []
+					in_multiline_session = true
+					current_parallel_sessions.push(session)
+				elsif line.start_with?('+ ')
 					conts = line[2..-1]
 					start_time, end_time = times_from_chunk[conts]
 					session_title = conts[12..-1]
@@ -82,24 +112,10 @@ module ScheduleReader
 						'shared' => true,
 						'sess_id' => "#{day_num}_#{start_time.strftime('%H%M')}"
 					}
-					chair_match = session_title.match(/ %chair (.*)$/)
-					if chair_match
-						session['chair'] = chair_match[1]
-						session_title = session_title[0..-(chair_match[0].size + 1)]
-					end
-					by_match = session_title.match(/ %by (.*)$/)
-					if by_match
-						session['speakers'] = [by_match[1]]
-						session_title = session_title[0..-(by_match[0].size + 1)]
-					end
 					session['name'] = session_title
 					papers = []
 					in_multiline_session = true
-					if line.start_with?('+ ') # shared
-						day_sessions.push(session)
-					else #parallel
-						current_parallel_sessions.push(session)
-					end
+					day_sessions.push(session)
 				elsif line.chomp.size > 0 and line.match(/ \d\d:\d\d--\d\d:\d\d /) # talk
 					talk_id = line.split()[0]
 					conts = line[(talk_id.size + 1)..-1]
