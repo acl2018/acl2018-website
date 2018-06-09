@@ -128,7 +128,6 @@ module ScheduleReader
 					conts = line[(talk_id.size + 1)..-1]
 					start_time, end_time = times_from_chunk[conts]
 					remainder = conts[12..-1]
-					puts remainder
 					title_author_match = remainder.match(/^ # ([^#]+) # ([^#]+)/)
 					talk = {
 						'id' => talk_id,
@@ -172,6 +171,7 @@ module ScheduleReader
 					end
 				end
 				day['sessions'] = sessions
+				day.delete('sessions_by_time')
 			end
 			schedule = {
 				'days' => all_days,
