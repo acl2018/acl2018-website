@@ -28,11 +28,14 @@ key_dates:
   - date: "May 11th, 2018"
     event: Camera-ready Due
   - date: "July 15th, 2018"
-    event: Tutorials
+    event: '<a href="/tutorials">Tutorials</a>'
+    attendable: true
   - date: "July 16th–18th, 2018"
     event: Main Conference
+    attendable: true
   - date: "July 19th–20th, 2018"
-    event: Workshops
+    event: <a href="/workshops">Workshops</a>
+    attendable: true
 permalink: pretty
 collections:
   call_for_papers:

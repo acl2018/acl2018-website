@@ -4,10 +4,19 @@ nav_title: Schedule
 top_nav_category: Programme
 tab_index: 2
 ---
+<h3>Overview</h3>
+<table class='conf-dates'>
+{% for kd in site.key_dates %}
+  {% if kd.attendable %}
+  <tr><td class='conf-date-label'>{{ kd.date }}</td> <td>{{ kd.event }}</td></tr>
+  {% endif %}
+{% endfor %}
+</table>
 
+<h3>Main Conference</h3>
 {% for day in site.main_schedule.days %}
 <div id="schedule">
-  <h3 class="day">{{ day.name }}: {{ day.date | date: "%B %-d" }}</h3>
+  <h4 class="day">{{ day.name }}: {{ day.date | date: "%B %-d" }}</h3>
   <table class="day-program">
     {% for session in day.sessions %}
       {% if session.shared %}
