@@ -4,20 +4,7 @@ nav_title: Schedule
 top_nav_category: Programme
 tab_index: 2
 ---
-<!-- <div class="select-cal-protocol">
-  <div class="name">Calendar Links:</div>
-  <div class="cal-protocol" id="calmode-ical"><a onclick="selectCalMode('ical'); return false;" href="#" title="Downloadable as .ics (Apple Calendar, Outlook etc)"><i class="fas fa-download" ></i>Download ICS</a></div>
-  <div class="cal-protocol" id="calmode-googlecal"><a onclick="selectCalMode('googlecal'); return false;" href="#" title="Add to Google Calendar"><i class="fab fa-google" ></i>Google Calendar</a></div>
-</div> -->
 
-
-<!-- <div class="select-cal-protocol">
-  <div class="name">Calendar Setting</div>
-  <div class="cal-options">
-    <span id="wrapper-ical"><input type="radio" class="cal-protocol" id="calmode-ical" onclick="selectCalMode('ical')" title="Downloadable as .ics (Apple Calendar, Outlook etc)" value="Download ICS" checked></input><label class='calendarmode' for="calmode-ical"><i class="fas fa-download" ></i>Download as ICS</label></span>
-    <span id="wrapper-googlecal"><input type="radio" class="cal-protocol" id="calmode-googlecal" onclick="selectCalMode('googlecal')" href="#" title="Add to Google Calendar"></input><label class='calendarmode' for="calmode-googlecal"><i class="fab fa-google" ></i>Google Calendar</label></span>
-  </div>
-</div> -->
 {% for day in site.main_schedule.days %}
 <div id="schedule">
   <h3 class="day">{{ day.name }}: {{ day.date | date: "%B %-d" }}</h3>
@@ -26,17 +13,22 @@ tab_index: 2
       {% if session.shared %}
       <tr id="shared-{{ session.sess_id }}" onclick="toggleSharedSession('{{ session.sess_id }}')"
           class="session-row shared session-name-row shared-session-name-row">
-        <td class="times session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
           <td class="session shared-session session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
-            <div class="session-name shared-session-name">{{ session.name }}</div>
+            <div class="times-and-name">
+              <div class="session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</div>
+              <div class="session-name shared-session-name">{{ session.name }}</div>
+            </div>
             <div class="session-location shared-session-location">{{ session.location }}</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
           </td>
       {% else %}
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row conc-session-name-row">
-        <td class="times session-times" rowspan="4">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</td>
-            <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}"><div class="session-name">{{ session.name }}</div>
-            </td>
+          <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
+            <div class="times-and-name">
+              <div class="session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</div>
+              <div class="session-name">{{ session.name }}</div>
+            </div>
+          </td>
       </tr>
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-indiv-row">
           {% for conc_sess in session.concurrent_sessions %}
@@ -74,11 +66,13 @@ tab_index: 2
 
 <div class="calendar-sync">
   <ul>
-    <li><a href="#" onclick="calendarDownloadSelectedSessions(); return false;">Download Selected as iCal files</a></li>
+    <li><a href="#" onclick="calendarDownloadSelectedSessions(); return false;"><i class="fas fa-download"></i>&nbsp;Download Selected as iCal files</a></li>
+    {% comment %}
     <li><a href="#" onclick="gcalSyncSelectedSessions(); return false;">Upload Selected to Google Calendar</a>
       <button id="signin-button" onclick="googleHandleSignInClick()">Sign In</button>
       <button id="signout-button" onclick="googleHandleSignOutClick()">Sign Out</button>
     </li>
+    {% endcomment %}
   </ul>
 </div>
 
@@ -258,47 +252,4 @@ tab_index: 2
   
   gapi.load('client:auth2', googleInitClient);
 </script>
-<!--   
-<script type="text/javascript">
-  var KNOWN_CAL_MODES = ['ical', 'googlecal'];  
-  var CAL_MODE;
 
-  function initCalMode() {
-    selectCalMode('ical');
-  }
-
-  function syncCalMode() {
-    var schedule = document.getElementById('schedule');
-    for (var i = 0; i < KNOWN_CAL_MODES.length; ++i) {
-      var mode = KNOWN_CAL_MODES[i];
-      var toShow = mode === CAL_MODE;
-      var matchingLinks = schedule.getElementsByClassName(['cal-link ' + mode]);
-      for (var j = 0; j < matchingLinks.length; ++j) {
-        var elem = matchingLinks[j];
-        elem.hidden = !toShow;
-      }
-      document.getElementById('calmode-' + mode).checked = toShow;
-      
-      var selector = document.getElementById('wrapper-' + mode);
-      selector.checked = toShow;
-      if (toShow) {
-        selector.classList.add('selected');
-      } else {
-        selector.classList.remove('selected');
-      }
-    }
-  }
-  
-  
-  function selectCalMode(className) {
-    CAL_MODE = className;
-    syncCalMode();
-  }
-  
-  initCalMode();
-  
-</script> -->
-
-<!--
-  {{ site.main_schedule | jsonify }}
--->

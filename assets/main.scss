@@ -258,7 +258,7 @@ $banner-height: 250px;
 }
 
 .conc-session {
-    width: (85%/{{ site.main_schedule.num_concurrent }}) !important;
+    width: (95%/{{ site.main_schedule.num_concurrent }}) !important;
 }
 
 .day-program td {
@@ -540,4 +540,18 @@ td.conc-session, .conc-session-details-row td.session-details {
 
 .day-program td.conc-session {
     hyphens: none;
+}
+
+.session-times, .session-name {
+    display: inline-block;
+}
+
+.session-times {
+    width: 7em;
+}
+
+.session-times {
+    color: #555;
+    font-weight: bold;
+    font-style: italic;
 }
