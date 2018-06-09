@@ -99,6 +99,8 @@ tab_index: 2
 
         for (var k = 0; k < concurrent.length; k++) {
           talks = concurrent[k].talks;
+          if (typeof talks === 'undefined')
+            continue;
           for (var l = 0; l < talks.length ; l++) {
             talk = talks[l];
             byId[talk.sess_id] = {'shared': false, 'item': talk}
