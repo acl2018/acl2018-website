@@ -42,7 +42,7 @@ tab_index: 2
           {% for conc_sess in session.concurrent_sessions %}
             <td class="session conc-session">
               <div class="conc-session-name">{{ conc_sess.name }}</div>
-            <div class="speakers session-speakers"><span class="session-chair-label">Chair:</span> {{ conc_sess.chair }}</div>
+            <div class="speakers session-speakers">{% if conc_sess.chair %}<span class="session-chair-label">Chair:</span> {{ conc_sess.chair }}{% endif %}</div>
             </td>
           {% endfor %}
       </tr>
