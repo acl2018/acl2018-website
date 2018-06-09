@@ -532,3 +532,12 @@ p.speaker {
     font-weight: bold;
     color: #555;
 }
+
+td.conc-session, .conc-session-details-row td.session-details {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.day-program td.conc-session {
+    hyphens: none;
+}
