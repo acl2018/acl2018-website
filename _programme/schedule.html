@@ -55,12 +55,12 @@ tab_index: 2
         {% for conc_sess in session.concurrent_sessions %}
           <td class="session-details">
             {% for talk in conc_sess.talks %}
-              <div class="talk" id="talk-{{ talk.sess_id }}" onclick="toggleSingleTalk('{{ talk.sess_id }}');">
+              <div class="talk" id="talk-{{ talk.sess_id }}" onclick="toggleSingleTalk('{{ talk.sess_id }}');"
+                  title="{{ talk.speakers | join: ', ' }}. {{ talk.name }}">
                 <div class="times talk-time">
                   {{ talk.start | date: "%H:%M" }}
                 </div>
                 <div class="talk-title">{{ talk.name }}</div>
-                <div class="speakers talk-speakers">{{ talk.speakers | join: ", " }}</div>
               </div>
             {% endfor %}
           </td>

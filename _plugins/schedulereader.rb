@@ -116,7 +116,7 @@ module ScheduleReader
 						'shared' => true,
 						'sess_id' => "#{day_num}_#{start_time.strftime('%H%M')}"
 					}
-					session['name'] = session_title
+					session['name'] = session_title.strip
 					papers = []
 					in_multiline_session = true
 					if !day_sessions.has_key?(start_time)
@@ -136,8 +136,8 @@ module ScheduleReader
 						'end' => end_time,
 					}					
 					if title_author_match
-						talk['speakers'] = [title_author_match[2]]
-						title = title_author_match[1]
+						talk['speakers'] = [title_author_match[2].strip]
+						title = title_author_match[1].strip
 					else
 						title = ''
 					end
