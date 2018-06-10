@@ -580,3 +580,14 @@ td.conc-session, .conc-session-details-row td.session-details {
 .session-suffix::before {
     content: ": ";
 }
+
+#search {
+    width: 20em; 
+    float: right;
+}
+
+.instructions {
+    font-style: italic;
+    font-size: 85%;
+    margin-bottom: 20px;
+}

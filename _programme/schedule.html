@@ -13,7 +13,15 @@ tab_index: 2
 {% endfor %}
 </table>
 
+<input type="search" placeholder="Filter by author, title or topic" id="search" >
+<style id="search_style"></style>
+<style id="parent_search_style"></style>
+<style id="aux_search_style"></style>
+
 <h3>Main Conference</h3>
+
+<div class="instructions">Hover over each entry to find out author information. You can use the search box to filter by author. Click on an entry to add it to your schedule; once you have selected your preferred sessions, you can download all as a .ics at the bottom of the page</div>
+
 {% for day in site.main_schedule.days %}
 <div id="schedule">
   <h4 class="day">{{ day.name }}: {{ day.date | date: "%B %-d" }}</h3>
@@ -42,7 +50,11 @@ tab_index: 2
       </tr>
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-indiv-row">
           {% for conc_sess in session.concurrent_sessions %}
-            <td class="session conc-session">
+            {% assign data_index = "" %}
+            {% for talk in conc_sess.talks %}
+              {% capture data_index %}{{ data_index }}{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}{% endcapture %}
+            {% endfor %}
+            <td class="session conc-session" data-index="{{ data_index }}">
               <div class="conc-session-name">{{ conc_sess.name }}</div>
             <div class="speakers session-speakers">{% if conc_sess.chair %}<span class="session-chair-label">Chair:</span> {{ conc_sess.chair }}{% endif %}</div>
             </td>
@@ -57,7 +69,9 @@ tab_index: 2
         {% for conc_sess in session.concurrent_sessions %}
           <td class="session-details">
             {% for talk in conc_sess.talks %}
-              <div class="talk" id="talk-{{ talk.sess_id }}" onclick="toggleSingleTalk('{{ talk.sess_id }}');"
+              <div class="talk" id="talk-{{ talk.sess_id }}" 
+                  data-index="{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}" 
+                  onclick="toggleSingleTalk('{{ talk.sess_id }}');"
                   title="{{ talk.speakers | join: ', ' }}. {{ talk.name }}">
                 <div class="times talk-time">
                   {{ talk.start | date: "%H:%M" }}
@@ -265,5 +279,19 @@ tab_index: 2
   }
   
   gapi.load('client:auth2', googleInitClient);
+</script>
+<script type="text/javascript">
+var searchStyle = document.getElementById('search_style');
+var auxSearchStyle = document.getElementById('aux_search_style');
+document.getElementById('search').addEventListener('input', function() {
+  if (!this.value) {
+    searchStyle.innerHTML = "";
+    auxSearchStyle.innerHTML = "";
+    return;
+  }
+  searchStyle.innerHTML = ".talk:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }  ";
+  searchStyle.innerHTML += ".conc-session:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { visibility: hidden; font-size: 0px; }";
+  auxSearchStyle.innerHTML = ".shared-name { opacity: 0.5; }"
+});
 </script>
 
