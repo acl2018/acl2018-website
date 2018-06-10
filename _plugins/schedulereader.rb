@@ -83,22 +83,6 @@ module ScheduleReader
 				elsif line.start_with?('= ')
 					conts = line[2..-1]
 					session_title = conts
-					# session = {
-					# 	'start' => start_time,
-					# 	'end' => end_time,
-					# 	'shared' => true,
-					# 	'sess_id' => "#{day_num}_#{start_time.strftime('%H%M')}"
-					# }
-					# chair_match = session_title.match(/ %chair (.*)$/)
-					# if chair_match
-					# 	session['chair'] = chair_match[1]
-					# 	session_title = session_title[0..-(chair_match[0].size + 1)]
-					# end
-					# by_match = session_title.match(/ %by (.*)$/)
-					# if by_match
-					# 	session['speakers'] = [by_match[1]]
-					# 	session_title = session_title[0..-(by_match[0].size + 1)]
-					# end
 					session = {
 						'name' => session_title,
 						'shared' => false
