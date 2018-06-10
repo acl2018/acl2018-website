@@ -291,6 +291,9 @@ table.day-program {
     @include media-query($on-palm) {
         font-size: 10px;
     }
+
+    width: 100%;
+
 }
 
 .cal-link {
@@ -583,11 +586,21 @@ td.conc-session, .conc-session-details-row td.session-details {
 
 #search {
     width: 20em; 
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+#search-pane {
     float: right;
+    font-size: 12px;
 }
 
 .instructions {
     font-style: italic;
     font-size: 85%;
     margin-bottom: 20px;
+}
+
+.conc-session-shared-name {
+    background-color: #f2f2f2;
 }
