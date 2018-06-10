@@ -51,8 +51,13 @@ module ScheduleReader
 							stream_num += 1
 						end
 						# print(par_sessions)
+						papers_are_short = par_sessions.all? do |ps|
+							ps['short_papers']
+						end
+						suffix = papers_are_short ? 'Short Papers' : 'Long Papers and TACL Papers'
 						parallel_session_top = {
-							'name' => "Presentations #{par_ses_num}",
+							'name' => "Oral Presentations #{par_ses_num}",
+							'suffix' => suffix,
 							'start' => par_sessions[0]['start'],
 							'end' => par_sessions[0]['end'],
 							'shared' => false,
@@ -82,10 +87,13 @@ module ScheduleReader
 					all_days.push(day)
 				elsif line.start_with?('= ')
 					conts = line[2..-1]
-					session_title = conts
+					session_title = conts.strip
+					is_short = session_title.end_with?(' (Short)')
+					session_title = session_title.sub(/ \(Short\)$/, '')
 					session = {
 						'name' => session_title,
-						'shared' => false
+						'shared' => false,
+						'short_papers' => is_short,
 					}
 					papers = []
 					in_multiline_session = true

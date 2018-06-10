@@ -35,7 +35,8 @@ tab_index: 2
           <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
             <div class="times-and-name">
               <div class="session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</div>
-              <div class="session-name">{{ session.name }}</div>
+              <div class="session-name">{{ session.name }}<span class="session-suffix">{{ session.suffix }}</span>
+              </div>
             </div>
           </td>
       </tr>

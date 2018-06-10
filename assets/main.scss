@@ -576,3 +576,7 @@ td.conc-session, .conc-session-details-row td.session-details {
 .tacl-badge::after {
     content: "TACL";
 }
+
+.session-suffix::before {
+    content: ": ";
+}
