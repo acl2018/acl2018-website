@@ -61,7 +61,9 @@ tab_index: 2
                 <div class="times talk-time">
                   {{ talk.start | date: "%H:%M" }}
                 </div>
-                <div class="talk-title">{{ talk.name }}</div>
+                <div class="talk-title">
+                  {% if talk.is_tacl %}<div class="badge tacl-badge"></div>{% endif %}                  
+                {{ talk.name }}</div>
               </div>
             {% endfor %}
           </td>

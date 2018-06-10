@@ -562,3 +562,17 @@ td.conc-session, .conc-session-details-row td.session-details {
         list-style-type: none;
     }
 }
+
+.badge {
+    background-color: #888;
+    padding: 1px 3px;
+    color: white;
+    display: inline;
+    font-weight: bold;
+    font-size: 85%;
+    font-style: normal;
+}
+
+.tacl-badge::after {
+    content: "TACL";
+}

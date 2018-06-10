@@ -117,6 +117,7 @@ module ScheduleReader
 						'id' => talk_id,
 						'start' => start_time,
 						'end' => end_time,
+						'is_tacl' => talk_id.end_with?('/TACL')
 					}					
 					if title_author_match
 						talk['speakers'] = [title_author_match[2].strip]
