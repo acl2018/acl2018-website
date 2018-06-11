@@ -54,7 +54,10 @@ tab_index: 2
             {% for talk in conc_sess.talks %}
               {% capture data_index %}{{ data_index }}{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}{% endcapture %}
             {% endfor %}
-            <td class="session conc-session" data-index="{{ data_index }}">
+            {% for talk in conc_sess.posters %}
+              {% capture data_index %}{{ data_index }}{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}{% endcapture %}
+            {% endfor %}
+              <td class="session conc-session" data-index="{{ data_index }}">
               <div class="conc-session-name">{{ conc_sess.name }}</div>
             <div class="speakers session-speakers">{% if conc_sess.chair %}<span class="session-chair-label">Chair:</span> {{ conc_sess.chair }}{% endif %}</div>
             </td>
@@ -67,9 +70,10 @@ tab_index: 2
       </tr>
       <tr class="session-row conc-session-details-row">
         {% for conc_sess in session.concurrent_sessions %}
-          <td class="session-details">
+          {% if conc_sess.talks %}
+          <td class="session-details talk-sessions">
             {% for talk in conc_sess.talks %}
-              <div class="talk" id="talk-{{ talk.sess_id }}" 
+              <div class="talk searchable" id="talk-{{ talk.sess_id }}" 
                   data-index="{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}" 
                   onclick="toggleSingleTalk('{{ talk.sess_id }}');"
                   title="{{ talk.speakers | join: ', ' }}. {{ talk.name }}">
@@ -82,6 +86,21 @@ tab_index: 2
               </div>
             {% endfor %}
           </td>
+          {% elsif conc_sess.posters %}
+          <td class="session-details poster-sessions">
+            <div class="poster-scrollable">
+            {% for talk in conc_sess.posters %}
+              <div class="poster searchable" 
+                  data-index="{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}" 
+                  title="{{ talk.speakers | join: ', ' }}. {{ talk.name }}">
+                <div class="talk-title">{{ talk.name }}</div>
+              </div>
+            {% endfor %}
+            </div>
+          </td>
+          {% else %}
+          <td class="session-details"></td>
+          {% endif %}
         {% endfor %}
       {% endif %}
       </tr>
@@ -289,7 +308,7 @@ document.getElementById('search').addEventListener('input', function() {
     auxSearchStyle.innerHTML = "";
     return;
   }
-  searchStyle.innerHTML = ".talk:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }  ";
+  searchStyle.innerHTML = ".searchable:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }  ";
   searchStyle.innerHTML += ".conc-session:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { visibility: hidden; font-size: 0px; }";
   auxSearchStyle.innerHTML = ".shared-name { opacity: 0.5; }"
 });

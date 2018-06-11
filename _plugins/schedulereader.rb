@@ -15,6 +15,8 @@ module ScheduleReader
 			par_ses_num = 1
 			max_concurrent = 0
 			current_talks = []
+			current_posters = []
+			most_recent_shared_session = nil
 
 		 	times_from_chunk = lambda do |line_remainder|
 				time_chunk = line_remainder[0..12]
@@ -25,13 +27,22 @@ module ScheduleReader
 			end			
 
 			File.open("_data/softconf-schedule-raw.txt").each do |line|
+				if (line.match(/^[*+=] /) or line.chomp.size == 0)
+					if current_parallel_sessions.size > 0 and current_talks.size > 0
+						most_recent_par_session = current_parallel_sessions[-1]
+						most_recent_par_session['talks'] = current_talks
+						most_recent_par_session['start'] = current_talks[0]['start']
+						most_recent_par_session['end'] = current_talks[-1]['end']
+						current_talks = []
+					end
+					if most_recent_shared_session != nil and current_posters.size > 0
+						most_recent_shared_session['posters'] = current_posters
+						current_posters = []
+						most_recent_shared_session = nil
+					end
+				end
 				if (line.match(/^[*+=] /) or line.chomp.size == 0) \
-						and current_talks.size > 0 and current_parallel_sessions.size > 0
-					most_recent_par_session = current_parallel_sessions[-1]
-					most_recent_par_session['talks'] = current_talks
-					most_recent_par_session['start'] = current_talks[0]['start']
-					most_recent_par_session['end'] = current_talks[-1]['end']
-					current_talks = []
+						and current_posters.size > 0 and current_parallel_sessions.size > 0
 				end
 				if (line.match(/^[+*] /)) and current_parallel_sessions.size > 0
 					by_start = Hash.new {[]}
@@ -114,6 +125,7 @@ module ScheduleReader
 					if !day_sessions.has_key?(start_time)
 						day_sessions[start_time] = []
 					end
+					most_recent_shared_session = session
 					day_sessions[start_time].push(session)
 				elsif line.chomp.size > 0 and line.match(/ \d\d:\d\d--\d\d:\d\d /) # talk
 					talk_id = line.split()[0]
@@ -135,6 +147,23 @@ module ScheduleReader
 					end
 					talk['name'] = title
 					current_talks.push(talk)
+				elsif line.chomp.size > 0 # poster
+					poster_id = line.split()[0]
+					remainder = line[(poster_id.size + 1)..-1]
+					title_author_match = remainder.match(/^# (.+) # (.+)/)
+					poster = {
+						'id' => poster_id,
+						'is_tacl' => poster_id.end_with?('/TACL'),
+						'poster' => true
+					}					
+					if title_author_match
+						poster['speakers'] = [title_author_match[2].strip]
+						title = title_author_match[1].strip
+					else
+						title = ''
+					end
+					poster['name'] = title
+					current_posters.push(poster)
 				end
 			end
 
@@ -158,7 +187,7 @@ module ScheduleReader
 							'name' => 'Poster Session',
 							'start' => sessions_at_time[0]['start'],
 							'end' => sessions_at_time[0]['end'],
-							'concurrent_sessions' => sessions_at_time
+							'concurrent_sessions' => sessions_at_time,
 						}
 						sessions.push(par_sess)
 					end

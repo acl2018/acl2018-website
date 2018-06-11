@@ -604,3 +604,12 @@ td.conc-session, .conc-session-details-row td.session-details {
 .conc-session-shared-name {
     background-color: #f2f2f2;
 }
+
+.poster .talk-title {
+    margin-top: 4px;
+}
+
+.poster-scrollable {
+    overflow: scroll;
+    max-height: 30em;
+}
