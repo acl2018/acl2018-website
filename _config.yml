@@ -11,6 +11,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-feed
   - jekyll-pwa-plugin
+  - jekyll-sitemap
 markdown: kramdown
 theme: minima
 exclude:
@@ -69,6 +70,10 @@ defaults:
       type: programme
     values:
       layout: programme
+  - scope:
+      path: "google*.html"
+    values:
+      sitemap: false  
 top_nav:
   - url: /registration/
     title: Registration
