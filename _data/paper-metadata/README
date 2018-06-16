@@ -1,0 +1,7 @@
+The file db.withoutmargins contains most of the metadata aside from abstracts, and then abstracts can be found in the directory abstracts/.
+
+db.withoutmargins contains page numbers of the final pdfs, but for short/long designations, see the following file: acl18-shortlong-ids.tsv.
+
+Kevin Gimpel
+June 8, 2018
+

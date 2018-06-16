@@ -20,7 +20,7 @@ tab_index: 2
 
 <h3>Main Conference</h3>
 
-<div class="instructions">Hover over each entry to find out author information. You can use the search box to filter by author. Click on an entry to add it to your schedule; once you have selected your preferred sessions, you can download all as a .ics at the bottom of the page</div>
+<div class="instructions">Hover over each entry to find out author and abstract information. You can use the search box to filter by author. Click on an entry to add it to your schedule; once you have selected your preferred sessions, you can download all as a .ics at the bottom of the page</div>
 
 <div id="schedule">
 {% for day in site.main_schedule.days %}
@@ -75,9 +75,9 @@ tab_index: 2
           <td class="session-details talk-sessions">
             {% for talk in conc_sess.talks %}
               <div class="talk searchable" id="talk-{{ talk.sess_id }}" 
-                  data-index="{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}" 
+                  data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}" 
                   onclick="toggleSingleTalk('{{ talk.sess_id }}');"
-                  title="{{ talk.speakers | join: ', ' }}. {{ talk.name }}">
+                  title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
                 <div class="times talk-time">
                   {{ talk.start | date: "%H:%M" }}
                 </div>
@@ -92,8 +92,8 @@ tab_index: 2
             <div class="poster-scrollable">
             {% for talk in conc_sess.posters %}
               <div class="poster searchable" 
-                  data-index="{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}" 
-                  title="{{ talk.speakers | join: ', ' }}. {{ talk.name }}">
+                  data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}" 
+                  title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
                 <div class="talk-title">{{ talk.name }}</div>
               </div>
             {% endfor %}

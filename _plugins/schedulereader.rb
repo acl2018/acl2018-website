@@ -2,10 +2,45 @@ require 'date'
 require 'time'
 
 module ScheduleReader
-  class Generator < Jekyll::Generator
+  	class Generator < Jekyll::Generator
+  		def read_abstract(paper_id) 
+  			content = File.read("_data/paper-metadata/abstracts/#{paper_id}.abs")
+  			return content.gsub(/[\n\t]+/, ' ')
+  		end
 
-		def generate(site)
-			# site.pages.each { |page| page.data['schedule'] = 'foo'}
+  		def read_paper_metadata()
+  			all_papers = {}
+			paper = {authors: []}
+			File.open("_data/paper-metadata/db.withoutmargins").each do |line|
+				line = line.chomp
+				if line.size == 0
+					all_papers[paper[:id]] = paper
+					paper = {authors: []}
+				end
+				key, value = line.split(/: /, 2)
+				if key == 'P'
+					paper[:id] = value
+					paper[:abstract] = read_abstract(value)
+				elsif key == 'T'
+					paper[:title] = value
+				elsif key == 'A'
+					paper[:authors].push(value)
+				end
+			end
+			File.open("_data/paper-metadata/acl18-shortlong-ids.tsv").each do |line|
+				line = line.chomp
+				id, length = line.split("\t")
+				paper = all_papers[id]
+				if not paper
+					puts("no paper #{id}")
+				else
+					paper[:long] = (length == "Long")
+				end
+			end
+			return all_papers
+		end
+ 
+  		def read_schedule()
 			all_days = []
 			day_num = 0
 			in_multiline_session = false
@@ -17,6 +52,7 @@ module ScheduleReader
 			current_talks = []
 			current_posters = []
 			most_recent_shared_session = nil
+			metadata = read_paper_metadata
 
 		 	times_from_chunk = lambda do |line_remainder|
 				time_chunk = line_remainder[0..12]
@@ -132,37 +168,43 @@ module ScheduleReader
 					conts = line[(talk_id.size + 1)..-1]
 					start_time, end_time = times_from_chunk[conts]
 					remainder = conts[12..-1]
-					title_author_match = remainder.match(/^ # (.+) # (.+)/)
+					is_tacl = talk_id.end_with?('/TACL')
+                    title_author_match = remainder.match(/^ # (.+) # (.+)/)					
 					talk = {
 						'id' => talk_id,
 						'start' => start_time,
 						'end' => end_time,
-						'is_tacl' => talk_id.end_with?('/TACL')
-					}					
-					if title_author_match
+						'is_tacl' => is_tacl
+					}
+					if not is_tacl			
+						extra = metadata[talk_id]
+						talk['name'] = extra[:title]
+						talk['speakers'] = extra[:authors]
+						talk['abstract'] = extra[:abstract]
+					elsif title_author_match
+						talk['name'] = title_author_match[1].strip
 						talk['speakers'] = [title_author_match[2].strip]
-						title = title_author_match[1].strip
-					else
-						title = ''
 					end
-					talk['name'] = title
 					current_talks.push(talk)
 				elsif line.chomp.size > 0 # poster
 					poster_id = line.split()[0]
 					remainder = line[(poster_id.size + 1)..-1]
-					title_author_match = remainder.match(/^# (.+) # (.+)/)
+					is_tacl = poster_id.end_with?('/TACL')
+                    title_author_match = remainder.match(/^ # (.+) # (.+)/)					
 					poster = {
 						'id' => poster_id,
-						'is_tacl' => poster_id.end_with?('/TACL'),
+						'is_tacl' => is_tacl,
 						'poster' => true
-					}					
-					if title_author_match
+					}
+					extra = metadata[poster_id]
+					if not is_tacl
+						poster['name'] = extra[:title]
+						poster['speakers'] = extra[:authors]
+						poster['abstract'] = extra[:abstract]
+					elsif title_author_match
+						poster['name'] = title_author_match[1].strip
 						poster['speakers'] = [title_author_match[2].strip]
-						title = title_author_match[1].strip
-					else
-						title = ''
 					end
-					poster['name'] = title
 					current_posters.push(poster)
 				end
 			end
@@ -199,9 +241,11 @@ module ScheduleReader
 				'days' => all_days,
 				'num_concurrent' => max_concurrent,
 			}
-
-			site.config['main_schedule'] = schedule
-
+			return schedule
 		end
-  end
+
+		def generate(site)
+			site.config['main_schedule'] = read_schedule
+		end
+  	end
 end
