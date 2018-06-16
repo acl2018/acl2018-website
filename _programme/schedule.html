@@ -78,10 +78,10 @@ tab_index: 2
                   data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}" 
                   onclick="toggleSingleTalk('{{ talk.sess_id }}');"
                   title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
-                <div class="times talk-time">
+                <div class="times talk-time"">
                   {{ talk.start | date: "%H:%M" }}
                 </div>
-                <div class="talk-title">
+                <div class="talk-title" id="paper-{{ talk.id | slugify }}>
                   {% if talk.is_tacl %}<div class="badge tacl-badge"></div>{% endif %}                  
                 {{ talk.name }}</div>
               </div>
@@ -94,7 +94,7 @@ tab_index: 2
               <div class="poster searchable" 
                   data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}" 
                   title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
-                <div class="talk-title">{{ talk.name }}</div>
+                <div class="talk-title" id="paper-{{ talk.id | slugify }}">{{ talk.name }}</div>
               </div>
             {% endfor %}
             </div>
