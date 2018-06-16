@@ -24,7 +24,8 @@ module ScheduleReader
 				elsif key == 'T'
 					paper[:title] = value
 				elsif key == 'A'
-					paper[:authors].push(value)
+					last, first = value.split(', ')
+					paper[:authors].push("#{first} #{last}")
 				end
 			end
 			File.open("_data/paper-metadata/acl18-shortlong-ids.tsv").each do |line|
@@ -40,7 +41,7 @@ module ScheduleReader
 			return all_papers
 		end
  
-  		def read_schedule()
+  		def read_schedule(metadata)
 			all_days = []
 			day_num = 0
 			in_multiline_session = false
@@ -245,7 +246,9 @@ module ScheduleReader
 		end
 
 		def generate(site)
-			site.config['main_schedule'] = read_schedule
+			paper_meta = read_paper_metadata
+			site.config['main_schedule'] = read_schedule(paper_meta)
+			site.config['main_paper_metadata'] = paper_meta.values
 		end
   	end
 end
