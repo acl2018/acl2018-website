@@ -10,22 +10,22 @@ module ScheduleReader
 
   		def read_paper_metadata()
   			all_papers = {}
-			paper = {authors: []}
+			paper = {'authors' => []}
 			File.open("_data/paper-metadata/db.withoutmargins").each do |line|
 				line = line.chomp
 				if line.size == 0
-					all_papers[paper[:id]] = paper
-					paper = {authors: []}
+					all_papers[paper['id']] = paper
+					paper = {'authors' => []}
 				end
 				key, value = line.split(/: /, 2)
 				if key == 'P'
-					paper[:id] = value
-					paper[:abstract] = read_abstract(value)
+					paper['id'] = value
+					paper['abstract'] = read_abstract(value)
 				elsif key == 'T'
-					paper[:title] = value
+					paper['title'] = value
 				elsif key == 'A'
 					last, first = value.split(', ')
-					paper[:authors].push("#{first} #{last}")
+					paper['authors'].push("#{first} #{last}")
 				end
 			end
 			File.open("_data/paper-metadata/acl18-shortlong-ids.tsv").each do |line|
@@ -33,9 +33,9 @@ module ScheduleReader
 				id, length = line.split("\t")
 				paper = all_papers[id]
 				if not paper
-					puts("no paper #{id}")
+					puts("no paper '#{id}'")
 				else
-					paper[:long] = (length == "Long")
+					paper['length'] = length.downcase
 				end
 			end
 			return all_papers
@@ -179,9 +179,9 @@ module ScheduleReader
 					}
 					if not is_tacl			
 						extra = metadata[talk_id]
-						talk['name'] = extra[:title]
-						talk['speakers'] = extra[:authors]
-						talk['abstract'] = extra[:abstract]
+						talk['name'] = extra['title']
+						talk['speakers'] = extra['authors']
+						talk['abstract'] = extra['abstract']
 					elsif title_author_match
 						talk['name'] = title_author_match[1].strip
 						talk['speakers'] = [title_author_match[2].strip]
@@ -199,9 +199,9 @@ module ScheduleReader
 					}
 					extra = metadata[poster_id]
 					if not is_tacl
-						poster['name'] = extra[:title]
-						poster['speakers'] = extra[:authors]
-						poster['abstract'] = extra[:abstract]
+						poster['name'] = extra['title']
+						poster['speakers'] = extra['authors']
+						poster['abstract'] = extra['abstract']
 					elsif title_author_match
 						poster['name'] = title_author_match[1].strip
 						poster['speakers'] = [title_author_match[2].strip]
@@ -248,7 +248,8 @@ module ScheduleReader
 		def generate(site)
 			paper_meta = read_paper_metadata
 			site.config['main_schedule'] = read_schedule(paper_meta)
-			site.config['main_paper_metadata'] = paper_meta.values
+			papers = paper_meta.values
+			site.config['main_paper_metadata'] = {'all' => paper_meta}
 		end
   	end
 end

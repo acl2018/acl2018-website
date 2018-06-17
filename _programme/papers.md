@@ -21,21 +21,19 @@ _Authors of accepted papers should read the [instructions for camera-ready submi
 </nav>
 
 
-### Long Papers
+
+{% assign lengths = "long|short" | split:'|' %}
+{% for length in lengths %}
+### {{ length | capitalize }} Papers
 
 <ul class="accepted-papers">
-{% for paper in site.data.papers_long %}
-    <li class="listing"><span class="paper-title">{{ paper.Title }}</span>. <span class="paper-authors">{{ paper.Authors }}</span>.</li>
+{% assign papers = site.main_paper_metadata.all | where:"length",length %}
+{% for paper in papers %}
+    <li class="listing"><span class="paper-title">{{ paper["title"] }}</span>. <span class="paper-authors">{{ paper.authors | join:", " }}</span>.</li>
 {% endfor %}
 </ul>
-
-### Short Papers
-
-<ul class="accepted-papers">
-{% for paper in site.data.papers_short %}
-    <li class="listing"><span class="paper-title">{{ paper.Title }}</span>. <span class="paper-authors">{{ paper.Authors }}</span>.</li>
 {% endfor %}
-</ul>
+
 
 ### Demo Papers
 
@@ -44,3 +42,4 @@ _Authors of accepted papers should read the [instructions for camera-ready submi
     <li class="listing"><span class="paper-title">{{ paper.Title }}</span>. <span class="paper-authors">{{ paper.Authors }}</span>.</li>
 {% endfor %}
 </ul>
+
