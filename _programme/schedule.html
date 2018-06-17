@@ -29,7 +29,7 @@ tab_index: 2
   <table class="day-program">
     {% for session in day.sessions %}
       {% if session.shared %}
-      <tr id="shared-{{ session.sess_id }}" onclick="toggleSharedSession('{{ session.sess_id }}')"
+      <tr id="session-{{ session.sess_id }}" onclick="toggleSession('{{ session.sess_id }}')"
           class="session-row shared session-name-row shared-session-name-row">
           <td class="session shared-session session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
             <div class="times-and-name">
@@ -74,9 +74,9 @@ tab_index: 2
           {% if conc_sess.talks %}
           <td class="session-details talk-sessions">
             {% for talk in conc_sess.talks %}
-              <div class="talk searchable" id="talk-{{ talk.sess_id }}" 
+              <div class="talk searchable" id="session-{{ talk.sess_id }}" 
                   data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}" 
-                  onclick="toggleSingleTalk('{{ talk.sess_id }}');"
+                  onclick="toggleSession('{{ talk.sess_id }}');"
                   title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
                 <div class="times talk-time"">
                   {{ talk.start | date: "%H:%M" }}
@@ -124,13 +124,14 @@ tab_index: 2
 </div>
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/idb-keyval@3/dist/idb-keyval-iife.min.js"></script>
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script type="text/javascript" src="{{ site.github.url }}/downloads/ics.deps.min.js"></script>
 <script type="text/javascript">
   var rawScheduleData = {{ site.main_schedule | jsonify }};
 
   var selected = new Set();
+  var selectedIdb = new idbKeyval.Store('sel-conf-sessions', 'sel-conf-sessions');
 
   function extractSchedulable() {
     byId = {};
@@ -160,24 +161,33 @@ tab_index: 2
 
   var schedulable = extractSchedulable();
 
-
-  function toggleSingleTalk(sessId) {
-    toggleSession(sessId, 'talk-')
+  function toggleSession(sessId) {
+    var elem = document.getElementById('session-' + sessId);
+    idbKeyval.get(sessId, selectedIdb).then(function(value) {
+      if (value) {
+        idbKeyval.del(sessId, selectedIdb);
+        elem.classList.remove("selected");
+      } else {
+        idbKeyval.set(sessId, true, selectedIdb);
+        elem.classList.add("selected");
+      }
+    });  
   }
 
-  function toggleSharedSession(sessId) {
-    toggleSession(sessId, 'shared-')
+  function doSessionSyncFromStored() {
+    idbKeyval.keys(selectedIdb).then(function(keys) {
+      syncSessionsInDomFromStored(keys);
+    });
   }
 
-  function toggleSession(sessId, domIdPrefix) {
-    var elem = document.getElementById(domIdPrefix + sessId);
-    if (selected.has(sessId)) {
-      selected.delete(sessId);
-      elem.classList.remove("selected");
-    } else {
-      selected.add(sessId);
-      elem.classList.add("selected");
-    }    
+  function syncSessionsInDomFromStored(selectedSessKeys) {
+    Array.from(document.getElementsByClassName("selected")).forEach(function(e) {
+      e.classList.remove("selected");
+    });
+    selectedSessKeys.forEach(function(k) {
+      var elem = document.getElementById('session-' + k);
+      elem.classList.add("selected");      
+    });
   }
 
   function slugify(text) {
@@ -194,7 +204,9 @@ tab_index: 2
   
 
   function calendarDownloadSelectedSessions() {
-    calendarDownloadByIds(Array.from(selected));
+    idbKeyval.keys(selectedIdb).then(function(sel) {
+      calendarDownloadByIds(sel);
+    });
   }
 
   function calendarDownloadByIds(sessIds) {
@@ -328,4 +340,7 @@ function highlightHash() {
 }
 document.addEventListener("hashchange", function(event) { highlightHash(); });
 document.addEventListener("DOMContentLoaded", function(event) { highlightHash(); });
+document.addEventListener("DOMContentLoaded", function(event) { doSessionSyncFromStored(); });
+
 </script>
+
