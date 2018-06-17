@@ -121,6 +121,7 @@ tab_index: 2
     </li>
     {% endcomment %}
   </ul>
+  <button onclick="clearSessions();">Clear All</button>
 </div>
 
 
@@ -187,6 +188,15 @@ tab_index: 2
     selectedSessKeys.forEach(function(k) {
       var elem = document.getElementById('session-' + k);
       elem.classList.add("selected");      
+    });
+  }
+
+  function clearSessions() {
+    idbKeyval.keys(selectedIdb).then(function(keys) {
+      keys.forEach(function(k) {
+        idbKeyval.del(k, selectedIdb);
+      });
+      doSessionSyncFromStored();
     });
   }
 
