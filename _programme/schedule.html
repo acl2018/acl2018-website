@@ -315,4 +315,17 @@ document.getElementById('search').addEventListener('input', function() {
   auxSearchStyle.innerHTML = ".shared-name { opacity: 0.5; }"
 });
 </script>
-
+<script type="text/javascript">
+function highlightHash() {
+  var elems = document.querySelectorAll(".hash-highlighted");
+  [].forEach.call(elems, function(el) {
+      el.className = el.className.replace(/\bhash-highlighted\b/, "");
+  });  
+  if (!document.location.hash)
+    return;
+  var hashElem = document.getElementById(document.location.hash.substr(1))
+  hashElem.classList.add('hash-highlighted');
+}
+document.addEventListener("hashchange", function(event) { highlightHash(); });
+document.addEventListener("DOMContentLoaded", function(event) { highlightHash(); });
+</script>

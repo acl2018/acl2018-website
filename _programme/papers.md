@@ -9,7 +9,7 @@ tab_index: 1
 This year, the ACL conference was super-competitive: We accepted 258 out of 1018 submitted long papers and 126 out of 526 short papers, with an overall acceptance rate of 24.9%.  The details of the review process will be published soon on the homepage. 
 Congratulations to all authors for their fine work, and thanks to all the area chairs and reviewers for their great effort to ensure the high-quality review process!
 
-_Authors of accepted papers should read the [instructions for camera-ready submissions]({{ site.github.url }}/2018/05/05/author-instructions)_
+Hover over papers in the list below to show the abstract. Click on the <i class="far fa-calendar-alt"></i> icon to view the paper entry in the <a href="../schedule/">schedule</a>.
 
 <nav class="table-contents">
     <h4>Jump to…</h4>
@@ -29,7 +29,11 @@ _Authors of accepted papers should read the [instructions for camera-ready submi
 <ul class="accepted-papers">
 {% assign papers = site.main_paper_metadata.all | where:"length",length %}
 {% for paper in papers %}
-    <li class="listing"><span class="paper-title">{{ paper["title"] }}</span>. <span class="paper-authors">{{ paper.authors | join:", " }}</span>.</li>
+    <li class="listing" title="ABSTRACT: {{ paper.abstract }}">
+        <a class="cal-link"  target="_blank" href="../schedule/#paper-{{ paper.id }}"><i class="far fa-calendar-alt"></i></a>
+        <span class="paper-title">{{ paper.title }}</span>. 
+        <span class="paper-authors">{{ paper.authors | join:", " }}</span>.
+    </li>
 {% endfor %}
 </ul>
 {% endfor %}
