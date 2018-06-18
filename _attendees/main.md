@@ -14,6 +14,7 @@ the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 
 
 * [Visas]({{ site.github.url }}/attendees/visa): information about visas for visitors from outside Australia
 * [Accommodation]({{ site.github.url }}/attendees/accommodation): information about hotels including access to discounted rates
+* [Local Activities](https://whatson.melbourne.vic.gov.au/winter/Pages/default.aspx): events on in Melbourne around the time of the conference
 
 ### Contact
 
