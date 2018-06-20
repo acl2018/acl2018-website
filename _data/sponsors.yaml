@@ -50,7 +50,8 @@
       - name: ISI
         url: https://www.isi.edu/technology_groups/insy/joining_us/researchers
         image: isi-nlp.jpg
-      - name: DSTG
+      - name: DST Group
+        url: https://www.dst.defence.gov.au/
   - name: Supporter
     sponsors:
       - name: Roam Analytics
