@@ -1,5 +1,9 @@
   - name: Diamond
     sponsors:
+      - name: Apple
+        image: apple.png
+      - name: Samsung
+        image: samsung.png
       - name: Google
         image: google.png
       - name: Toutiao/Bytedance
@@ -28,6 +32,8 @@
         image: naver.png
       - name: CVTE
         image: cvte.jpg
+      - name: DHCRC
+        image: dhcrc.png
   - name: Silver
     sponsors:
       - name: Nuance
@@ -36,16 +42,24 @@
         image: huawei.png
       - name: Elsevier
         image: elsevier.png
+      - name: Duolingo
+        image: duolingo.png
+        url: https://www.duolingo.com/
   - name: Bronze
     sponsors:
       - name: ISI
         url: https://www.isi.edu/technology_groups/insy/joining_us/researchers
         image: isi-nlp.jpg
+      - name: DSTG
   - name: Supporter
     sponsors:
       - name: Roam Analytics
       - name: SAP
         image: sap.png
+      - name: Melbourne
+        image: melbourne.png
+      - name: Melbourne Convention Bureau
+        image: mcb.png
   - name: Student Volunteers Sponsor
     sponsors:
       - name: Data 61
