@@ -182,16 +182,20 @@ module ScheduleReader
 						talk['name'] = extra['title']
 						talk['speakers'] = extra['authors']
 						talk['abstract'] = extra['abstract']
-					elsif title_author_match
-						talk['name'] = title_author_match[1].strip
-						talk['speakers'] = [title_author_match[2].strip]
+					else
+						if title_author_match
+							talk['name'] = title_author_match[1].strip
+							talk['speakers'] = [title_author_match[2].strip]
+						else
+							puts "No paper title author match in '#{remainder}"
+						end
 					end
 					current_talks.push(talk)
 				elsif line.chomp.size > 0 # poster
 					poster_id = line.split()[0]
 					remainder = line[(poster_id.size + 1)..-1]
 					is_tacl = poster_id.end_with?('/TACL')
-                    title_author_match = remainder.match(/^ # (.+) # (.+)/)					
+                    title_author_match = remainder.match(/^# (.+) # (.+)/)					
 					poster = {
 						'id' => poster_id,
 						'is_tacl' => is_tacl,
@@ -202,9 +206,13 @@ module ScheduleReader
 						poster['name'] = extra['title']
 						poster['speakers'] = extra['authors']
 						poster['abstract'] = extra['abstract']
-					elsif title_author_match
-						poster['name'] = title_author_match[1].strip
-						poster['speakers'] = [title_author_match[2].strip]
+					else
+						if title_author_match
+							poster['name'] = title_author_match[1].strip
+							poster['speakers'] = [title_author_match[2].strip]
+						else
+							puts "No poster title author match in '#{remainder}"
+						end
 					end
 					current_posters.push(poster)
 				end
