@@ -26,6 +26,7 @@
   - name: Gold
     sponsors:
       - name: IBM Research
+        image: ibm.png
       - name: Microsoft
         image: microsoft.png
       - name : Naver
