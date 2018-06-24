@@ -31,7 +31,11 @@ module ScheduleReader
 		end
 
 		def read_demo_metadata()
-			return read_acl_db("_data/demo-metadata", "/DEMO")
+			demos = read_acl_db("_data/demo-metadata", "/DEMO")
+			demos.values.each do |paper|
+				paper['format'] = 'demo'
+			end
+			return demos
 		end
 
   		def read_paper_metadata()
@@ -46,7 +50,7 @@ module ScheduleReader
 				if not paper
 					puts("no paper '#{id}'")
 				else
-					paper['length'] = length.downcase
+					paper['format'] = length.downcase == "long" ? 'long' : 'short'
 				end
 			end
 			return all_papers

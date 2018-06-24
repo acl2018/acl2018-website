@@ -22,15 +22,15 @@ Congratulations to all authors for their fine work, and thanks to all the area c
 
 
 
-{% assign lengths = "long|short" | split:'|' %}
-{% for length in lengths %}
-<h3 id="{{ length }}-papers">{{ length | capitalize }} Papers</h3>
+{% assign formats = "long|short|demo" | split:'|' %}
+{% for fmt in formats %}
+<h3 id="{{ fmt }}-papers">{{ fmt | capitalize }} Papers</h3>
 
 <ul class="accepted-papers">
-{% assign papers = site.main_paper_metadata.all | where:"length",length %}
+{% assign papers = site.main_paper_metadata.all | where:"format",fmt %}
 {% for paper in papers %}
     <li class="listing" title="ABSTRACT: {{ paper.abstract }}">
-        <a class="cal-link" title="View schedule entry for '{{ paper.title }}'" target="_blank" href="../schedule/#paper-{{ paper.id }}"><i class="far fa-calendar-alt"></i></a>
+        <a class="cal-link" title="View schedule entry for '{{ paper.title }}'" target="_blank" href="../schedule/#paper-{{ paper.id | slugify }}"><i class="far fa-calendar-alt"></i></a>
         <span class="paper-title">{{ paper.title }}</span>. 
         <span class="paper-authors">{{ paper.authors | join:", " }}</span>.
     </li>
@@ -38,12 +38,4 @@ Congratulations to all authors for their fine work, and thanks to all the area c
 </ul>
 {% endfor %}
 
-
-<h3 id="demo-papers">Demo Papers</h3>
-
-<ul class="accepted-papers">
-{% for paper in site.data.papers_demo %}
-    <li class="listing"><span class="paper-title">{{ paper.Title }}</span>. <span class="paper-authors">{{ paper.Authors }}</span>.</li>
-{% endfor %}
-</ul>
 
