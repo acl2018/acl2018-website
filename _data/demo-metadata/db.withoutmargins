@@ -1,0 +1,251 @@
+P: 4
+T: Platforms for Non-speakers Annotating Names in Any Language
+A: Lin, Ying
+A: Costello, Cash
+A: Zhang, Boliang
+A: Lu, Di
+A: Ji, Heng
+A: Mayfield, James
+A: McNamee, Paul
+F: final/4/4_Paper.pdf
+L: 6
+
+P: 6
+T: NovelPerspective: Identifying Point of View Characters
+A: White, Lyndon
+A: Togneri, Roberto
+A: Liu, Wei
+A: Bennamoun, Mohammed
+F: final/6/6_Paper.pdf
+L: 6
+
+P: 7
+T: Out-of-the-box Universal Romanization Tool uroman
+A: Hermjakob, Ulf
+A: May, Jonathan
+A: Knight, Kevin
+F: final/7/7_Paper.pdf
+L: 6
+
+P: 9
+T: HarriGT: A Tool for Linking News to Science
+A: Ravenscroft, James
+A: Clare, Amanda
+A: Liakata, Maria
+F: final/9/9_Paper.pdf
+L: 6
+
+P: 12
+T: Jack the Reader -- A Machine Reading Framework
+A: Weissenborn, Dirk
+A: Minervini, Pasquale
+A: Augenstein, Isabelle
+A: Welbl, Johannes
+A: Rocktäschel, Tim
+A: Bosnjak, Matko
+A: Mitchell, Jeff
+A: Demeester, Thomas
+A: Dettmers, Tim
+A: Stenetorp, Pontus
+A: Riedel, Sebastian
+F: final/12/12_Paper.pdf
+L: 6
+
+P: 14
+T: YEDDA: A Lightweight Collaborative Text Span Annotation Tool
+A: Yang, Jie
+A: Zhang, Yue
+A: Li, Linwei
+A: Li, Xingxuan
+F: final/14/14_Paper.pdf
+L: 6
+
+P: 19
+T: NextGen AML: Distributed Deep Learning based Language Technologies to Augment Anti Money Laundering Investigation
+A: Han, Jingguang
+A: Barman, Utsab
+A: Hayes, Jeremiah
+A: Du, Jinhua
+A: Burgin, Edward
+A: Wan, Dadong
+F: final/19/19_Paper.pdf
+L: 6
+
+P: 21
+T: Translating a Language You Don't Know In the Chinese Room
+A: Hermjakob, Ulf
+A: May, Jonathan
+A: Pust, Michael
+A: Knight, Kevin
+F: final/21/21_Paper.pdf
+L: 6
+
+P: 23
+T: DCFEE: A Document-level Chinese Financial Event Extraction System based on Automatically Labeled Training Data
+A: Yang, Hang
+A: Chen, Yubo
+A: Liu, Kang
+A: Xiao, Yang
+A: Zhao, Jun
+F: final/23/23_Paper.pdf
+L: 6
+
+P: 33
+T: Sentence Suggestion of Japanese Functional Expressions for Chinese-speaking Learners
+A: Liu, Jun
+A: Shindo, Hiroyuki
+A: Matsumoto, Yuji
+F: final/33/33_Paper.pdf
+L: 6
+
+P: 34
+T: SANTO: A Web-based Annotation Tool for Ontology-driven Slot Filling
+A: Hartung, Matthias
+A: ter Horst, Hendrik
+A: Grimm, Frank
+A: Diekmann, Tim
+A: Klinger, Roman
+A: Cimiano, Philipp
+F: final/34/34_Paper.pdf
+L: 6
+
+P: 38
+T: NCRF++: An Open-source Neural Sequence Labeling Toolkit
+A: Yang, Jie
+A: Zhang, Yue
+F: final/38/38_Paper.pdf
+L: 6
+
+P: 39
+T: NLP Web Services for Resource-Scarce Languages
+A: Puttkammer, Martin
+A: Eiselen, Roald
+A: Hocking, Justin
+A: Koen, Frederik
+F: final/39/39_Paper.pdf
+L: 7
+
+P: 46
+T: TALEN: Tool for Annotation of Low-resource ENtities
+A: Mayhew, Stephen
+A: Roth, Dan
+F: final/46/46_Paper.pdf
+L: 7
+
+P: 47
+T: A Web-scale system for scientific knowledge exploration
+A: Shen, Zhihong
+A: Ma, Hao
+A: Wang, Kuansan
+F: final/47/47_Paper.pdf
+L: 6
+
+P: 53
+T: ScoutBot: A Dialogue System for Collaborative Navigation
+A: Lukin, Stephanie M.
+A: Gervits, Felix
+A: Hayes, Cory
+A: Moolchandani, Pooja
+A: Leuski, Anton
+A: Rogers, John
+A: Sanchez Amaro, Carlos
+A: Marge, Matthew
+A: Voss, Clare
+A: Traum, David
+F: final/53/53_Paper.pdf
+L: 6
+
+P: 62
+T: The SUMMA Platform: A Scalable Infrastructure for Multi-lingual Multi-media Monitoring
+A: Germann, Ulrich
+A: Liepins, Renars
+A: Barzdins, Guntis
+A: Gosko, Didzis
+A: Miranda, Sebastião
+A: Nogueira, David
+F: final/62/62_Paper.pdf
+L: 6
+
+P: 64
+T: CRUISE: Cold-Start New Skill Development via Iterative Utterance Generation
+A: Shen, Yilin
+A: Ray, Avik
+A: Patel, Abhishek
+A: Jin, Hongxia
+F: final/64/64_Paper.pdf
+L: 6
+
+P: 65
+T: Praaline: An Open-Source System for Managing, Annotating, Visualising and Analysing Speech Corpora
+A: Christodoulides, George
+F: final/65/65_Paper.pdf
+L: 5
+
+P: 67
+T: Marian: Fast Neural Machine Translation in C++
+A: Junczys-Dowmunt, Marcin
+A: Grundkiewicz, Roman
+A: Dwojak, Tomasz
+A: Hoang, Hieu
+A: Heafield, Kenneth
+A: Neckermann, Tom
+A: Seide, Frank
+A: Germann, Ulrich
+A: Aji, Alham Fikri
+A: Bogoychev, Nikolay
+A: Martins, André F. T.
+A: Birch, Alexandra
+F: final/67/67_Paper.pdf
+L: 6
+
+P: 68
+T: DeepPavlov: Open-Source Library for Dialogue Systems
+A: Burtsev, Mikhail
+A: Seliverstov, Alexander
+A: Airapetyan, Rafael
+A: Arkhipov, Mikhail
+A: Baymurzina, Dilyara
+A: Bushkov, Nickolay
+A: Gureenkova, Olga
+A: Khakhulin, Taras
+A: Kuratov, Yuri
+A: Kuznetsov, Denis
+A: Litinsky, Alexey
+A: Logacheva, Varvara
+A: Lymar, Alexey
+A: Malykh, Valentin
+A: Petrov, Maxim
+A: Polulyakh, Vadim
+A: Pugachev, Leonid
+A: Sorokin, Alexey
+A: Vikhreva, Maria
+A: Zaynutdinov, Marat
+F: final/68/68_Paper.pdf
+L: 6
+
+P: 69
+T: RETURNN as a Generic Flexible Neural Toolkit with Application to Translation and Speech Recognition
+A: Zeyer, Albert
+A: Alkhouli, Tamer
+A: Ney, Hermann
+F: final/69/69_Paper.pdf
+L: 6
+
+P: 75
+T: A Flexible, Efficient and Accurate Framework for Community Question Answering Pipelines
+A: Romeo, Salvatore
+A: Da San Martino, Giovanni
+A: Barrón-Cedeño, Alberto
+A: Moschitti, Alessandro
+F: final/75/75_Paper.pdf
+L: 6
+
+P: 79
+T: Moon IME: Neural-based Chinese Pinyin Aided Input Method with Customizable Association
+A: Huang, Yafang
+A: Li, Zuchao
+A: Zhang, Zhuosheng
+A: Zhao, Hai
+F: final/79/79_Paper.pdf
+L: 6
+

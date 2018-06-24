@@ -8,10 +8,10 @@ module ScheduleReader
   			return content.gsub(/[\n\t]+/, ' ')
   		end
 
-  		def read_paper_metadata()
+  		def read_acl_db(file_prefix, id_suffix)
   			all_papers = {}
 			paper = {'authors' => []}
-			File.open("_data/paper-metadata/db.withoutmargins").each do |line|
+			File.open("#{file_prefix}/db.withoutmargins").each do |line|
 				line = line.chomp
 				if line.size == 0
 					all_papers[paper['id']] = paper
@@ -19,8 +19,7 @@ module ScheduleReader
 				end
 				key, value = line.split(/: /, 2)
 				if key == 'P'
-					paper['id'] = value
-					paper['abstract'] = read_abstract(value)
+					paper['id'] = "#{value}#{id_suffix}"
 				elsif key == 'T'
 					paper['title'] = value
 				elsif key == 'A'
@@ -28,6 +27,18 @@ module ScheduleReader
 					paper['authors'].push("#{first} #{last}")
 				end
 			end
+			return all_papers
+		end
+
+		def read_demo_metadata()
+			return read_acl_db("_data/demo-metadata", "/DEMO")
+		end
+
+  		def read_paper_metadata()
+  			all_papers = read_acl_db("_data/paper-metadata", "")
+  			all_papers.each do |key, paper|
+  				paper['abstract'] = read_abstract(key)
+  			end
 			File.open("_data/paper-metadata/acl18-shortlong-ids.tsv").each do |line|
 				line = line.chomp
 				id, length = line.split("\t")
@@ -40,7 +51,11 @@ module ScheduleReader
 			end
 			return all_papers
 		end
- 
+
+		def read_all_metadata()
+			return read_demo_metadata().merge(read_paper_metadata())
+		end
+
   		def read_schedule(metadata)
 			all_days = []
 			day_num = 0
@@ -53,7 +68,6 @@ module ScheduleReader
 			current_talks = []
 			current_posters = []
 			most_recent_shared_session = nil
-			metadata = read_paper_metadata
 
 		 	times_from_chunk = lambda do |line_remainder|
 				time_chunk = line_remainder[0..12]
@@ -209,8 +223,8 @@ module ScheduleReader
 						poster['speakers'] = extra['authors']
 						poster['abstract'] = extra['abstract']
 					else
-	                    title_author_match = remainder.match(/^ *# (.+) # (.+)/)					
-	                    title_match = remainder.match(/^ *# (.+)$/)					
+						title_author_match = remainder.match(/^ *# (.+) # (.+)/)					
+						title_match = remainder.match(/^ *# (.+)$/)					
 						if title_author_match
 							poster['name'] = title_author_match[1].strip
 							poster['speakers'] = [title_author_match[2].strip]
@@ -265,7 +279,7 @@ module ScheduleReader
 		end
 
 		def generate(site)
-			paper_meta = read_paper_metadata
+			paper_meta = read_all_metadata
 			site.config['main_schedule'] = read_schedule(paper_meta)
 			papers = paper_meta.values
 			site.config['main_paper_metadata'] = {'all' => paper_meta}
