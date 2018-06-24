@@ -63,7 +63,7 @@ module ScheduleReader
 				return [start_time, end_time]
 			end			
 
-			File.open("_data/softconf-schedule-raw.txt").each do |line|
+			File.open("_data/softconf-schedule-with-extras.txt").each do |line|
 				if (line.match(/^[*+=] /) or line.chomp.size == 0)
 					if current_parallel_sessions.size > 0 and current_talks.size > 0
 						most_recent_par_session = current_parallel_sessions[-1]
@@ -110,6 +110,7 @@ module ScheduleReader
 							'end' => par_sessions[0]['end'],
 							'shared' => false,
 							'concurrent_sessions' => par_sessions,
+							'is_posters' => false,
 						}
 						if par_sessions.size > max_concurrent
 							max_concurrent = par_sessions.size
@@ -170,19 +171,19 @@ module ScheduleReader
 					start_time, end_time = times_from_chunk[conts]
 					remainder = conts[12..-1]
 					is_tacl = talk_id.end_with?('/TACL')
-                    title_author_match = remainder.match(/^ # (.+) # (.+)/)					
 					talk = {
 						'id' => talk_id,
 						'start' => start_time,
 						'end' => end_time,
 						'is_tacl' => is_tacl
 					}
-					if not is_tacl			
+					if metadata.has_key?(talk_id)
 						extra = metadata[talk_id]
 						talk['name'] = extra['title']
 						talk['speakers'] = extra['authors']
 						talk['abstract'] = extra['abstract']
 					else
+						title_author_match = remainder.match(/^ *# (.+) # (.+)/)					
 						if title_author_match
 							talk['name'] = title_author_match[1].strip
 							talk['speakers'] = [title_author_match[2].strip]
@@ -195,23 +196,27 @@ module ScheduleReader
 					poster_id = line.split()[0]
 					remainder = line[(poster_id.size + 1)..-1]
 					is_tacl = poster_id.end_with?('/TACL')
-                    title_author_match = remainder.match(/^# (.+) # (.+)/)					
 					poster = {
 						'id' => poster_id,
 						'is_tacl' => is_tacl,
 						'poster' => true
 					}
-					extra = metadata[poster_id]
-					if not is_tacl
+					if metadata.has_key?(poster_id)
+						extra = metadata[poster_id]
 						poster['name'] = extra['title']
 						poster['speakers'] = extra['authors']
 						poster['abstract'] = extra['abstract']
 					else
+	                    title_author_match = remainder.match(/^ *# (.+) # (.+)/)					
+	                    title_match = remainder.match(/^ *# (.+)$/)					
 						if title_author_match
 							poster['name'] = title_author_match[1].strip
 							poster['speakers'] = [title_author_match[2].strip]
+						elsif title_match
+							poster['name'] = title_match[1].strip
+							poster['speakers'] = []
 						else
-							puts "No poster title author match in '#{remainder}"
+							puts "No poster title(/author) match in '#{remainder}"
 						end
 					end
 					current_posters.push(poster)
@@ -239,6 +244,7 @@ module ScheduleReader
 							'start' => sessions_at_time[0]['start'],
 							'end' => sessions_at_time[0]['end'],
 							'concurrent_sessions' => sessions_at_time,
+							'is_posters' => true,
 						}
 						sessions.push(par_sess)
 					end
