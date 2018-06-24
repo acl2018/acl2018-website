@@ -29,7 +29,7 @@ tab_index: 2
   <table class="day-program">
     {% for session in day.sessions %}
       {% if session.shared %}
-      <tr id="shared-{{ session.sess_id }}" onclick="toggleSharedSession('{{ session.sess_id }}')"
+        <tr id="shared-{{ session.sess_id }}" onclick="toggleSharedSession('{{ session.sess_id }}')"
           class="session-row shared session-name-row shared-session-name-row">
           <td class="session shared-session session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
             <div class="times-and-name">
@@ -39,76 +39,83 @@ tab_index: 2
             <div class="session-location shared-session-location">{{ session.location }}</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
           </td>
-      </tr>
+        </tr>
       {% else %}
-      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row conc-session-name-row">
-          <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
-            <div class="times-and-name">
-              <div class="session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</div>
-              <div class="session-name">{{ session.name }}<span class="session-suffix">{{ session.suffix }}</span>
-              </div>
-            </div>
-          </td>
-      </tr>
-      <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-indiv-row">
-        {% for conc_sess in session.concurrent_sessions %}
-          {% assign data_index = "" %}
-          {% for talk in conc_sess.talks %}
-            {% capture data_index %}{{ data_index }}{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}{% endcapture %}
-          {% endfor %}
-          {% for talk in conc_sess.posters %}
-            {% capture data_index %}{{ data_index }}{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}{% endcapture %}
-          {% endfor %}
-            <td class="session conc-session" data-index="{{ data_index }}">
-            <div class="conc-session-name">{{ conc_sess.name }}</div>
-          <div class="speakers session-speakers">{% if conc_sess.chair %}<span class="session-chair-label">Chair:</span> {{ conc_sess.chair }}{% endif %}</div>
-          </td>
-        {% endfor %}
-      </tr>
-      <tr class="session-row conc-session-loc-row">
-          {% for conc_sess in session.concurrent_sessions %}
-            <td class="session-location conc-session-location">{{ conc_sess.location }}</td>
-          {% endfor %}
-      </tr>
-      <tr class="session-row conc-session-details-row">
-        {% for conc_sess in session.concurrent_sessions %}
-          {% if conc_sess.talks %}
-          <td class="session-details talk-sessions">
-            {% for talk in conc_sess.talks %}
-              <div class="talk searchable" id="talk-{{ talk.sess_id }}" 
-                  data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }} {% if talk.is_tacl %}tacl{% endif %}" 
-                  onclick="toggleSingleTalk('{{ talk.sess_id }}');"
-                  title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
-                <div class="times talk-time"">
-                  {{ talk.start | date: "%H:%M" }}
-                </div>
-                <div class="talk-title" id="paper-{{ talk.id | slugify }}">
-                  {% if talk.is_tacl %}<div class="badge tacl-badge"></div>{% endif %}                  
-                {{ talk.name }}</div>
-              </div>
-            {% endfor %}
-          </td>
-          {% elsif conc_sess.posters %}           
-          <td class="session-details poster-sessions">
-            <div class="poster-scrollable">
-            {% for talk in conc_sess.posters %}
-              <div class="poster searchable" 
-                  data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }} {% if talk.is_tacl %}tacl{% endif %}" 
-                  title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
-                <div class="talk-title" id="paper-{{ talk.id | slugify }}">{{ talk.name }}
-                  {% if talk.is_tacl %}<div class="badge tacl-badge"></div>{% endif %}
+
+
+        <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row conc-session-name-row">
+            <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
+              <div class="times-and-name">
+                <div class="session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</div>
+                <div class="session-name">{{ session.name }}<span class="session-suffix">{{ session.suffix }}</span>
                 </div>
               </div>
+            </td>
+        </tr>
+
+        {% if session.is_posters %}
+          <tr class="poster-session-row">
+            <td colspan={{ site.main_schedule.num_concurrent }}" class="poster-session-top">        
+              {% for conc_sess in session.concurrent_sessions %}
+                {% assign data_index = "" %}
+                {% for talk in conc_sess.posters %}
+                  {% capture data_index %}{{ data_index }}{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}{% endcapture %}
+                {% endfor %}
+                <div class="poster-sub-session">
+                  <div class="poster-session-name searchable" data-index="{{ data_index }}">{{ conc_sess.name }}</div>
+                {% for talk in conc_sess.posters %}
+                  <span class="poster-name searchable" 
+                    data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }} {% if talk.is_tacl %}tacl{% endif %}"
+                    title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
+                    {% if talk.is_tacl %}<div class="badge tacl-badge"></div>{% endif %}
+                    {{ talk.name }}
+                  </span>
+                {% endfor %}
+                </div>
+              {% endfor %}
+            </td>
+          </tr>
+        {% else %}
+          <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-indiv-row">
+            {% for conc_sess in session.concurrent_sessions %}
+              {% assign data_index = "" %}
+              {% for talk in conc_sess.talks %}
+                {% capture data_index %}{{ data_index }} {{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}{% endcapture %}
+              {% endfor %}
+              <td class="session conc-session" data-index="{{ data_index }}">
+              <div class="conc-session-name">{{ conc_sess.name }}</div>
+              <div class="speakers session-speakers">{% if conc_sess.chair %}<span class="session-chair-label">Chair:</span> {{ conc_sess.chair }}{% endif %}</div>
+              </td>
             {% endfor %}
-            </div>
-          </td>
-          {% else %}
-          <td class="session-details"></td>
-          {% endif %}
-        {% endfor %}
-      </tr>
-      {% endif %}
-    {% endfor %}
+          </tr>
+          <tr class="session-row conc-session-loc-row">
+              {% for conc_sess in session.concurrent_sessions %}
+                <td class="session-location conc-session-location">{{ conc_sess.location }}</td>
+              {% endfor %}
+          </tr>
+          <tr class="session-row conc-session-details-row">
+            {% for conc_sess in session.concurrent_sessions %}
+              <td class="session-details talk-sessions">
+                {% for talk in conc_sess.talks %}
+                  <div class="talk searchable" id="talk-{{ talk.sess_id }}" 
+                      data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }} {% if talk.is_tacl %}tacl{% endif %}" 
+                      onclick="toggleSingleTalk('{{ talk.sess_id }}');"
+                      title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
+                    <div class="times talk-time"">
+                      {{ talk.start | date: "%H:%M" }}
+                    </div>
+                    <div class="talk-title" id="paper-{{ talk.id | slugify }}">
+                      {% if talk.is_tacl %}<div class="badge tacl-badge"></div>{% endif %}                  
+                      {{ talk.name }}
+                    </div>
+                  </div>
+                {% endfor %}
+              </td>
+            {% endfor %}
+          </tr>
+        {% endif %} <!-- posters/talks -->
+      {% endif %} <!-- shared/parallel -->
+    {% endfor %} <!-- sessions -->
   </table>
 </div>
 {% endfor %}

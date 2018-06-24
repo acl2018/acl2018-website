@@ -324,10 +324,14 @@ table.day-program {
 }
 
 .session-details {
-    font-size: 0.9em;
     padding-left: 2px;
     padding-right: 2px;
 }
+
+.session-details, .poster-session-top {
+    font-size: 0.9em;
+}
+
 
 .select-cal-protocol {
     font-size: 13px;
@@ -572,7 +576,7 @@ td.conc-session, .conc-session-details-row td.session-details {
     color: white;
     display: inline;
     font-weight: bold;
-    font-size: 85%;
+    font-size: 77%;
     font-style: normal;
 }
 
@@ -625,4 +629,26 @@ td.conc-session, .conc-session-details-row td.session-details {
 .hash-highlighted {
     background-color: rgba(255, 255, 0, 0.3);
     font-weight: bold;
+}
+
+.poster-name {
+    font-style: italic;
+}
+
+.poster-session-name {
+    font-weight: bold;
+    display: inline;
+    margin-right: 2em;
+}
+
+.poster-name::after {
+    content: " • ";
+}
+
+.poster-name:last-child::after {
+    content:"";
+}
+
+.poster-sub-session {
+    margin-top: 3px;
 }
