@@ -319,7 +319,7 @@ table.day-program {
     padding-bottom: 8px;
 }
 
-.shared-name {
+.bookable {
     background-color: #e8e8e8;
 }
 
@@ -510,7 +510,7 @@ table.hotel-rates {
     font-weight: bold;
 }
 
-.selected td.shared-session, .selected.talk {
+.selected td.shared-name, .selected.talk {
     background-color: hsl(225, 100%, 75%);
 }
 
@@ -605,7 +605,7 @@ td.conc-session, .conc-session-details-row td.session-details {
     margin-bottom: 20px;
 }
 
-.conc-session-shared-name {
+.non-bookable {
     background-color: #f2f2f2;
 }
 

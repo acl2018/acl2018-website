@@ -103,14 +103,16 @@ module ScheduleReader
 							ps['short_papers']
 						end
 						suffix = papers_are_short ? 'Short Papers' : 'Long Papers and TACL Papers'
+						start_time = par_sessions[0]['start']
 						parallel_session_top = {
 							'name' => "Oral Presentations #{par_ses_num}",
 							'suffix' => suffix,
-							'start' => par_sessions[0]['start'],
+							'start' => start_time,
 							'end' => par_sessions[0]['end'],
 							'shared' => false,
 							'concurrent_sessions' => par_sessions,
 							'is_posters' => false,
+							'sess_id' => "#{day_num}_#{start_time.strftime('%H%M')}",
 						}
 						if par_sessions.size > max_concurrent
 							max_concurrent = par_sessions.size
@@ -223,7 +225,7 @@ module ScheduleReader
 				end
 			end
 
-			all_days.each do |day|
+			all_days.each.with_index(1) do |day, day_num|
 				sessions = []
 				sessions_by_time = day['sessions_by_time']
 				all_starts = sessions_by_time.keys.sort
@@ -238,13 +240,16 @@ module ScheduleReader
 							sess['sess_id'] = "#{sess['sess_id']}-#{stream_num}"
 							stream_num += 1
 						end
+						start_time = sessions_at_time[0]['start']
+						end_time = sessions_at_time[0]['end']
 						par_sess = {
 							'shared' => false,
 							'name' => 'Poster Session',
-							'start' => sessions_at_time[0]['start'],
-							'end' => sessions_at_time[0]['end'],
+							'start' => start_time,
+							'end' => end_time,
 							'concurrent_sessions' => sessions_at_time,
 							'is_posters' => true,
+							'sess_id' => "#{day_num}_#{start_time.strftime('%H%M')}",
 						}
 						sessions.push(par_sess)
 					end

@@ -31,7 +31,7 @@ tab_index: 2
       {% if session.shared %}
         <tr id="shared-{{ session.sess_id }}" onclick="toggleSharedSession('{{ session.sess_id }}')"
           class="session-row shared session-name-row shared-session-name-row">
-          <td class="session shared-session session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
+          <td class="session shared-session session-name-cell shared-name bookable" colspan="{{ site.main_schedule.num_concurrent }}">
             <div class="times-and-name">
               <div class="session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</div>
               <div class="session-name shared-session-name">{{ session.name }}</div>
@@ -41,9 +41,15 @@ tab_index: 2
           </td>
         </tr>
       {% else %}
-
-        <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row conc-session-name-row">
-            <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
+        {% if session.is_posters %}
+          {% capture onclick %}onclick="toggleSharedSession('{{ session.sess_id }}')"{% endcapture %}
+          {% assign extra_class = "bookable" %}
+        {% else %}
+          {% assign onclick = '' %}
+          {% assign extra_class = "non-bookable" %}
+        {% endif %}
+        <tr id="shared-{{ session.sess_id }}" {{ onclick }} class="session-row shared session-name-row conc-session-name-row">
+            <td class="conc-session-shared-name session-name-cell shared-name {{ extra_class }}" colspan="{{ site.main_schedule.num_concurrent }}">
               <div class="times-and-name">
                 <div class="session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</div>
                 <div class="session-name">{{ session.name }}<span class="session-suffix">{{ session.suffix }}</span>
@@ -54,7 +60,7 @@ tab_index: 2
 
         {% if session.is_posters %}
           <tr class="poster-session-row">
-            <td colspan={{ site.main_schedule.num_concurrent }}" class="poster-session-top">        
+            <td colspan="{{ site.main_schedule.num_concurrent }}" class="poster-session-top">        
               {% for conc_sess in session.concurrent_sessions %}
                 {% assign data_index = "" %}
                 {% for talk in conc_sess.posters %}
@@ -75,7 +81,7 @@ tab_index: 2
             </td>
           </tr>
         {% else %}
-          <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-indiv-row">
+          <tr class="session-row session-name-row conc-session-indiv-row">
             {% for conc_sess in session.concurrent_sessions %}
               {% assign data_index = "" %}
               {% for talk in conc_sess.talks %}
@@ -100,7 +106,7 @@ tab_index: 2
                       data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }} {% if talk.is_tacl %}tacl{% endif %}" 
                       onclick="toggleSingleTalk('{{ talk.sess_id }}');"
                       title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
-                    <div class="times talk-time"">
+                    <div class="times talk-time">
                       {{ talk.start | date: "%H:%M" }}
                     </div>
                     <div class="talk-title" id="paper-{{ talk.id | slugify }}">
