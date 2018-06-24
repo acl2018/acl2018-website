@@ -20,7 +20,7 @@ tab_index: 2
 
 <h3>Main Conference</h3>
 
-<div class="instructions">Hover over each entry to find out author and abstract information. You can use the search box to filter by author name, title, session topic or TACL papers (enter 'tacl'). Click on an entry to add it to your schedule; once you have selected your preferred sessions, you can download all as a .ics at the bottom of the page</div>
+<div class="instructions">Hover over each entry to find out author and abstract information. You can use the search box to filter by author name, title, session topic or TACL papers (enter 'tacl'). Click on an entry to add it to your schedule; once you have selected your preferred sessions, you can download all as a .ics at the bottom of the page. To get a shareable link to an entry, right-click on the <i class="fas fa-link"></i> icon and copy the link.</i></div>
 
 <div id="schedule">
 {% for day in site.main_schedule.days %}
@@ -72,6 +72,7 @@ tab_index: 2
                   <span class="poster-name searchable" id="paper-{{ talk.id | slugify }}" 
                     data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }} {% if talk.is_tacl %}tacl{% endif %}"
                     title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
+                    <a class="hashlink" href="{{ page.url }}#paper-{{ talk.id | slugify }}"><i class="fas fa-link"></i></a>                    
                     {% if talk.is_tacl %}<div class="badge tacl-badge"></div>{% endif %}
                     {{ talk.name }}
                   </span>
@@ -110,6 +111,7 @@ tab_index: 2
                       {{ talk.start | date: "%H:%M" }}
                     </div>
                     <div class="talk-title" id="paper-{{ talk.id | slugify }}">
+                      <a class="hashlink" href="{{ page.url }}#paper-{{ talk.id | slugify }}"><i class="fas fa-link"></i></a>
                       {% if talk.is_tacl %}<div class="badge tacl-badge"></div>{% endif %}                  
                       {{ talk.name }}
                     </div>

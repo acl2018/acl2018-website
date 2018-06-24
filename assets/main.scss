@@ -633,6 +633,9 @@ td.conc-session, .conc-session-details-row td.session-details {
 
 .poster-name {
     font-style: italic;
+    .hashlink {
+        margin-left: 5px;
+    }
 }
 
 .poster-session-name {
@@ -641,14 +644,17 @@ td.conc-session, .conc-session-details-row td.session-details {
     margin-right: 2em;
 }
 
-.poster-name::after {
-    content: " • ";
-}
-
-.poster-name:last-child::after {
-    content:"";
-}
 
 .poster-sub-session {
     margin-top: 3px;
 }
+
+
+a.hashlink {
+    font-size: 75%;
+
+    &:link, &:active, &:visited, :hover {
+        color: black;
+    }
+}
+
