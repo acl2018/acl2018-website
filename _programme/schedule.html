@@ -42,7 +42,6 @@ tab_index: 2
         </tr>
       {% else %}
 
-
         <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row conc-session-name-row">
             <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
               <div class="times-and-name">
@@ -64,7 +63,7 @@ tab_index: 2
                 <div class="poster-sub-session">
                   <div class="poster-session-name searchable" data-index="{{ data_index }}">{{ conc_sess.name }}</div>
                 {% for talk in conc_sess.posters %}
-                  <span class="poster-name searchable" 
+                  <span class="poster-name searchable" id="paper-{{ talk.id | slugify }}" 
                     data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }} {% if talk.is_tacl %}tacl{% endif %}"
                     title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
                     {% if talk.is_tacl %}<div class="badge tacl-badge"></div>{% endif %}
