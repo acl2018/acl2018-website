@@ -39,6 +39,7 @@ tab_index: 2
             <div class="session-location shared-session-location">{{ session.location }}</div>
             <div class="speakers session-speakers">{{ session.speakers | join: ", " }}</div>
           </td>
+      </tr>
       {% else %}
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row shared session-name-row conc-session-name-row">
           <td class="conc-session-shared-name session-name-cell shared-name" colspan="{{ site.main_schedule.num_concurrent }}">
@@ -50,19 +51,19 @@ tab_index: 2
           </td>
       </tr>
       <tr id="{{ session.start | date: '%Y%m%d-%H%M' }}" class="session-row session-name-row conc-session-indiv-row">
-          {% for conc_sess in session.concurrent_sessions %}
-            {% assign data_index = "" %}
-            {% for talk in conc_sess.talks %}
-              {% capture data_index %}{{ data_index }}{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}{% endcapture %}
-            {% endfor %}
-            {% for talk in conc_sess.posters %}
-              {% capture data_index %}{{ data_index }}{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}{% endcapture %}
-            {% endfor %}
-              <td class="session conc-session" data-index="{{ data_index }}">
-              <div class="conc-session-name">{{ conc_sess.name }}</div>
-            <div class="speakers session-speakers">{% if conc_sess.chair %}<span class="session-chair-label">Chair:</span> {{ conc_sess.chair }}{% endif %}</div>
-            </td>
+        {% for conc_sess in session.concurrent_sessions %}
+          {% assign data_index = "" %}
+          {% for talk in conc_sess.talks %}
+            {% capture data_index %}{{ data_index }}{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}{% endcapture %}
           {% endfor %}
+          {% for talk in conc_sess.posters %}
+            {% capture data_index %}{{ data_index }}{{ talk.id }} {{ talk.speakers | join: ', ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}{% endcapture %}
+          {% endfor %}
+            <td class="session conc-session" data-index="{{ data_index }}">
+            <div class="conc-session-name">{{ conc_sess.name }}</div>
+          <div class="speakers session-speakers">{% if conc_sess.chair %}<span class="session-chair-label">Chair:</span> {{ conc_sess.chair }}{% endif %}</div>
+          </td>
+        {% endfor %}
       </tr>
       <tr class="session-row conc-session-loc-row">
           {% for conc_sess in session.concurrent_sessions %}
@@ -87,7 +88,7 @@ tab_index: 2
               </div>
             {% endfor %}
           </td>
-          {% elsif conc_sess.posters %}
+          {% elsif conc_sess.posters %}           
           <td class="session-details poster-sessions">
             <div class="poster-scrollable">
             {% for talk in conc_sess.posters %}
@@ -105,8 +106,8 @@ tab_index: 2
           <td class="session-details"></td>
           {% endif %}
         {% endfor %}
-      {% endif %}
       </tr>
+      {% endif %}
     {% endfor %}
   </table>
 </div>
