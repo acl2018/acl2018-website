@@ -157,12 +157,20 @@ module ScheduleReader
 				elsif line.start_with?('= ')
 					conts = line[2..-1]
 					session_title = conts.strip
+					chair_re = / %chair ([[:alpha:] ]+)$/
+					chair_match = session_title.match(chair_re)
+					chair = ''
+					if chair_match
+						chair = chair_match[1]
+						session_title = session_title.sub(chair_re, '')
+					end
 					is_short = session_title.end_with?(' (Short)')
 					session_title = session_title.sub(/ \(Short\)$/, '')
 					session = {
 						'name' => session_title,
 						'shared' => false,
 						'short_papers' => is_short,
+						'chair' => chair,
 					}
 					papers = []
 					in_multiline_session = true
