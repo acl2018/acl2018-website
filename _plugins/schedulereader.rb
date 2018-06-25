@@ -157,7 +157,7 @@ module ScheduleReader
 				elsif line.start_with?('= ')
 					conts = line[2..-1]
 					session_title = conts.strip
-					chair_re = / %chair ([[:alpha:] ]+)$/
+					chair_re = / %chair ([[:alpha:]. -]+)$/
 					chair_match = session_title.match(chair_re)
 					chair = ''
 					if chair_match
