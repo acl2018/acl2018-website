@@ -217,7 +217,6 @@ module ScheduleReader
 					}
 					session['name'] = session_title.strip
 					session['location'] = get_location(session)
-					puts "#{session['name']} => #{session['location']}"
 					papers = []
 					in_multiline_session = true
 					if !day_sessions.has_key?(start_time)
