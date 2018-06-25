@@ -65,7 +65,7 @@
         image: mcb.png
       - name: Sintelix
         image: sintelix.png
- - name: Student Volunteers Sponsor
+  - name: Student Volunteers Sponsor
     sponsors:
       - name: Data 61
         image: data61.png
