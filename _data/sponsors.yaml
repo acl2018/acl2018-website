@@ -53,6 +53,8 @@
         image: isi-nlp.jpg
       - name: DST Group
         url: https://www.dst.defence.gov.au/
+      - name: Sintelix
+        image: sintelix.png
   - name: Supporter
     sponsors:
       - name: Roam Analytics
