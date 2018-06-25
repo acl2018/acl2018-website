@@ -658,3 +658,15 @@ a.hashlink {
     }
 }
 
+.times-and-name {
+    display: inline-block;
+}
+
+.session-name-cell {
+    .shared-session-location {
+        display: inline-block;
+        float: right;
+        margin-right: 20px;
+        margin-top: 3px;
+    }
+}

@@ -3,6 +3,16 @@ require 'time'
 
 module ScheduleReader
   	class Generator < Jekyll::Generator
+
+  		@@stream_locations = [
+			'Plenary, MCEC',
+			'Room 203/204, MCEC',
+			'Room 210/211, MCEC',
+			'Room 212/213, MCEC',
+			'Room 219, MCEC',
+			'Room 220, MCEC',
+  		]
+
   		def read_abstract(paper_id) 
   			content = File.read("_data/paper-metadata/abstracts/#{paper_id}.abs")
   			return content.gsub(/[\n\t]+/, ' ')
@@ -58,6 +68,24 @@ module ScheduleReader
 
 		def read_all_metadata()
 			return read_demo_metadata().merge(read_paper_metadata())
+		end
+
+		def get_location(session)
+			sn = session['stream_num']
+			if sn 
+				return @@stream_locations[sn]
+			else
+				ses_name = session['name']
+				if ses_name.end_with?(' Break')
+					return ''
+				elsif ses_name == 'Social Event'
+					return 'Melbourne Aquarium'
+				elsif ses_name.start_with?('Poster Session')
+					return 'Melbourne Room, MCEC'						
+				else
+					return 'Plenary, MCEC'
+				end
+			end
 		end
 
   		def read_schedule(metadata)
@@ -171,7 +199,9 @@ module ScheduleReader
 						'shared' => false,
 						'short_papers' => is_short,
 						'chair' => chair,
+						'stream_num' => current_parallel_sessions.size,
 					}
+					session['location'] = get_location(session)
 					papers = []
 					in_multiline_session = true
 					current_parallel_sessions.push(session)
@@ -186,6 +216,8 @@ module ScheduleReader
 						'sess_id' => "#{day_num}_#{start_time.strftime('%H%M')}"
 					}
 					session['name'] = session_title.strip
+					session['location'] = get_location(session)
+					puts "#{session['name']} => #{session['location']}"
 					papers = []
 					in_multiline_session = true
 					if !day_sessions.has_key?(start_time)
