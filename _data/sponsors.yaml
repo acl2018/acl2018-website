@@ -53,8 +53,6 @@
         image: isi-nlp.jpg
       - name: DST Group
         url: https://www.dst.defence.gov.au/
-      - name: Sintelix
-        image: sintelix.png
   - name: Supporter
     sponsors:
       - name: Roam Analytics
@@ -65,7 +63,9 @@
         image: melbourne.png
       - name: Melbourne Convention Bureau
         image: mcb.png
-  - name: Student Volunteers Sponsor
+      - name: Sintelix
+        image: sintelix.png
+ - name: Student Volunteers Sponsor
     sponsors:
       - name: Data 61
         image: data61.png
