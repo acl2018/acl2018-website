@@ -664,7 +664,8 @@ a.hashlink {
 
 .session-name-cell {
     .shared-session-location {
-        display: inline-block;
+        display: none;
+/*        display: inline-block; */
         float: right;
         margin-right: 20px;
         margin-top: 3px;
