@@ -77,11 +77,11 @@ module ScheduleReader
 			else
 				ses_name = session['name']
 				if ses_name.end_with?(' Break')
-					return ''
+					return 'Level 2 Foyer and Melbourne Room'
 				elsif ses_name == 'Social Event'
 					return 'Melbourne Aquarium'
 				elsif ses_name.start_with?('Poster Session')
-					return 'Melbourne Room, MCEC'						
+					return 'Melbourne Room 1 and 2, MCEC'						
 				else
 					return 'Plenary, MCEC'
 				end
