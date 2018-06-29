@@ -588,6 +588,10 @@ td.conc-session, .conc-session-details-row td.session-details {
     content: ": ";
 }
 
+.session-suffix:empty::before {
+    content: "";
+}
+
 #search {
     width: 20em; 
     margin-left: 5px;
@@ -664,8 +668,7 @@ a.hashlink {
 
 .session-name-cell {
     .shared-session-location {
-        display: none;
-/*        display: inline-block; */
+        display: inline-block; 
         float: right;
         margin-right: 20px;
         margin-top: 3px;
