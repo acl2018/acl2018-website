@@ -2,31 +2,39 @@
     sponsors:
       - name: Apple
         image: apple.png
+        url: https://apple.com
       - name: Samsung
         image: samsung.png
+        url: https://research.samsung.com/
       - name: Google
         image: google.png
+        url: https://google.com
       - name: Toutiao/Bytedance
         image: bytedance-toutiao.png
+        url: https://www.bytedance.com/
   - name: Platinum
     sponsors:
       - name: Amazon
         image: amazon.png
+        url: https://www.amazon.com/
       - name: Baidu
         image: baidu.png
       - name : Facebook
         image: facebook.png
+        url: https://facebook.com
       - name: Jingdong
         url: http://www.jd.com
         image: jingdong.png
-      - name: Recruit Institute of Technology
-        image: rit.png
+      - name: Megagon Labs
+        image: megagon.png
+        url: http://www.megagon.ai
       - name: Tencent
         image: tencent.png
   - name: Gold
     sponsors:
       - name: IBM Research
         image: ibm.png
+        url: https://www.research.ibm.com/
       - name: Microsoft
         image: microsoft.png
       - name : Naver
