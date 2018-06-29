@@ -10,6 +10,14 @@ tab_index: -1
 The conference will be held in [Melbourne, Australia](https://www.melbourne.org/?utm_source=Microsite&utm_campaign=Computational%20Linguistics) at
 the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 15th to 20th, 2018.
 
+### Meal Information
+
+The following meals are provided as part of your registration fee:
+* Mid-morning breaks include coffee, tea, water, ands nacks in the Melbourne Room and level 2 foyer
+* A light lunch of sandwiches and a muffin is provided during each of the midday poster sesions on Monday–Wednesday, in the Melbourne Room and level 2 foyer
+* Mid-afternoon breaks include coffee, tea, water, and snacks in the Melbourne Room and level 2 foyer
+
+
 ### Further Information
 
 * [Visas]({{ site.github.url }}/attendees/visa): information about visas for visitors from outside Australia
