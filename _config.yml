@@ -32,7 +32,7 @@ key_dates:
     event: '<a href="/tutorials">Tutorials</a>'
     attendable: true
   - date: "July 16th–18th, 2018"
-    event: Main Conference
+    event: Main Conference; System Demonstrations
     attendable: true
   - date: "July 19th–20th, 2018"
     event: <a href="/workshops">Workshops</a>
