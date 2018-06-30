@@ -19,6 +19,7 @@
         url: https://www.amazon.com/
       - name: Baidu
         image: baidu.png
+        url: https://www.baidu.com/
       - name : Facebook
         image: facebook.png
         url: https://facebook.com
@@ -30,6 +31,7 @@
         url: http://www.megagon.ai
       - name: Tencent
         image: tencent.png
+        url: https://www.tencent.com/
   - name: Gold
     sponsors:
       - name: IBM Research
