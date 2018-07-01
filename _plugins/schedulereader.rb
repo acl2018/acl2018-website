@@ -13,46 +13,114 @@ module ScheduleReader
 			'Room 220, MCEC',
   		]
 
-  		def read_abstract(paper_id) 
-  			content = File.read("_data/paper-metadata/abstracts/#{paper_id}.abs")
-  			return content.gsub(/[\n\t]+/, ' ')
+  		def read_single_metadata(filename, id_suffix)
+  			paper = {'authors' => []}
+  			author_first_name = nil
+  			in_abstract = false
+  			File.open(filename).each do |line| 
+  				subnum_match = line.match /^SubmissionNumber#=%=#(\d+)$/
+  				abst_match = line.match /^Abstract#==#(.*)$/
+  				author_first_match = line.match /^Author\{\d+\}\{Firstname\}#=%=#(.+)$/
+  				author_last_match = line.match /^Author\{\d+\}\{Lastname\}#=%=#(.+)$/
+  				title_match = line.match /^FinalPaperTitle#=%=#(.+)/
+  				any_field_match = line.match /^[\w{}]+#=%?=#/
+  				if subnum_match
+  					# puts "found id '#{subnum_match[1]}'"
+  					paper['id'] = subnum_match[1].strip + id_suffix
+				elsif abst_match
+					paper['abstract'] = abst_match[1].strip
+					in_abstract = true
+				elsif author_first_match
+					author_first_name = author_first_match[1].strip
+				elsif author_last_match
+					last_name = author_last_match[1].strip
+					author = "#{author_first_name} #{last_name}"
+					paper['authors'].push(author)
+					author_first_name = nil
+				elsif title_match
+					paper['title'] = title_match[1].strip
+				elsif any_field_match
+					in_abstract = false
+				elsif in_abstract
+					paper['abstract'] += ' ' + line.strip 
+				end
+  			end
+  			paper
   		end
 
-  		def read_acl_db(file_prefix, id_suffix)
-  			all_papers = {}
-			paper = {'authors' => []}
-			File.open("#{file_prefix}/db.withoutmargins").each do |line|
-				line = line.chomp
-				if line.size == 0
-					all_papers[paper['id']] = paper
-					paper = {'authors' => []}
-				end
-				key, value = line.split(/: /, 2)
-				if key == 'P'
-					paper['id'] = "#{value}#{id_suffix}"
-				elsif key == 'T'
-					paper['title'] = value
-				elsif key == 'A'
-					last, first = value.split(', ')
-					paper['authors'].push("#{first} #{last}")
-				end
-			end
-			return all_papers
-		end
-
-		def read_demo_metadata()
-			demos = read_acl_db("_data/demo-metadata", "/DEMO")
-			demos.values.each do |paper|
-				paper['format'] = 'demo'
-			end
-			return demos
-		end
-
-  		def read_paper_metadata()
-  			all_papers = read_acl_db("_data/paper-metadata", "")
-  			all_papers.each do |key, paper|
-  				paper['abstract'] = read_abstract(key)
+  		def read_bulk_metadata(filepath, id_suffix = "")
+  			papers = {}
+  			# puts "#{filepath}/final/*/*_metadata.txt"
+  			Dir.glob("#{filepath}/final/*/*_metadata.txt") do |file|
+  				single = read_single_metadata(file, id_suffix)
+  				papers[single['id']] = single
   			end
+  			return papers
+  		end
+
+
+  		def read_all_metadata() 
+  			root = "_data/from-handbook"
+  			main_papers = read_bulk_metadata("#{root}/papers", "")
+  			add_short_long(main_papers)
+  			srw_papers = read_bulk_metadata("#{root}/srw", "/SRW")
+ 			srw_papers.values.each { |paper| paper['format'] = 'srw' }
+ 			demo_papers = read_bulk_metadata("#{root}/demos", "/DEMO")
+			demo_papers.values.each { |paper| paper['format'] = 'demo' }
+  			return main_papers.merge(srw_papers).merge(demo_papers)
+  		end
+
+  # 		def read_acl_db(file_prefix, id_suffix)
+  # 			all_papers = {}
+		# 	paper = {'authors' => []}
+		# 	File.open("#{file_prefix}/db.withoutmargins").each do |line|
+		# 		line = line.chomp
+		# 		if line.size == 0
+		# 			all_papers[paper['id']] = paper
+		# 			paper = {'authors' => []}
+		# 		end
+		# 		key, value = line.split(/: /, 2)
+		# 		if key == 'P'
+		# 			paper['id'] = "#{value}#{id_suffix}"
+		# 		elsif key == 'T'
+		# 			paper['title'] = value
+		# 		elsif key == 'A'
+		# 			last, first = value.split(', ')
+		# 			paper['authors'].push("#{first} #{last}")
+		# 		end
+		# 	end
+		# 	return all_papers
+		# end
+
+		# def read_demo_metadata()
+		# 	demos = read_acl_db("_data/demo-metadata", "/DEMO")
+
+		# 	return demos
+		# end
+
+  # 		def read_paper_metadata()
+  # 			all_papers = read_acl_db("_data/paper-metadata", "")
+  # 			all_papers.each do |key, paper|
+  # 				paper['abstract'] = read_abstract(key)
+  # 			end
+			# File.open("_data/paper-metadata/acl18-shortlong-ids.tsv").each do |line|
+			# 	line = line.chomp
+			# 	id, length = line.split("\t")
+			# 	paper = all_papers[id]
+			# 	if not paper
+			# 		puts("no paper '#{id}'")
+			# 	else
+			# 		paper['format'] = length.downcase == "long" ? 'long' : 'short'
+			# 	end
+			# end
+		# 	return all_papers
+		# end
+
+		# def read_all_metadata()
+		# 	return read_demo_metadata().merge(read_paper_metadata())
+		# end
+
+		def add_short_long(all_papers) 
 			File.open("_data/paper-metadata/acl18-shortlong-ids.tsv").each do |line|
 				line = line.chomp
 				id, length = line.split("\t")
@@ -63,12 +131,7 @@ module ScheduleReader
 					paper['format'] = length.downcase == "long" ? 'long' : 'short'
 				end
 			end
-			return all_papers
-		end
-
-		def read_all_metadata()
-			return read_demo_metadata().merge(read_paper_metadata())
-		end
+		end			
 
 		def get_location(session)
 			sn = session['stream_num']

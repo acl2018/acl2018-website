@@ -14,17 +14,21 @@ Congratulations to all authors for their fine work, and thanks to all the area c
 <nav class="table-contents">
     <h4>Jump to…</h4>
     <ul>
-    <li><a href='#long-papers'>Long Papers</a></li>
-    <li><a href='#short-papers'>Short Papers</a></li>
-    <li><a href='#demo-papers'>Demo Papers</a></li>
+    <li><a href='#long-papers'>Long Papers (Main Conference)</a></li>
+    <li><a href='#short-papers'>Short Papers (Main Conference)</a></li>
+    <li><a href='#demo-papers'>System Demonstration Papers</a></li>
+    <li><a href='#srw-papers'>Student Research Workshop Papers</a></li>
     </ul>
 </nav>
 
 
 
-{% assign formats = "long|short|demo" | split:'|' %}
+{% assign formats = "long|short|demo|srw" | split:'|' %}
 {% for fmt in formats %}
-<h3 id="{{ fmt }}-papers">{{ fmt | capitalize }} Papers</h3>
+{% capture sectname %}
+    {% if fmt == 'demo' %}System Demonstration{% elsif fmt == 'srw' %}Student Research Workshop{% else %}{{ fmt | capitalize }}{% endif %}
+{% endcapture %}
+<h3 id="{{ fmt }}-papers">{{ sectname }} Papers</h3>
 
 <ul class="accepted-papers">
 {% assign papers = site.main_paper_metadata.all | where:"format",fmt %}
