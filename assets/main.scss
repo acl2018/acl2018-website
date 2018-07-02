@@ -674,3 +674,15 @@ a.hashlink {
         margin-top: 3px;
     }
 }
+
+@include media-query($on-palm) {
+    .social-text {
+        display: none;
+    }
+
+    #footer-main {    
+        .icon {
+            font-size: 24px;
+        }
+    }
+}
