@@ -23,6 +23,7 @@ The following meals are provided as part of your registration fee:
 * [Visas]({{ site.github.url }}/attendees/visa): information about visas for visitors from outside Australia
 * [Accommodation]({{ site.github.url }}/attendees/accommodation): information about hotels including access to discounted rates
 * [Local Activities](https://whatson.melbourne.vic.gov.au/winter/Pages/default.aspx): events on in Melbourne around the time of the conference
+* [Get the handbook]({{ site.github.url}}/downloads/acl2018_handbook.pdf "download the handbook (PDF)")
 
 ### Contact
 
