@@ -29,7 +29,7 @@ key_dates:
   - date: "May 11th, 2018"
     event: Camera-ready Due
   - date: "July 15th, 2018"
-    event: '<a href="/tutorials">Tutorials</a>'; Welcome Reception
+    event: '<a href="/tutorials">Tutorials</a>; Welcome Reception'
     attendable: true
   - date: "July 16th–18th, 2018"
     event: Main Conference; System Demonstrations; <a target="_blank" href="https://sites.google.com/view/aclsrw2018/home">Student Research Workshop</a>

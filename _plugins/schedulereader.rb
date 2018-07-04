@@ -70,56 +70,6 @@ module ScheduleReader
   			return main_papers.merge(srw_papers).merge(demo_papers)
   		end
 
-  # 		def read_acl_db(file_prefix, id_suffix)
-  # 			all_papers = {}
-		# 	paper = {'authors' => []}
-		# 	File.open("#{file_prefix}/db.withoutmargins").each do |line|
-		# 		line = line.chomp
-		# 		if line.size == 0
-		# 			all_papers[paper['id']] = paper
-		# 			paper = {'authors' => []}
-		# 		end
-		# 		key, value = line.split(/: /, 2)
-		# 		if key == 'P'
-		# 			paper['id'] = "#{value}#{id_suffix}"
-		# 		elsif key == 'T'
-		# 			paper['title'] = value
-		# 		elsif key == 'A'
-		# 			last, first = value.split(', ')
-		# 			paper['authors'].push("#{first} #{last}")
-		# 		end
-		# 	end
-		# 	return all_papers
-		# end
-
-		# def read_demo_metadata()
-		# 	demos = read_acl_db("_data/demo-metadata", "/DEMO")
-
-		# 	return demos
-		# end
-
-  # 		def read_paper_metadata()
-  # 			all_papers = read_acl_db("_data/paper-metadata", "")
-  # 			all_papers.each do |key, paper|
-  # 				paper['abstract'] = read_abstract(key)
-  # 			end
-			# File.open("_data/paper-metadata/acl18-shortlong-ids.tsv").each do |line|
-			# 	line = line.chomp
-			# 	id, length = line.split("\t")
-			# 	paper = all_papers[id]
-			# 	if not paper
-			# 		puts("no paper '#{id}'")
-			# 	else
-			# 		paper['format'] = length.downcase == "long" ? 'long' : 'short'
-			# 	end
-			# end
-		# 	return all_papers
-		# end
-
-		# def read_all_metadata()
-		# 	return read_demo_metadata().merge(read_paper_metadata())
-		# end
-
 		def add_short_long(all_papers) 
 			File.open("_data/paper-metadata/acl18-shortlong-ids.tsv").each do |line|
 				line = line.chomp
@@ -143,8 +93,12 @@ module ScheduleReader
 					return 'Level 2 Foyer and Melbourne Room'
 				elsif ses_name == 'Social Event'
 					return 'Melbourne Aquarium'
+				elsif ses_name == 'Welcome Reception'
+					return 'Melbourne Room 1'
 				elsif ses_name.start_with?('Poster Session')
-					return 'Melbourne Room 1 and 2, MCEC'						
+					return 'Melbourne Room 1 and 2, MCEC'
+				elsif ses_name.end_with?('Tutorials')
+					return ''	
 				else
 					return 'Plenary, MCEC'
 				end
@@ -202,7 +156,7 @@ module ScheduleReader
 						stream_num = 1
 						par_sessions.each do |ps|
 							ps['talks'].each do |talk|
-								session_id = "#{day_num}_#{talk['start'].strftime('%H%M')}-#{stream_num}"
+								session_id = "#{talk['start'].strftime('%d_%H%M')}-#{stream_num}"
 								talk['sess_id'] = session_id
 							end
 							stream_num += 1
@@ -221,7 +175,7 @@ module ScheduleReader
 							'shared' => false,
 							'concurrent_sessions' => par_sessions,
 							'is_posters' => false,
-							'sess_id' => "#{day_num}_#{start_time.strftime('%H%M')}",
+							'sess_id' => start_time.strftime('%d_%H%M'),
 						}
 						if par_sessions.size > max_concurrent
 							max_concurrent = par_sessions.size
@@ -276,7 +230,7 @@ module ScheduleReader
 						'start' => start_time,
 						'end' => end_time,
 						'shared' => true,
-						'sess_id' => "#{day_num}_#{start_time.strftime('%H%M')}"
+						'sess_id' => start_time.strftime('%d_%H%M')
 					}
 					session['name'] = session_title.strip
 					session['location'] = get_location(session)
@@ -369,7 +323,7 @@ module ScheduleReader
 							'end' => end_time,
 							'concurrent_sessions' => sessions_at_time,
 							'is_posters' => true,
-							'sess_id' => "#{day_num}_#{start_time.strftime('%H%M')}",
+							'sess_id' => start_time.strftime('%d_%H%M'),
 						}
 						sessions.push(par_sess)
 					end
