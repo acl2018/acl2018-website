@@ -1,16 +1,21 @@
 
 * Sunday, July 15, 2018
 
-+ 09:00--12:30 Morning Tutorials
++ 09:00--12:30 Tutorial
 12/TUTE # 100 Things You Always Wanted to Know about Semantics & Pragmatics But Were Afraid to Ask
++ 09:00--12:30 Tutorial
 26/TUTE # Neural Approaches to Conversational AI
++ 09:00--12:30 Tutorial
 27/TUTE # Variational Inference and Deep Generative Models
++ 09:00--12:30 Tutorial
 20/TUTE # Connecting Language and Vision to Actions
-
-+ 13:30--17:00 Afternoon Tutorials
++ 13:30--17:00 Tutorial
 25/TUTE # Beyond Multiword Expressions: Processing Idioms and Metaphors
++ 13:30--17:00 Tutorial
 28/TUTE # Neural Semantic Parsing
++ 13:30--17:00 Tutorial
 39/TUTE # Deep Reinforcement Learning for NLP
++ 13:30--17:00 Tutorial
 24/TUTE # Multi-lingual Entity Discovery and Linking
 
 + 18:00--20:00 Welcome Reception

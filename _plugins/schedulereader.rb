@@ -318,7 +318,7 @@ module ScheduleReader
 						end_time = sessions_at_time[0]['end']
 						par_sess = {
 							'shared' => false,
-							'name' => 'Poster Session',
+							'name' => common_prefix(sessions_at_time.map do |s| s['name'] end),
 							'start' => start_time,
 							'end' => end_time,
 							'concurrent_sessions' => sessions_at_time,
@@ -344,5 +344,15 @@ module ScheduleReader
 			papers = paper_meta.values
 			site.config['main_paper_metadata'] = {'all' => paper_meta}
 		end
+
+		def common_prefix(m)
+			# Given a array of pathnames, returns the longest common leading component
+			return '' if m.empty?
+			s1, s2 = m.min, m.max
+			s1.each_char.with_index do |c, i|
+			return s1[0...i] if c != s2[i]
+			end
+  		return s1
+end
   	end
 end
