@@ -657,7 +657,7 @@ td.conc-session, .conc-session-details-row td.session-details {
 a.hashlink {
     font-size: 75%;
 
-    &:link, &:active, &:visited, :hover {
+    &:link, &:active, &:visited, &:hover {
         color: black;
     }
 }
@@ -685,4 +685,16 @@ a.hashlink {
             font-size: 24px;
         }
     }
+}
+
+.footer-policy {
+    font-size: 70%;
+
+    max-width: $content-width - 2 * $spacing-unit;
+    margin: 5px auto;
+
+    a:link, a:active, a:visited, a:hover {
+        color: #606060;
+    }
+    text-align: left;
 }
