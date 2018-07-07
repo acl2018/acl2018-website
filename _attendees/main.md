@@ -38,6 +38,10 @@ a good overview of public transport options, as does [Public Transport Victoria]
 
 [Uber](https://www.uber.com/en-AU/) operates in Melbourne, and can be cheaper than taxis for short trips.
 
+### Weather
+
+July is winter time in Melbourne. The average daily maximum is 14°C (58°F),  and you may experience rain or squally winds (along with some sunshine) during your time here as part of the notoriously changeable local weather.
+
 ### Meal Information
 
 The following meals are provided as part of your registration fee:
