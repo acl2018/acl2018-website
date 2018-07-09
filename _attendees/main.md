@@ -44,7 +44,7 @@ The conference promotes a positive and inslusive environment and will enforce th
 
 ### Weather
 
-July is winter time in Melbourne. The average daily maximum is 14°C (58°F),  and you may experience rain or squally winds (along with some sunshine) during your time here as part of the notoriously changeable local weather.
+July is winter time in Melbourne. The average daily maximum is 14°C (58°F),  and you may experience rain or squally winds (along with some sunshine) during your time here as part of the notoriously changeable local weather. Naturally, you should [check the forecast](http://www.bom.gov.au/vic/forecasts/melbourne.shtml).
 
 ### Meal Information
 
