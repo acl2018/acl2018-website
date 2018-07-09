@@ -21,7 +21,7 @@ For the SkyBus, the [Docklands Express](https://www.skybus.com.au/southbank-dock
 The SkyBus also runs a [Melbourne City Express](https://www.skybus.com.au/melbourne-city-express/) to Southern Cross train station, which is a short 15 minute walk from the conference venue.
 Those contemplating renting a car for the trip, be warned that parking in the city centre can be difficult and costly.
 
-If you do arrive at Melbourne's second airport, Avalon (AVL), which services the cheaper carriers, you also have both SkyBus or taxi options, although note that travel times to the city will be about 15 minutes longer.
+If you do arrive at Melbourne's second airport, Avalon (AVV), which services the cheaper carriers, you also have both SkyBus or taxi options, although note that travel times to the city will be about 15 minutes longer.
 
 Melbourne is famous for its trams, and has one of the most extensive tram networks in the world. The CBD is designated a Free Tram Zone, meaning that you can ride any tram for free, although beware, as the Free Tram Zone finishes one stop short of the conference venue and 
 ticket inspectors frequent the fringes of the zone trying to catch out
@@ -33,7 +33,7 @@ get on a tram. Note that if you touch on within the Free Tram Zone, you
 will be charged. No, not the most user-friendly system in the world, but
 there are clear announcements in the trams of whether you are in the
 Free Tram Zone or not. The same Myki ticket will work on local trains 
-and busses, should you need to travel further afield. [Google maps](https://www.google.com/maps) gives
+and buses, should you need to travel further afield. [Google maps](https://www.google.com/maps) gives
 a good overview of public transport options, as does [Public Transport Victoria](https://www.ptv.vic.gov.au/) and their PTV phone app.
 
 [Uber](https://www.uber.com/en-AU/) operates in Melbourne, and can be cheaper than taxis for short trips.
