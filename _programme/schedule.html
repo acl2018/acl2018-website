@@ -22,7 +22,7 @@ tab_index: 2
 
 <div class="instructions">
   <p>Posters for the Student Research Workshop and System Demonstrations run concurrently with main conference poster sessions. Please note that additional <a href="/registration">registration</a> is required for workshops and tutorials.</p>
-  <p>Hover over each entry to find out author and abstract information. You can use the search box to filter by author name, title, session topic or TACL papers (enter 'tacl'). Click on an entry to add it to your schedule; once you have selected your preferred sessions, you can download all as a .ics at the bottom of the page. To get a shareable link to an entry, right-click on the <i class="fas fa-link"></i> icon and copy the link.</p>
+  <p>Hover over each entry to find out author and abstract information. You can use the search box to filter by author name, title, session topic or TACL papers (enter 'tacl'). Click on an entry to add it to your schedule; once you have selected your preferred sessions, you can download all as a .ics at the bottom of the page. If you use a relatively modern browser, your selected sessions should be saved in the browser. To get a shareable link to an entry, right-click on the <i class="fas fa-link"></i> icon and copy the link.</p>
 </div>
 
 <div id="schedule">
@@ -32,11 +32,7 @@ tab_index: 2
   <table class="day-program">
     {% for session in day.sessions %}
       {% if session.shared %}
-<<<<<<< HEAD
       <tr id="session-{{ session.sess_id }}" onclick="toggleSession('{{ session.sess_id }}')"
-=======
-        <tr id="shared-{{ session.sess_id }}" onclick="toggleSharedSession('{{ session.sess_id }}')"
->>>>>>> master
           class="session-row shared session-name-row shared-session-name-row">
           <td class="session shared-session session-name-cell shared-name bookable" colspan="{{ site.main_schedule.num_concurrent }}">
             <div class="times-and-name">
@@ -49,13 +45,13 @@ tab_index: 2
         </tr>
       {% else %}
         {% if session.is_posters %}
-          {% capture onclick %}onclick="toggleSharedSession('{{ session.sess_id }}')"{% endcapture %}
+          {% capture onclick %}onclick="toggleSession('{{ session.sess_id }}')"{% endcapture %}
           {% assign extra_class = "bookable" %}
         {% else %}
           {% assign onclick = '' %}
           {% assign extra_class = "non-bookable" %}
         {% endif %}
-        <tr id="shared-{{ session.sess_id }}" {{ onclick }} class="session-row shared session-name-row conc-session-name-row">
+        <tr id="session-{{ session.sess_id }}" {{ onclick }} class="session-row shared session-name-row conc-session-name-row">
             <td class="conc-session-shared-name session-name-cell shared-name {{ extra_class }}" colspan="{{ site.main_schedule.num_concurrent }}">
               <div class="times-and-name">
                 <div class="session-times">{{ session.start | date: "%H:%M" }}–{{ session.end | date: "%H:%M" }}</div>
@@ -63,26 +59,6 @@ tab_index: 2
                 </div>
               </div>
             </td>
-<<<<<<< HEAD
-          {% endfor %}
-      </tr>
-      <tr class="session-row conc-session-loc-row">
-          {% for conc_sess in session.concurrent_sessions %}
-            <td class="session-location conc-session-location">{{ conc_sess.location }}</td>
-          {% endfor %}
-      </tr>
-      <tr class="session-row conc-session-details-row">
-        {% for conc_sess in session.concurrent_sessions %}
-          {% if conc_sess.talks %}
-          <td class="session-details talk-sessions">
-            {% for talk in conc_sess.talks %}
-              <div class="talk searchable" id="session-{{ talk.sess_id }}" 
-                  data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }}" 
-                  onclick="toggleSession('{{ talk.sess_id }}');"
-                  title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
-                <div class="times talk-time"">
-                  {{ talk.start | date: "%H:%M" }}
-=======
         </tr>
 
         {% if session.is_posters %}
@@ -104,7 +80,6 @@ tab_index: 2
                     {{ talk.name }}
                   </span>
                 {% endfor %}
->>>>>>> master
                 </div>
               {% endfor %}
             </td>
@@ -131,9 +106,9 @@ tab_index: 2
             {% for conc_sess in session.concurrent_sessions %}
               <td class="session-details talk-sessions">
                 {% for talk in conc_sess.talks %}
-                  <div class="talk searchable" id="talk-{{ talk.sess_id }}" 
+                  <div class="talk searchable" id="session-{{ talk.sess_id }}" 
                       data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }} {% if talk.is_tacl %}tacl{% endif %}" 
-                      onclick="toggleSingleTalk('{{ talk.sess_id }}');"
+                      onclick="toggleSession('{{ talk.sess_id }}');"
                       title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
                     <div class="times talk-time">
                       {{ talk.start | date: "%H:%M" }}
