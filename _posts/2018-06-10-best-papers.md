@@ -4,7 +4,7 @@ title: Best Papers
 snippet: The best long and short papers have been announced
 ---
 
-The ACL 2018 organising committee is please to announce the following best papers:
+The ACL 2018 organising committee is pleased to announce the following best papers:
 
 **Best Long Papers**
 
