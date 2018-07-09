@@ -12,9 +12,10 @@ the [Melbourne Convention and Exhibition Centre](http://mcec.com.au/) from July 
 
 ### Transport
 
+<iframe src="https://www.google.com/maps/d/embed?mid=10fODwxGgG0wR4djbdgfmvUagAczDOjY3" width="320" height="240"></iframe>
+
 The MCEC conference venue is located on the south-west corner of Melbourne city center ('CBD').
 It can be [reached easily](https://www.rome2rio.com/map/Melbourne-Airport-MEL/1-Convention-Centre-Pl-South-Wharf-VIC-3006-Australia) from the main Tullamarine airport (code: MEL), using a taxi or the cheaper SkyBus bus service. 
-See also this [google map](https://goo.gl/maps/XqE4jobmbj22), which shows the important ACL locations.
 The trip takes 30-45 minutes and costs range from about $60 for a taxi to $19 for the bus, and both services depart on the ground level of the airport, near to the baggage claim area. 
 For the SkyBus, the [Docklands Express](https://www.skybus.com.au/southbank-docklands-express/) service stops directly outside the MCEC conference venue, as well as several other stops nearby. 
 The SkyBus also runs a [Melbourne City Express](https://www.skybus.com.au/melbourne-city-express/) to Southern Cross train station, which is a short 15 minute walk from the conference venue.
