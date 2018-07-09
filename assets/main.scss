@@ -319,15 +319,19 @@ table.day-program {
     padding-bottom: 8px;
 }
 
-.shared-name {
+.bookable {
     background-color: #e8e8e8;
 }
 
 .session-details {
-    font-size: 0.9em;
     padding-left: 2px;
     padding-right: 2px;
 }
+
+.session-details, .poster-session-top {
+    font-size: 0.9em;
+}
+
 
 .select-cal-protocol {
     font-size: 13px;
@@ -478,7 +482,7 @@ table.hotel-rates {
 
 .table-contents {
     border: 1px solid #bbb;
-    width: 15em;
+    width: 20em;
     font-size: 85%;
 
     ul {
@@ -506,7 +510,7 @@ table.hotel-rates {
     font-weight: bold;
 }
 
-.selected td.shared-session, .selected.talk {
+.selected td.shared-name, .selected.talk {
     background-color: hsl(225, 100%, 75%);
 }
 
@@ -572,7 +576,7 @@ td.conc-session, .conc-session-details-row td.session-details {
     color: white;
     display: inline;
     font-weight: bold;
-    font-size: 85%;
+    font-size: 77%;
     font-style: normal;
 }
 
@@ -582,6 +586,10 @@ td.conc-session, .conc-session-details-row td.session-details {
 
 .session-suffix::before {
     content: ": ";
+}
+
+.session-suffix:empty::before {
+    content: "";
 }
 
 #search {
@@ -601,7 +609,7 @@ td.conc-session, .conc-session-details-row td.session-details {
     margin-bottom: 20px;
 }
 
-.conc-session-shared-name {
+.non-bookable {
     background-color: #f2f2f2;
 }
 
@@ -625,4 +633,68 @@ td.conc-session, .conc-session-details-row td.session-details {
 .hash-highlighted {
     background-color: rgba(255, 255, 0, 0.3);
     font-weight: bold;
+}
+
+.poster-name {
+    font-style: italic;
+    .hashlink {
+        margin-left: 5px;
+    }
+}
+
+.poster-session-name {
+    font-weight: bold;
+    display: inline;
+    margin-right: 2em;
+}
+
+
+.poster-sub-session {
+    margin-top: 3px;
+}
+
+
+a.hashlink {
+    font-size: 75%;
+
+    &:link, &:active, &:visited, &:hover {
+        color: black;
+    }
+}
+
+.times-and-name {
+    display: inline-block;
+}
+
+.session-name-cell {
+    .shared-session-location {
+        display: inline-block; 
+        float: right;
+        margin-right: 20px;
+        margin-top: 3px;
+    }
+}
+
+@include media-query($on-palm) {
+    .social-text {
+        display: none;
+    }
+
+    #footer-main {    
+        .icon {
+            font-size: 24px;
+        }
+    }
+}
+
+.footer-policy {
+    font-size: 70%;
+
+    max-width: $content-width - 2 * $spacing-unit;
+    margin: 5px auto;
+
+    a:link, a:active, a:visited, a:hover {
+        color: #606060;
+    }
+    text-align: left;
 }

@@ -29,10 +29,10 @@ key_dates:
   - date: "May 11th, 2018"
     event: Camera-ready Due
   - date: "July 15th, 2018"
-    event: '<a href="/tutorials">Tutorials</a>'
+    event: '<a href="/tutorials">Tutorials</a>; Welcome Reception'
     attendable: true
   - date: "July 16th–18th, 2018"
-    event: Main Conference
+    event: Main Conference; System Demonstrations; <a target="_blank" href="https://sites.google.com/view/aclsrw2018/home">Student Research Workshop</a>
     attendable: true
   - date: "July 19th–20th, 2018"
     event: <a href="/workshops">Workshops</a>
@@ -107,3 +107,4 @@ ios_icon_sizes: [20, 29, 40, 57, 60, 72, 76]
 google:
   calendar_client_id: 460035702073-rrm0n7avbp03rlb7jvg07jstiq7ecpf6.apps.googleusercontent.com
   api_key: AIzaSyCME8tUMnP6RAWY66RB3ET06QKjBDttZQ0
+handbook_url: https://www.dropbox.com/s/6mnfsuzg6swssny/acl2018_handbook.pdf?dl=1
