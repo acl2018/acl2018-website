@@ -512,6 +512,19 @@ table.hotel-rates {
 
 .selected td.shared-name, .selected.talk {
     background-color: hsl(225, 100%, 75%);
+    @media print {
+        border: 2px solid hsl(225, 100%, 75%);
+    }
+}
+
+@media print {
+    .fas.fa-link {
+        display: none;
+    }
+
+    #schedule {
+        font-size: 10pt;
+    }
 }
 
 p.speaker {
