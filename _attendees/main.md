@@ -53,6 +53,16 @@ The following meals are provided as part of your registration fee:
 * A light lunch of sandwiches and a muffin is provided during each of the midday poster sesions on Monday–Wednesday, in the Melbourne Room and level 2 foyer
 * Mid-afternoon breaks include coffee, tea, water, and snacks in the Melbourne Room and level 2 foyer
 
+For other meals there are several cafes and restaurants within a few minutes walk of the convention centre. Head to the in the South Wharf area (west), where you'll find many good places to choose from, including a food court in  the DFO shopping complex. There are many more eating options available if you head east along the river to Crown and further along at Southbank, including cafes, restaurants and another food court in the Southgate shopping complex.  
+
+Crossing the river and walking a little further to the CBD is worthwhile, where you will find the highest density of restaurants in greater Melbourne. In general, the streets to the east of Elizabeth Street, especially, east of Russell Street, are best for evenings. For an outstanding gelato experience, with experimental flavours, drop into Gelateria Primavera. Chinatown has its spine along Little Bourke Street, including the long-standing Golden Orchids.
+Closest to the conference venue, the most vibrant area is near the corner of Katherine Place and Flinders Lane. Further east along Flinders Lane, you can find Dukes coffee roasters. Degraves Street, either side of Flinders Lane, is packed with cafés, and is very popular with visitors and locals alike.
+
+There are several quality rooftop bars in the CBD, including Bomba, Siglo, Campari House, Rooftop Bar (Curtin House), Madame Brussels, and Red Hummingbird. For a view of the city, and of local commuters rushing for their trains, head to the delightful Arbory. Either side, along the Yarra River, Ponyfish Island and Riverland are gems.
+
+Explore Melbourne’s laneways: some of them have amazing places to eat (Hardware Lane, Centre Place, Degraves Street), some have fantastic artwork (Hosier Lane), some are just a little scary looking.
+
+To browse a list of curated cafés, restaurants and other notable places interactively on your smartphone, please check out the following [Google Maps Places](https://goo.gl/maps/6Q96QDCHbJD2).
 
 ### Further Information
 
