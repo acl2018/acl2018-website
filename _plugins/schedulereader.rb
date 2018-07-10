@@ -196,7 +196,7 @@ module ScheduleReader
 					day = {
 						'sessions_by_time' => day_sessions, 
 						'date' => date.to_s, 
-						'name' => "Day #{day_num}",
+						'name' => date.strftime("%A"), #"Day #{day_num}",
 					}
 					all_days.push(day)
 				elsif line.start_with?('= ')
