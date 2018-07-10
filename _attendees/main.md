@@ -64,6 +64,13 @@ Explore Melbourne’s laneways: some of them have amazing places to eat (Hardwar
 
 To browse a list of curated cafés, restaurants and other notable places interactively on your smartphone, please check out the following [Google Maps Places](https://goo.gl/maps/6Q96QDCHbJD2).
 
+### Poster printing
+
+Local print shops offer poster printing services, including:
+
+ * [Officeworks](https://www.officeworks.com.au/shop/officeworks/Print-And-Copy/Speciality-Posters) *several close locations, including South Melbourne and Elizabeth Street*
+ * [Kwik Kopy](https://www.kwikkopy.com.au/browse-centres/william-street) *45 William Street*
+
 ### Further Information
 
 * [Visas]({{ site.github.url }}/attendees/visa): information about visas for visitors from outside Australia
