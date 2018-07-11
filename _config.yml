@@ -75,6 +75,8 @@ defaults:
     values:
       sitemap: false  
 top_nav:
+  - url: /app/
+    title: App
   - url: /registration/
     title: Registration
   - url: /attendees/
