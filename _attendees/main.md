@@ -49,7 +49,7 @@ July is winter time in Melbourne. The average daily maximum is 14°C (58°F),  a
 ### Meal Information
 
 The following meals are provided as part of your registration fee:
-* Mid-morning breaks include coffee, tea, water, ands nacks in the Melbourne Room and level 2 foyer
+* Mid-morning breaks include coffee, tea, water, and snacks in the Melbourne Room and level 2 foyer
 * A light lunch of sandwiches and a muffin is provided during each of the midday poster sesions on Monday–Wednesday, in the Melbourne Room and level 2 foyer
 * Mid-afternoon breaks include coffee, tea, water, and snacks in the Melbourne Room and level 2 foyer
 
