@@ -7,7 +7,7 @@ tab_index: 1
 
 In keeping with recent ACLs, the ACL 2018 Social Event will be held in
 an aquarium.  The [Melbourne Sealife Aquarium](https://www.melbourneaquarium.com.au/) is a short 10 minute walk upriver
-along the Yarra from the convention centre (see map on [Attendees page](attendees.md)).
+along the Yarra from the convention centre (see map on [Attendees page](..)).
 
 ![shark](https://www.melbourneaquarium.com.au/media/2334/shark-dive.jpg)
 
@@ -25,4 +25,4 @@ Note that dinner is not provided, and there is a limited time for dinner
 between the end of the conference programme and the start of the social
 event.  Please plan accordingly.  There are many dinner venues
 along the river foreshore as part of the South Wharf, Casino (which is
-directly opposite the Acquarium), and Southbank precincts. See the [Attendees page](attendees.md) for details.
+directly opposite the Acquarium), and Southbank precincts. See the [Attendees page](..) for details.
