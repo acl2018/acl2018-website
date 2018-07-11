@@ -11,7 +11,7 @@ along the Yarra from the convention centre (see map on [Attendees page](..)).
 
 ![shark](https://www.melbourneaquarium.com.au/media/2334/shark-dive.jpg)
 
-The event runs from 19:30-22:30 and you will be served deserts and drinks, including
+The event runs from 19:30-22:30 on Tuesday 17th July and you will be served deserts and drinks, including
 an open bar.  Be sure to see the massive `Mermaid Garden', a walk-through glass
 passageway amongst hundreds of sharks and thousands more marine
 creatures, just a taste of the extraordinary marine diversity of
