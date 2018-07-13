@@ -764,5 +764,18 @@ a.hashlink {
         font-size: 14px;
     }
 
+    .day-subtitle {
+        whitespace: nowrap;
+        font-weight: normal;
+        font-style: italic;
+        text-transform: uppercase;
+        font-size: 11px;
+    }
+
+}
+
+.extra-note {
+    font-style: italic;
+    font-size: 85%;
 }
 

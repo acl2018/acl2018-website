@@ -5,20 +5,16 @@ top_nav_category: Programme
 tab_index: 2
 ---
 <h3>Overview</h3>
-<table class='conf-dates'>
-{% for kd in site.key_dates %}
-  {% if kd.attendable %}
-  <tr><td class='conf-date-label'>{{ kd.date }}</td> <td>{{ kd.event }}</td></tr>
-  {% endif %}
-{% endfor %}
-</table>
 
 <table class="overview-schedule" id="overview">
   <tr class="overview-row">
     {% for day in site.data.overview_days %}
     <td class="day-wrapper">
       <table class="overview-day">
-        <th class="day-name">{{ day.name }}</th>
+        <thead>
+        <tr><th title="{{ day.details }}" class="day-subtitle">{{ day.subtitle }}</th></tr>
+        <tr><th title="{{ day.details }}" class="day-name">{{ day.name }}</th></tr>
+        </thead>
         {% for item in day.items %}
         <tr style="height: {{ item.length | times: 35 }}px !important" class="overview-item">
           <td>
@@ -41,6 +37,8 @@ tab_index: 2
     {% endfor %}
   </tr>
 </table>
+
+<p class="extra-note">Conference days include system demonstration posters and <a target="_blank" href="https://sites.google.com/view/aclsrw2018/home">Student Research Workshop</a></p>
 
 <div id="search-pane"><i class="fas fa-search"></i><input type="search" placeholder="Filter by author, title or topic" id="search" ></div>
 <style id="search_style"></style>

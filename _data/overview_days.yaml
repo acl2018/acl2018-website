@@ -1,0 +1,180 @@
+- name: Sun 15th
+  subtitle: Tutorials
+  id_pref: "session-15"
+  items:
+    - name: Tutorials
+      start_time: "09:00"
+      length: 3.5
+      id_suff: "_0900"
+    - name: Lunch
+      start_time: "12:30"
+      length: 1
+    - name: Tutorials
+      start_time: "13:30"
+      length: 3.5
+      id_suff: "_1330"
+    - name: 
+      start_time: "17:00"
+      length: 1
+    - name: Welcome Reception
+      start_time: "18:00"
+      length: 2
+      id_suff: "_1800"
+- name: Mon 16th
+  subtitle: Conference
+  details: "Main Conference and System Demonstrations"
+  id_pref: "session-16"
+  items:
+    - name: Welcome Session
+      start_time: "09:00"
+      length: 1
+      id_suff: "_0900"
+    - name: 
+      start_time: "10:00"
+      length: 0.5
+    - name: Oral Presentations
+      start_time: "10:30"
+      length: 1.67
+      id_suff: "_1030"
+    - name: 
+      start_time: "12:10"
+      length: 0.33
+    - name: Poster Session
+      start_time: "12:30"
+      length: 1.5
+      id_suff: "_1230"
+    - name: Oral Presentations
+      start_time: "14:00"
+      length: 1.67
+      id_suff: "_1400"
+    - name: 
+      start_time: "15:40"
+      length: 0.5
+    - name: Oral Presentations
+      start_time: "16:10"
+      length: 1.67
+      id_suff: "_1610"
+    - name: 
+      start_time: 17:50
+      length: 0.42
+    - name: Student Recruitment
+      start_time: "18:15"
+      length: 1.5
+- name: Tue 17th
+  subtitle: Conference
+  details: "Main Conference, System Demonstrations and Student Research Workshop"
+  id_pref: "session-17"
+  items:
+    - name: Invited Talk
+      start_time: "09:00"
+      length: 1
+      id_suff: "_0900"
+    - name: 
+      start_time: "00:00"
+      length: 0.5
+    - name: Oral Presentations
+      start_time: "10:30"
+      length: 1.67
+      id_suff: "_1030"
+    - name: 
+      start_time: "12:10"
+      length: 0.33
+    - name: Poster Session
+      start_time: "12:30"
+      length: 1.5
+      id_suff: "_1230"
+    - name: Oral Presentations
+      start_time: "14:00"
+      length: 1
+      id_suff: "_1400"
+    - name: 
+      start_time: "15:00"
+      length: 0.5
+    - name: Oral Presentations
+      start_time: "15:30"
+      length: 1.67
+      id_suff: "_1530"
+    - name: 
+      start_time: "17:10"
+      length: 0.17
+    - name: Business Meeting
+      start_time: "17:20"
+      length: 1.5
+      id_suff: "_1710"
+    - name: Social Event
+      start_time: "19:30"
+      length: 2.2
+      link: /attendees/social/
+- name: Wed 18th
+  subtitle: Conference
+  details: "Main Conference, System Demonstrations and Student Research Workshop"
+  id_pref: "session-17"
+  items:
+    - name: Invited Talk
+      start_time: "09:00"
+      length: 1
+      id_suff: "_0900"
+    - name: 
+      start_time: "00:00"
+      length: 0.5
+    - name: Oral Presentations
+      start_time: "10:30"
+      length: 1.67
+      id_suff: "_1030"
+    - name: 
+      start_time: "12:10"
+      length: 0.33
+    - name: Poster Session
+      start_time: "12:30"
+      length: 1.5
+      id_suff: "_1230"
+    - name: Oral Presentations
+      start_time: "14:00"
+      length: 1
+      id_suff: "_1400"
+    - name: 
+      start_time: "15:00"
+      length: 0.5
+    - name: Best Paper Session
+      start_time: "15:30"
+      length: 1.75
+      id_suff: "_1530"
+    - name: 
+      start_time: "17:15"
+      length: 0.25
+    - name: Lifetime Achievement
+      start_time: "17:30"
+      length: 1
+      id_suff: "_1730"
+    - name: 
+      length: 0.25
+- name: Thu 19th
+  subtitle: Workshops
+  id_pref: ""
+  items:
+    - name: Workshops
+      start_time: "09:00"
+      length: 3.5
+      link: "/workshops/#thursday-19-july"
+    - name: Lunch
+      start_time: "12:30"
+      length: 1
+    - name: Workshops
+      start_time: "13:30"
+      length: 3.5
+      link: "/workshops/#thursday-19-july"
+- name: Fri 20th
+  subtitle: Workshops
+  id_pref: ""
+  items:
+    - name: Workshops
+      start_time: "09:00"
+      length: 3.5
+      link: "/workshops/#friday-20-july"
+    - name: Lunch
+      start_time: "12:30"
+      length: 1
+    - name: Workshops
+      start_time: "13:30"
+      length: 3.5
+      link: "/workshops/#friday-20-july"
