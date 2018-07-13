@@ -22,7 +22,7 @@ tab_index: 2
 
 <div class="instructions">
   <p>Posters for the Student Research Workshop and System Demonstrations run concurrently with main conference poster sessions. Please note that additional <a href="/registration">registration</a> is required for workshops and tutorials.</p>
-  <p>Hover over each entry to find out author and abstract information. You can use the search box to filter by author name, title, session topic or TACL papers (enter 'tacl'). Click on an entry to add it to your schedule; once you have selected your preferred sessions, you can download all as a .ics at the bottom of the page. If you use a relatively modern browser, your selected sessions should be saved in the browser. To get a shareable link to an entry, right-click on the <i class="fas fa-link"></i> icon and copy the link.</p>
+  <p>Hover over each entry to find out author and abstract information. You can use the search box to filter by author name, title, session topic or TACL papers (enter 'tacl'). Click on an entry to add it to your schedule; once you have selected your preferred sessions, you can download all as a .ics at the bottom of the page. If you use a relatively modern browser, your selected sessions should be saved in the browser. {% comment %}To get a shareable link to an entry, right-click on the <i class="fas fa-link"></i> icon and copy the link.{% endcomment %}</p>
 </div>
 
 <div id="schedule">
@@ -134,8 +134,8 @@ tab_index: 2
 
 <div class="calendar-sync">
   <ul>
-    <li><a href="#" onclick="calendarDownloadSelectedSessions(); return false;"><i class="fas fa-download"></i>&nbsp;Download Selected as iCal files</a></li>
     {% comment %}
+    <li><a href="#" onclick="calendarDownloadSelectedSessions(); return false;"><i class="fas fa-download"></i>&nbsp;Download Selected as iCal files</a></li>
     <li><a href="#" onclick="gcalSyncSelectedSessions(); return false;">Upload Selected to Google Calendar</a>
       <button id="signin-button" onclick="googleHandleSignInClick()">Sign In</button>
       <button id="signout-button" onclick="googleHandleSignOutClick()">Sign Out</button>
