@@ -13,6 +13,35 @@ tab_index: 2
 {% endfor %}
 </table>
 
+<table class="overview-schedule" id="overview">
+  <tr class="overview-row">
+    {% for day in site.data.overview_days %}
+    <td class="day-wrapper">
+      <table class="overview-day">
+        <th class="day-name">{{ day.name }}</th>
+        {% for item in day.items %}
+        <tr style="height: {{ item.length | times: 35 }}px !important" class="overview-item">
+          <td>
+          {% if item.name %}
+          <div class="start-time">{{ item.start_time }}</div>
+          <div class="item-name">
+            {% if item.id_suff %}
+              <a href="#{{ day.id_pref }}{{ item.id_suff }}">{{ item.name }}</a>
+            {% elsif item.link %}
+              <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
+            {% else %}{{ item.name }}
+            {% endif %}
+          </div>
+          </td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </table>
+    </td>
+    {% endfor %}
+  </tr>
+</table>
+
 <div id="search-pane"><i class="fas fa-search"></i><input type="search" placeholder="Filter by author, title or topic" id="search" ></div>
 <style id="search_style"></style>
 <style id="parent_search_style"></style>
