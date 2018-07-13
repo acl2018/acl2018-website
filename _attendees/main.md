@@ -80,6 +80,7 @@ Here is a laundry list of things you can do to get the full Melbourne experience
  * take a walk or bike ride along the Yarra river, along the attractive riverside paths. A few kilometres upriver you will reach Yarra Bend, home to more than  10,000 fruit bats (flying foxes). They roost during the day and take to the air at dusk.
  * visit one of Melbourne's many rooftop bars. Another rooftop of sorts is the Eureka Tower, one of the tallest buildings in Melbourne (and the world, for a brief time), which affords a panoramic view of the city.
  * imbibe at one of Melbourne's quirky drinking holes such as Holey Moley Golf Club, a cocktail bar and mini-golf course, and Pony-Fish island, a tiny bar located on a tiny pontoon on the river.
+ * take a walking tour of the city, e.g. "I'm Free Walking Tours", which leave from the State Library or Arts Centre
  * enjoy the street art in several small lanes in the city centre, including Hosier Lane and AC/DC lane
  * get your Art fix at the National Gallery of Victoria. On Friday evenings there is evening entertainment with live music, bookings essential.
  * learn about crime and punishment from Australia’s colonial past at the Old Melbourne Goal. The gallows are a particular highlight. You can also see the handmade metal armour of our most infamous 19th century villian, Ned Kelly, in the State Library, replete with bullet marks.
