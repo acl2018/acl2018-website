@@ -18,7 +18,7 @@ creatures, just a taste of the extraordinary marine diversity of
 Australia. See if you can beat the enormous crocodile in a staring contest.
 
 Bring your partners and children to enjoy this spectacular
-place. Note that most of the creatures will be on display, although there
+place (extras will need their own additional tickets). Most of the creatures will be on display, although there
 will be limited light in the penguin enclosure, to simulate night-time conditions.
 
 Note that dinner is not provided, and there is a limited time for dinner
