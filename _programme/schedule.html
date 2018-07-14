@@ -144,11 +144,11 @@ tab_index: 2
                       {{ talk.start | date: "%H:%M" }}
                     </div>
                     <div class="talk-title" id="paper-{{ talk.id | slugify }}">
-                      <a class="hashlink" href="{{ page.url }}#paper-{{ talk.id | slugify }}"><i class="fas fa-link"></i></a>
+                      <a class="hashlink" onclick="event.stopPropagation()" href="{{ page.url }}#paper-{{ talk.id | slugify }}"><i class="fas fa-link"></i></a>
                       {% if talk.is_tacl %}
-                        <div class="badge tacl-badge"></div> {{ talk.name }}
+                        <a onclick="event.stopPropagation()" href="https://www.transacl.org/ojs/index.php/tacl/article/view/{{ talk.id | slice: 0, -5 }}" title="view '{{ talk.name }}' on TransACL site"><div class="badge tacl-badge"></div> {{ talk.name }} <i class="fas fa-external-link-alt"></i></a>
                       {% else %}
-                        <a href="/paper/{{ talk.id | slugify }}">{{ talk.name }}</a>
+                        <a onclick="event.stopPropagation()" href="/paper/{{ talk.id | slugify }}">{{ talk.name }}</a>
                       {% endif %}
                     </div>
                   </div>
