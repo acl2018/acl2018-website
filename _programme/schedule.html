@@ -167,8 +167,8 @@ tab_index: 2
 
 <div class="calendar-sync">
   <ul>
-    {% comment %}
     <li><a href="#" onclick="calendarDownloadSelectedSessions(); return false;"><i class="fas fa-download"></i>&nbsp;Download Selected as iCal files</a></li>
+    {% comment %}
     <li><a href="#" onclick="gcalSyncSelectedSessions(); return false;">Upload Selected to Google Calendar</a>
       <button id="signin-button" onclick="googleHandleSignInClick()">Sign In</button>
       <button id="signout-button" onclick="googleHandleSignOutClick()">Sign Out</button>
@@ -280,11 +280,15 @@ tab_index: 2
     calendarDownloadSessions(sessions);
   }
 
+  function fixDate(orig) {
+    return orig.replace(/ \+/, "+")
+  }
+
   function calendarDownloadSessions(sessions) {
     var cal = ics('ACL18');
     for (var i = 0; i < sessions.length; ++i) {
       var sess = sessions[i];
-      cal.addEvent(sess.name + " (ACL18)", sessionDesc(sess), sessionLoc(sess), sess.start, sess.end);
+      cal.addEvent(sess.name + " (ACL18)", sessionDesc(sess), sessionLoc(sess), fixDate(sess.start), fixDate(sess.end));
     }
     cal.download('ACL18');
   }
