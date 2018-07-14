@@ -33,5 +33,5 @@ title: Tutorials
             toggleDisplay('info_' + document.location.hash.slice(1), 'tute-details');
         }        
     }
-    window.onload = showFromHash;
+	document.addEventListener("DOMContentLoaded", function(event) {showFromHash(); });
 </script>
