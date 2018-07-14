@@ -421,11 +421,14 @@ function highlightCurrent() {
     for (var j = 0; j < sessions.length; j++) {
       var sess = sessions[j];
       var concurrent = sess.concurrent_sessions;
-      if (typeof concurrent === 'undefined') {
+      if (typeof concurrent === 'undefined' || sess.is_posters) {
         var start = new Date(fixDate(sess.start));
         var end = new Date(fixDate(sess.end));
         if (start <= now && now <= end) {
-          document.getElementById('session-' + sess.sess_id).classList.add('current')
+          var elem = document.getElementById('session-' + sess.sess_id);
+          elem.classList.add('current');
+          if (!document.location.hash)
+            elem.scrollIntoView();
         }
         continue;
       }
@@ -439,7 +442,10 @@ function highlightCurrent() {
           var start = new Date(fixDate(talk.start));
           var end = new Date(fixDate(talk.end));
           if (start <= now && now <= end) {
-            document.getElementById('session-' + talk.sess_id).classList.add('current')
+            var elem = document.getElementById('session-' + talk.sess_id);
+            elem.classList.add('current');
+            if (!document.location.hash)
+              elem.scrollIntoView();            
           }
         }
       }
