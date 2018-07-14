@@ -49,7 +49,7 @@ tab_index: 2
 
 <div class="instructions">
   <p>Posters for the Student Research Workshop and System Demonstrations run concurrently with main conference poster sessions. Please note that additional <a href="/registration">registration</a> is required for workshops and tutorials.</p>
-  <p>Hover over each entry to find out author and abstract information. You can use the search box to filter by author name, title, session topic or TACL papers (enter 'tacl'). Click on an entry to add it to your schedule; once you have selected your preferred sessions, you can download all as a .ics at the bottom of the page, which can be imported into Outlook, macOS Calendar and Google Calendar. If you use a relatively modern browser, your selected sessions should also be saved in the browser. {% comment %}To get a shareable link to an entry, right-click on the <i class="fas fa-link"></i> icon and copy the link.{% endcomment %}</p>
+  <p>Hover over each entry to find out author and abstract information. You can use the search box to filter by author name, title, session topic or TACL papers (enter 'tacl'). Click on an entry to add it to your schedule; once you have selected your preferred sessions, you can download all as a .ics at the bottom of the page, which can be imported into Outlook, macOS Calendar and Google Calendar. If you use a relatively modern browser, your selected sessions should also be saved in the browser. ‘▶︎’ denotes current session ‘★’ denotes a selected session. To get a shareable link to an entry, right-click on the <i class="fas fa-link"></i> icon and copy the link.</p>
 </div>
 
 <div id="schedule">
@@ -411,7 +411,7 @@ function highlightHash() {
 }
 
 function highlightCurrent() {
-  var now = new Date("2018-07-16 10:47:00+1000")
+  var now = new Date();
   var days = rawScheduleData.days;
   document.querySelectorAll(".current").forEach(function(e) {
     e.classList.remove("current");
@@ -421,8 +421,14 @@ function highlightCurrent() {
     for (var j = 0; j < sessions.length; j++) {
       var sess = sessions[j];
       var concurrent = sess.concurrent_sessions;
-      if (typeof concurrent === 'undefined') 
+      if (typeof concurrent === 'undefined') {
+        var start = new Date(fixDate(sess.start));
+        var end = new Date(fixDate(sess.end));
+        if (start <= now && now <= end) {
+          document.getElementById('session-' + sess.sess_id).classList.add('current')
+        }
         continue;
+      }
 
       for (var k = 0; k < concurrent.length; k++) {
         var talks = concurrent[k].talks;

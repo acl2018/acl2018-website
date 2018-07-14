@@ -804,6 +804,19 @@ a.hashlink {
     content: " ▶︎ NOW";
 }
 
-.selected .talk-title::before {
+.selected .talk-title::before, .selected .session-name::before {
     content: " ★ ";
+}
+
+.current .session-name::before {
+    content: " ▶︎ ";    
+}
+
+#schedule .current {
+    .bookable {
+        background-color: #e7d2fb;
+    }
+    &.selected .bookable {
+        background-color: #bfa4fb;
+    }    
 }
