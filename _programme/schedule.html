@@ -103,8 +103,11 @@ tab_index: 2
                     data-index="{{ talk.id }} {{ talk.speakers | join: '; ' | downcase }} {{ talk.name | downcase }} {{ conc_sess.name | downcase }} {% if talk.is_tacl %}tacl{% endif %}"
                     title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
                     <a class="hashlink" href="{{ page.url }}#paper-{{ talk.id | slugify }}"><i class="fas fa-link"></i></a>                    
-                    {% if talk.is_tacl %}<div class="badge tacl-badge"></div>{% endif %}
-                    {{ talk.name }}
+                    {% if talk.is_tacl %}
+                      <div class="badge tacl-badge"></div> {{ talk.name }}
+                    {% else %}
+                      <a href="/paper/{{ talk.id | slugify }}">{{ talk.name }}</a>
+                    {% endif %}
                   </span>
                 {% endfor %}
                 </div>
@@ -142,8 +145,11 @@ tab_index: 2
                     </div>
                     <div class="talk-title" id="paper-{{ talk.id | slugify }}">
                       <a class="hashlink" href="{{ page.url }}#paper-{{ talk.id | slugify }}"><i class="fas fa-link"></i></a>
-                      {% if talk.is_tacl %}<div class="badge tacl-badge"></div>{% endif %}                  
-                      {{ talk.name }}
+                      {% if talk.is_tacl %}
+                        <div class="badge tacl-badge"></div> {{ talk.name }}
+                      {% else %}
+                        <a href="/paper/{{ talk.id | slugify }}">{{ talk.name }}</a>
+                      {% endif %}
                     </div>
                   </div>
                 {% endfor %}

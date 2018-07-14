@@ -2,6 +2,28 @@ require 'date'
 require 'time'
 
 module ScheduleReader
+	  # this class is used to tell Jekyll to generate a page
+	class DataPage < Jekyll::Page
+
+	    # - site and base are copied from other plugins: to be honest, I am not sure what they do
+	    #
+	    # - `dir` is the default output directory
+	    # - `data` is the data defined in `_data.yml` of the record for which we are generating a page
+	    # - `name` is the key in `data` which determines the output filename
+	    # - `template` is the name of the template for generating the page
+	    # - `extension` is the extension for the generated file
+	    def initialize(site, base, dir, data, id, template)
+			@site = site
+			@base = base
+			@dir = "#{dir}/#{id}/"
+			@name = "index.html"
+
+			self.process(@name)
+			self.read_yaml(File.join(base, '_layouts'), template)
+			self.data.merge!(data)
+	    end
+	end
+
   	class Generator < Jekyll::Generator
 
   		@@stream_locations = [
@@ -343,6 +365,9 @@ module ScheduleReader
 			site.config['main_schedule'] = read_schedule(paper_meta)
 			papers = paper_meta.values
 			site.config['main_paper_metadata'] = {'all' => paper_meta}
+			papers.each do |p|
+				site.pages << DataPage.new(site, site.source, 'paper', p, p['id'].sub('/', '-').downcase, 'paper.html')
+			end	
 		end
 
 		def common_prefix(m)

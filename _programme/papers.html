@@ -37,7 +37,7 @@ Congratulations to all authors for their fine work, and thanks to all the area c
 {% for paper in papers %}
     <li class="listing" title="ABSTRACT: {{ paper.abstract }}">
         <a class="cal-link" title="View schedule entry for '{{ paper.title }}'" target="_blank" href="../schedule/#paper-{{ paper.id | slugify }}"><i class="far fa-calendar-alt"></i></a>
-        <span class="paper-title">{{ paper.title }}</span>. 
+        <span class="paper-title"><a href="/paper/{{ paper.id | slugify }}">{{ paper.title }}</a></span>. 
         <span class="paper-authors">{{ paper.authors | join:", " }}</span>.
     </li>
 {% endfor %}
