@@ -511,7 +511,7 @@ table.hotel-rates {
 }
 
 .selected td.shared-name, .selected.talk {
-    background-color: hsl(225, 100%, 75%);
+    background-color: #a4b9fb;
     @media print {
         border: 2px solid hsl(225, 100%, 75%);
     }
@@ -788,3 +788,6 @@ a.hashlink {
     font-size: 85%;
 }
 
+#schedule a {
+    color: #084aa1
+}
