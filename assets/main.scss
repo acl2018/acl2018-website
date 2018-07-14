@@ -801,5 +801,9 @@ a.hashlink {
 }
     
 .current .talk-time::after {
-    content: " ★ NOW";
+    content: " ▶︎ NOW";
+}
+
+.selected .talk-title::before {
+    content: " ★ ";
 }
