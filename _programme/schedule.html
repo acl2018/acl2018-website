@@ -189,23 +189,24 @@ tab_index: 2
   var selectedIdb = new idbKeyval.Store('sel-conf-sessions', 'sel-conf-sessions');
 
   function extractSchedulable() {
-    byId = {};
-    days = rawScheduleData.days;
+    var byId = {};
+    var days = rawScheduleData.days;
     for (var i = 0; i < days.length; i++) {
       sessions = days[i].sessions;
       for (var j = 0; j < sessions.length; j++) {
-        sess = sessions[j];
+        var sess = sessions[j];
         byId[sess.sess_id] = {'shared': true, 'item': sess};
-        concurrent = sess.concurrent_sessions;
+        var concurrent = sess.concurrent_sessions;
         if (typeof concurrent === 'undefined') 
           continue;
 
         for (var k = 0; k < concurrent.length; k++) {
-          talks = concurrent[k].talks;
+          var talks = concurrent[k].talks;
           if (typeof talks === 'undefined')
             continue;
           for (var l = 0; l < talks.length ; l++) {
-            talk = talks[l];
+            var talk = talks[l];
+            talk.location = concurrent[k].location;
             byId[talk.sess_id] = {'shared': false, 'item': talk}
           }
         }
