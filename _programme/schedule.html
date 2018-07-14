@@ -104,7 +104,7 @@ tab_index: 2
                     title="{{ talk.speakers | join: '; ' }}. ABSTRACT: {{ talk.abstract }}">
                     <a class="hashlink" href="{{ page.url }}#paper-{{ talk.id | slugify }}"><i class="fas fa-link"></i></a>                    
                     {% if talk.is_tacl %}
-                      <div class="badge tacl-badge"></div> {{ talk.name }}
+                      <a href="https://www.transacl.org/ojs/index.php/tacl/article/view/{{ talk.tacl_id }}" title="view '{{ talk.name }}' on TransACL site if it is already published"><div class="badge tacl-badge"></div> {{ talk.name }} <i class="fas fa-external-link-square-alt"></i></a>
                     {% else %}
                       <a href="/paper/{{ talk.id | slugify }}">{{ talk.name }}</a>
                     {% endif %}
@@ -146,7 +146,7 @@ tab_index: 2
                     <div class="talk-title" id="paper-{{ talk.id | slugify }}">
                       <a class="hashlink" onclick="event.stopPropagation()" href="{{ page.url }}#paper-{{ talk.id | slugify }}"><i class="fas fa-link"></i></a>
                       {% if talk.is_tacl %}
-                        <a onclick="event.stopPropagation()" href="https://www.transacl.org/ojs/index.php/tacl/article/view/{{ talk.id | slice: 0, -5 }}" title="view '{{ talk.name }}' on TransACL site"><div class="badge tacl-badge"></div> {{ talk.name }} <i class="fas fa-external-link-alt"></i></a>
+                        <a onclick="event.stopPropagation()" href="https://www.transacl.org/ojs/index.php/tacl/article/view/{{ talk.tacl_id }}" title="view '{{ talk.name }}' on TransACL site if it is already published"><div class="badge tacl-badge"></div> {{ talk.name }} <i class="fas fa-external-link-square-alt"></i></a>
                       {% else %}
                         <a onclick="event.stopPropagation()" href="/paper/{{ talk.id | slugify }}">{{ talk.name }}</a>
                       {% endif %}

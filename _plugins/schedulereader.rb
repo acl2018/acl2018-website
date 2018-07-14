@@ -271,6 +271,7 @@ module ScheduleReader
 					is_tacl = talk_id.end_with?('/TACL')
 					talk = {
 						'id' => talk_id,
+						'tacl_id' => talk_id.sub(/\/TACL$/, ''),
 						'start' => start_time,
 						'end' => end_time,
 						'is_tacl' => is_tacl
@@ -296,6 +297,7 @@ module ScheduleReader
 					is_tacl = poster_id.end_with?('/TACL')
 					poster = {
 						'id' => poster_id,
+						'tacl_id' => poster_id.sub(/\/TACL$/, ''),
 						'is_tacl' => is_tacl,
 						'poster' => true
 					}
