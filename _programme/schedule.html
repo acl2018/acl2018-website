@@ -409,8 +409,40 @@ function highlightHash() {
   var hashElem = document.getElementById(document.location.hash.substr(1))
   hashElem.classList.add('hash-highlighted');
 }
+
+function highlightCurrent() {
+  var now = new Date("2018-07-16 10:47:00+1000")
+  var days = rawScheduleData.days;
+  document.querySelectorAll(".current").forEach(function(e) {
+    e.classList.remove("current");
+  });
+  for (var i = 0; i < days.length; i++) {
+    sessions = days[i].sessions;
+    for (var j = 0; j < sessions.length; j++) {
+      var sess = sessions[j];
+      var concurrent = sess.concurrent_sessions;
+      if (typeof concurrent === 'undefined') 
+        continue;
+
+      for (var k = 0; k < concurrent.length; k++) {
+        var talks = concurrent[k].talks;
+        if (typeof talks === 'undefined')
+          continue;
+        for (var l = 0; l < talks.length ; l++) {
+          var talk = talks[l];
+          var start = new Date(fixDate(talk.start));
+          var end = new Date(fixDate(talk.end));
+          if (start <= now && now <= end) {
+            document.getElementById('session-' + talk.sess_id).classList.add('current')
+          }
+        }
+      }
+    }
+  }
+}
 document.addEventListener("hashchange", function(event) { highlightHash(); });
 document.addEventListener("DOMContentLoaded", function(event) { highlightHash(); });
+document.addEventListener("DOMContentLoaded", function(event) { highlightCurrent(); })
 document.addEventListener("DOMContentLoaded", function(event) { doSessionSyncFromStored(); });
 
 </script>

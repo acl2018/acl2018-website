@@ -791,3 +791,15 @@ a.hashlink {
 #schedule a {
     color: #084aa1
 }
+
+.current {
+    background-color: #e7d2fb;
+
+    &.selected {
+        background-color: #bfa4fb;
+    }
+}
+    
+.current .talk-time::after {
+    content: " ★ NOW";
+}
