@@ -271,11 +271,14 @@ module ScheduleReader
 					is_tacl = talk_id.end_with?('/TACL')
 					talk = {
 						'id' => talk_id,
-						'tacl_id' => talk_id.sub(/\/TACL$/, ''),
 						'start' => start_time,
 						'end' => end_time,
 						'is_tacl' => is_tacl
 					}
+					if is_tacl
+						talk['tacl_id'] = talk_id.sub(/\/TACL$/, '')
+					end
+
 					if metadata.has_key?(talk_id)
 						extra = metadata[talk_id]
 						talk['name'] = extra['title']
@@ -295,12 +298,16 @@ module ScheduleReader
 					poster_id = line.split()[0]
 					remainder = line[(poster_id.size + 1)..-1]
 					is_tacl = poster_id.end_with?('/TACL')
+					is_tute = poster_id.end_with?('/TUTE')
 					poster = {
 						'id' => poster_id,
-						'tacl_id' => poster_id.sub(/\/TACL$/, ''),
 						'is_tacl' => is_tacl,
+						'is_tute' => is_tute,
 						'poster' => true
 					}
+					if is_tacl
+						poster['tacl_id'] = poster_id.sub(/\/TACL$/, '')
+					end
 					if metadata.has_key?(poster_id)
 						extra = metadata[poster_id]
 						poster['name'] = extra['title']

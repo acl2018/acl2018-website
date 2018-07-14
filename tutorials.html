@@ -16,6 +16,8 @@ title: Tutorials
 
 <div class="tutorial-time">{% if tute.time == 'morning' %}09:00 – 12:30{% else %}13:30 – 17:00{% endif %}</div>
 
+<div class="tutorial-location">{{ tute.location }}</div>
+
 <div id="{{ tute_info_id }}" class="tute-details" style="display: none;">
 
     <p>{{ tute.description | markdownify }}</p>

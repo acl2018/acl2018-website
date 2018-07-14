@@ -6,7 +6,7 @@
       Developing an intelligent dialogue system that not only emulates human conversation, but also can answer questions of topics ranging from latest news of a movie star to Einstein's theory of relativity, and fulfill complex tasks such as travel planning, has been one of the longest running goals in AI. The goal remains elusive until recently when we started observing promising results in both the research community and industry as the large amount of conversation data is available for training and the breakthroughs in deep learning (DL) and reinforcement learning (RL) are applied to conversational AI. 
 
       In this tutorial, we start with a brief introduction to the recent progress on DL and RL that is related to natural language processing and conversational AI. Then, we describe in detail the state-of-the-art neural approaches developed for three types of dialogue systems. The first is a question answering (QA) agent. Equipped with rich knowledge drawn from various data sources including Web documents and pre-compiled knowledge graphs (KG's), the QA agent can provide concise direct answers to user queries.  The second is a task-oriented dialogue system that can help users accomplish tasks ranging from meeting scheduling to vacation planning. The third is a social chat bot which can converse seamlessly and appropriately with humans, and often plays roles of a chat companion and a recommender. In the final part of the tutorial, we review attempts to developing open-domain conversational AI systems that combine the strengths of different types of dialogue systems.
-
+    location: 219, MCEC
 
   - title: Deep Reinforcement Learning for NLP
     presenters: William Yang Wang, Jiwei Li and Xiaodong He
@@ -15,6 +15,8 @@
     time: afternoon
     description: |
       Many Natural Language Processing (NLP) tasks (including generation, language grounding, reasoning, information extraction, coreference resolution, and dialog) can be formulated as Deep Reinforcement Learning (DRL) problems. However, since language is often discrete and the space for all sentences is infinite, there are many challenges for formulating reinforcement learning problems of NLP tasks. In this tutorial, we provide a gentle introduction to the foundation of Deep Reinforcement Learning, as well as some practical DRL solutions in NLP. We will show how DRL is different from traditional learning settings in NLP, and different ways of interpreting DRL models. We then introduce recent advances in designing deep reinforcement learning for NLP, with a special focus on generation, dialogue, and information extraction. Finally, we discuss the challenges going forward, including why they succeed, and when they may fail, aiming at providing some practical advice about deep reinforcement learning for solving real-world NLP problems.
+    location: 219, MCEC
+
 
   - title: Neural Semantic Parsing
     presenters: Luke Zettlemoyer, Matt Gardner, Pradeep Dasigi, Srinivasan Iyer and Alane Suhr
@@ -25,6 +27,7 @@
       Semantic parsing, the study of  translating natural language utterances into machine-executable programs, is a well-established research area and has applications in question answering, instruction following, voice assistants, and code generation. In the last two years, the models used for semantic parsing have changed dramatically with the introduction of neural encoder-decoder methods that allow us to rethink many of the previous assumptions underlying semantic parsing. We aim to inform those already interested in semantic parsing research of these new developments in the field, as well as introduce the topic as an exciting research area to those who are unfamiliar with it.
 
       Current approaches for neural semantic parsing share several similarities with neural machine translation, but the key difference between the two fields is that semantic parsing translates natural language into a formal language, while machine translation translates it into a different natural language. The formal language used in semantic parsing allows for constrained decoding, where the model is constrained to only produce outputs that are valid formal statements. We will describe the various approaches researchers have taken to do this. We will also discuss the choice of formal languages used by semantic parsers, and describe why much recent work has chosen to use standard programming languages instead of more linguistically-motivated representations. We will then describe a particularly challenging setting for semantic parsing, where there is additional context or interaction that the parser must take into account when translating natural language to formal language, and give an overview of recent work in this direction. Finally, we will introduce some tools available in AllenNLP for doing semantic parsing research.
+    location: 217, MCEC
 
   - title: "Beyond Multiword Expressions: Processing Idioms and Metaphors"
     presenters: Valia Kordoni
@@ -35,7 +38,7 @@
       Idioms and metaphors are characteristic to all areas of human activity and to all types of discourse. Their processing is a rapidly growing area in NLP, since they have become a big challenge for NLP systems, with their automatic identification and interpretation being indispensable for any semantics-oriented NLP application.
 
       This tutorial will provide attendees with a clear notion of the linguistic characteristics of idioms and metaphors, computational models of idioms and metaphors using state-of-the-art NLP techniques, their relevance for the intersection of deep learning and natural language processing, what methods and resources are available to support their use, and what more could be done in the future. Our target audience are researchers and practitioners in machine learning, parsing (syntactic and semantic) and language technology, not necessarily experts in idioms and metaphors, who are interested in tasks that involve or could benefit from considering idioms and metaphors as a pervasive phenomenon in human language and communication.
-
+    location: 216, MCEC
 
   - title: Connecting Language and Vision to Actions
     presenters: Peter Anderson, Abhishek Das and Qi Wu
@@ -45,6 +48,7 @@
     description: |
 
       Recent advances at the intersection of language and vision have made incredible progress in tasks such as image captioning, visual question answering and visual dialog. The challenge now is to extend this progress to embodied agents that move and interact with their visual environments. This tutorial will provide a comprehensive yet accessible introduction to the key innovations that have driven progress in language and vision modeling (such as multi-modal pooling, visual and co-attention, dynamic network composition, methods for incorporating external knowledge and cooperative/adversarial games). We will then discuss some of the current and upcoming challenges of combining language, vision, and actions, and discuss some recently-released interactive 3D simulation environments that can be used for this purpose (such as House3D, Home, Minos, Matterport3D Simulator, Gibson, Thor, and Chalet).
+    location: 218, MCEC
 
 
   - title: 100 Things You Always Wanted to Know about Semantics & Pragmatics But Were Afraid to Ask
@@ -65,6 +69,7 @@
       * **Meaning beyond the sentence**: How do sentences in discourse relate to each other? How do we connect referring expressions with the same referents?
       * **Presupposition and implicature**: What are presuppositions and implicatures? What linguistic expressions introduce presuppositions and how do they interact in larger structures? How do we calculate implicatures?
       * **Resources**: What linguistic resources have been built to assist with semantic processing?
+    location: 216, MCEC
 
 
   - title: Multi-lingual Entity Discovery and Linking
@@ -76,6 +81,7 @@
       The primary goals of this tutorial are to review the framework of cross-lingual EL and motivate it as a broad paradigm for the Information Extraction task. We will start by discussing the traditional EL techniques and metrics and address questions relevant to the adequacy of these to across domains and languages. We will then present more recent approaches such as Neural EL, discuss the basic building blocks of a state-of-the-art neural EL system and analyze some of the current results on English EL. We will then proceed to Cross-lingual EL and discuss methods that work across languages. In particular, we will discuss and compare multiple methods that make use of multi-lingual word embeddings. We will also present EL methods that work for both name tagging and linking in very low resource languages. Finally, we will discuss the uses of cross-lingual EL in a variety of applications like search engines and commercial product selling applications. Also, contrary to the 2014 EL tutorial, we will  also  focus on Entity Discovery which is an essential component of EL.
 
       The tutorial will be useful for both senior and junior researchers (in academia and industry) with interests in cross-source information extraction and linking, knowledge acquisition, and the use of acquired knowledge in natural language processing and information extraction. We will try to provide a concise road-map of recent approaches, perspectives, and results, as well as point to some of our EL resources that are available to the research community.
+    location: 216, MCEC
 
 
   - title: Variational Inference and Deep Generative Models
@@ -87,4 +93,4 @@
       Neural networks are taking NLP by storm. Yet they are mostly applied to fully supervised tasks. Many real-world NLP problems require unsupervised or semi-supervised models, however, because annotated data is hard to obtain. This is where generative models shine. Through the use of latent variables they can be applied in missing data settings. Furthermore they can complete missing entries in partially annotated data sets.
 
       This tutorial is about how to use neural networks inside generative models, thus giving us Deep Generative Models (DGMs). The training method of choice for these models is variational inference (VI). We start out by introducing VI on a basic level. From there we turn to DGMs. We justify them theoretically and give concrete advise on how to implement them. For continuous latent variables, we review the variational autoencoder and use Gaussian reparametrisation to show how to sample latent values from it. We then turn to discrete latent variables for which no reparametrisation exists. Instead, we explain how to use the score-function or REINFORCE gradient estimator in those cases. We finish by explaining how to combine continuous and discrete variables in semi-supervised modelling problems.
-
+    location: 217, MCEC
