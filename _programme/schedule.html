@@ -334,7 +334,6 @@ function highlightCurrent() {
   var now = new Date();
   now.setMinutes(now.getMinutes() + 3);
   if (nextChange != null && now < nextChange) {
-    console.log("not checking sessions: " + now + " < " + nextChange);
     return; // short circuit to save compute
   }
   var days = rawScheduleData.days;
