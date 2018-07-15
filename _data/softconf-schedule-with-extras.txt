@@ -9,6 +9,7 @@
 27/TUTE # Variational Inference and Deep Generative Models
 + 09:00--12:30 Tutorial
 20/TUTE # Connecting Language and Vision to Actions
++ 12:30--13:30 Lunch
 + 13:30--17:00 Tutorial
 25/TUTE # Beyond Multiword Expressions: Processing Idioms and Metaphors
 + 13:30--17:00 Tutorial
@@ -233,6 +234,8 @@
 977 16:35--17:00 # Straight to the Tree: Constituency Parsing with Neural Syntactic Distance # Yikang Shen, Zhouhan Lin, Athul Paul Jacob, Alessandro Sordoni, Aaron Courville and Yoshua Bengio
 1525 17:00--17:25 # Gaussian Mixture Latent Vector Grammars # Yanpeng Zhao, Liwen Zhang and Kewei Tu
 1106 17:25--17:50 # Extending a Parser to Distant Domains Using a Few Dozen Partially Annotated Examples # Vidur Joshi, Matthew Peters and Mark Hopkins
+
++ 18:15--19:45 Student Recruitment Event
 
 * Tuesday, July 17, 2018
 + 9:00--10:00 Invited Talk 1: Carolyn Penstein Rosé

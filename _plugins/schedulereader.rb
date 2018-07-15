@@ -123,6 +123,8 @@ module ScheduleReader
 					return ''	
 				elsif ses_name == 'Lunch'
 					return ''
+				elsif ses_name == 'Student Recruitment Event'
+					return 'Showtime and Common Man'
 				else
 					return 'Plenary, MCEC'
 				end

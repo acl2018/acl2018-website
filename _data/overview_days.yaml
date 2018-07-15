@@ -60,6 +60,7 @@
     - name: Student Recruitment
       start_time: "18:15"
       length: 1.5
+      id_suff: "_1815"
 - name: Tue 17th
   subtitle: Conference
   details: "Main Conference, System Demonstrations and Student Research Workshop"
