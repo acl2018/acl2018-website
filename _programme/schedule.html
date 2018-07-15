@@ -414,7 +414,7 @@ function highlightHash() {
 
 function highlightCurrent() {
   var now = new Date();
-  now.setMinutes(now.getMinutes() + 2);
+  now.setMinutes(now.getMinutes() + 3);
   var days = rawScheduleData.days;
   document.querySelectorAll(".current").forEach(function(e) {
     e.classList.remove("current");
