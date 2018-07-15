@@ -410,11 +410,15 @@ function highlightHash() {
   hashElem.classList.add('hash-highlighted');
 }
 
-
+var nextChange = null;
 
 function highlightCurrent() {
   var now = new Date();
   now.setMinutes(now.getMinutes() + 3);
+  if (nextChange != null && now < nextChange) {
+    console.log("not checking sessions: " + now + " < " + nextChange);
+    return; // short circuit to save compute
+  }
   var days = rawScheduleData.days;
   document.querySelectorAll(".current").forEach(function(e) {
     e.classList.remove("current");
@@ -430,8 +434,10 @@ function highlightCurrent() {
         if (start <= now && now <= end) {
           var elem = document.getElementById('session-' + sess.sess_id);
           elem.classList.add('current');
+          nextChange = end;
           if (!document.location.hash)
             elem.scrollIntoView();
+          return;
         }
         continue;
       }
@@ -447,8 +453,10 @@ function highlightCurrent() {
           if (start <= now && now <= end) {
             var elem = document.getElementById('session-' + talk.sess_id);
             elem.classList.add('current');
+            nextChange = end;
             if (!document.location.hash)
-              elem.scrollIntoView();            
+              elem.scrollIntoView();
+            return;
           }
         }
       }
@@ -459,6 +467,6 @@ document.addEventListener("hashchange", function(event) { highlightHash(); });
 document.addEventListener("DOMContentLoaded", function(event) { highlightHash(); });
 document.addEventListener("DOMContentLoaded", function(event) { highlightCurrent(); })
 document.addEventListener("DOMContentLoaded", function(event) { doSessionSyncFromStored(); });
-window.setInterval(function() { highlightCurrent(); }, 90000);
+window.setInterval(function() { highlightCurrent(); }, 60000);
 </script>
 
