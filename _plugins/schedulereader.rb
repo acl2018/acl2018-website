@@ -121,6 +121,8 @@ module ScheduleReader
 					return 'Melbourne Room 1 and 2, MCEC'
 				elsif ses_name.end_with?('Tutorials')
 					return ''	
+				elsif ses_name == 'Lunch'
+					return ''
 				else
 					return 'Plenary, MCEC'
 				end

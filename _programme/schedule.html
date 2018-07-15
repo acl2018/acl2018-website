@@ -410,8 +410,11 @@ function highlightHash() {
   hashElem.classList.add('hash-highlighted');
 }
 
+
+
 function highlightCurrent() {
   var now = new Date();
+  now.setMinutes(now.getMinutes() + 2);
   var days = rawScheduleData.days;
   document.querySelectorAll(".current").forEach(function(e) {
     e.classList.remove("current");
@@ -456,6 +459,6 @@ document.addEventListener("hashchange", function(event) { highlightHash(); });
 document.addEventListener("DOMContentLoaded", function(event) { highlightHash(); });
 document.addEventListener("DOMContentLoaded", function(event) { highlightCurrent(); })
 document.addEventListener("DOMContentLoaded", function(event) { doSessionSyncFromStored(); });
-
+window.setInterval(function() { highlightCurrent(); }, 90000);
 </script>
 
