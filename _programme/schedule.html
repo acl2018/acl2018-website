@@ -278,14 +278,19 @@ tab_index: 2
   }
 
   function fixDate(orig) {
-    return orig.replace(/ [+-]/, "+")
+    return orig.replace(/ [+-]/, "+");
+  }
+
+  function stripTz(orig) {
+    return orig.replace(/ [+-]\d+$/, "");
   }
 
   function calendarDownloadSessions(sessions) {
     var cal = ics('ACL18');
     for (var i = 0; i < sessions.length; ++i) {
       var sess = sessions[i];
-      cal.addEvent(sess.name + " (ACL18)", sessionDesc(sess), sessionLoc(sess), fixDate(sess.start), fixDate(sess.end));
+      // ics.js no handling UTC well - go for naive objects
+      cal.addEvent(sess.name + " (ACL18)", sessionDesc(sess), sessionLoc(sess), stripTz(sess.start), stripTz(sess.end));
     }
     cal.download('ACL18');
   }
