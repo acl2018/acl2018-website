@@ -12,6 +12,9 @@
       - name: Toutiao/Bytedance
         image: bytedance-toutiao.png
         url: https://www.bytedance.com/
+      - name : Facebook
+        image: facebook.png
+        url: https://facebook.com
   - name: Platinum
     sponsors:
       - name: Amazon
@@ -20,9 +23,6 @@
       - name: Baidu
         image: baidu.png
         url: https://www.baidu.com/
-      - name : Facebook
-        image: facebook.png
-        url: https://facebook.com
       - name: Jingdong
         url: http://www.jd.com
         image: jingdong.png
@@ -77,6 +77,8 @@
         image: monash.png
       - name: Sintelix
         image: sintelix.png
+      - name: Monash University
+        image: monash.png
   - name: Student Volunteers Sponsor
     sponsors:
       - name: Data 61
