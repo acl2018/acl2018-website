@@ -73,6 +73,8 @@
         image: melbourne.png
       - name: Melbourne Convention Bureau
         image: mcb.png
+      - name: Monash IT
+        image: monash.png
       - name: Sintelix
         image: sintelix.png
   - name: Student Volunteers Sponsor
