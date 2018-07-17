@@ -105,10 +105,12 @@ tab_index: 2
                     <a class="hashlink" href="{{ page.url }}#paper-{{ talk.id | slugify }}"><i class="fas fa-link"></i></a>                    
                     {% if talk.is_tacl %}
                       <a href="https://www.transacl.org/ojs/index.php/tacl/article/view/{{ talk.tacl_id }}" title="view '{{ talk.name }}' on TransACL site if it is already published"><div class="badge tacl-badge"></div> {{ talk.name }} <i class="fas fa-external-link-square-alt"></i></a>
-                    {% else if talk.is_tute %}
-                      <a href="/tutorials/#{{ talk.name | slugify | slice: 0, 27 }}">{{ talk.name }}</a>
-                    {% else %}
+                    {% elsif talk.poster %}
                       <a href="/paper/{{ talk.id | slugify }}">{{ talk.name }}</a>
+                    {% comment %}
+                    {% elsif talk.is_tute %}
+                      <a href="/tutorials/#{{ talk.name | slugify | slice: 0, 27 }}">{{ talk.name }}</a>
+                    {% endcomment %}
                     {% endif %}
                   </span>
                 {% endfor %}
