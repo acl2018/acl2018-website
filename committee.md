@@ -109,7 +109,7 @@ committee:
   - rolename: Webmaster
     people: 
       - name: Andrew MacKinlay
-        affiliation: Culture Amp / University of Melbourne
+        affiliation: Culture Amp
         page: https://www.linkedin.com/in/andrew-mackinlay-4a7ba43a/
         email: acl2018web@gmail.com
 ---
@@ -120,7 +120,7 @@ committee:
 #### {{ role.rolename }}
 
   {% for person in role.people %}
-  * [{{ person.name }}]({{ person.page }}){% if person.email %}([{{ person.email }}](mailto:{{ person.email }})){% endif %}, {{ person.affiliation }}{% endfor %}
+  * [{{ person.name }}]({{ person.page }}){% if person.email %} ([{{ person.email }}](mailto:{{ person.email }})){% endif %}, {{ person.affiliation }}{% endfor %}
 {% endfor %}
 
 ### Area Chairs
