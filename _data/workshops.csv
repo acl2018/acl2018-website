@@ -1,16 +1,16 @@
-date,submission_num,name,abbreviation,url
-2018-07-19,18,BioNLP 2018,BioNLP,https://aclweb.org/aclwiki/BioNLP_Workshop
-2018-07-19,50,Deep Learning Approaches for Low Resource Natural Language Processing,DeepLo,https://sites.google.com/view/deeplo18/home
-2018-07-19,48,Third Workshop on Computational Approaches to Linguistic Code-Switching,CALCS,https://code-switching.github.io/2018/
-2018-07-19,56,Multilingual Surface Realization: Shared Task and Beyond,MSR,http://taln.upf.edu/pages/msr2018-ws/
-2018-07-19,57,The 5th Workshop on Natural Language Processing Techniques for Educational Applications,NLPTEA,https://sites.google.com/view/nlptea2018
-2018-07-19,37,Cognitive Aspects of Computational Language Learning and Processing,CogCL,https://sites.google.com/view/cognitivews2018/home
-2018-07-19,40,Workshop on Relevance of Linguistic Structure in Neural Architectures for NLP,RELNLP,https://sites.google.com/view/relsnnlp
-2018-07-19,25,Workshop on Machine Reading for Question Answering,MRQA,https://mrqa2018.github.io/
-2018-07-20,44,1st Workshop on Economics and Natural Language Processing,ECONLP,http://www.julielab.de/econlp2018.html
-2018-07-20,11,The Seventh Named Entities Workshop,NEWS,http://workshop.colips.org/news2018/
-2018-07-20,20,Workshop for NLP Open Source Software,NLPOSS,https://nlposs.github.io/
-2018-07-20,54,Sixth International Workshop on Natural Language Processing for Social Media,SocialNLP,https://sites.google.com/site/socialnlp2018/
-2018-07-20,49,First Workshop on Computational Modeling of Human Multimodal Language,MML_Challenge,http://multicomp.cs.cmu.edu/acl2018multimodalchallenge/
-2018-07-20,41,3rd Workshop on Representation Learning for NLP,RepL4NLP,https://sites.google.com/site/repl4nlp2018/
-2018-07-20,30,The 2nd Workshop on Neural Machine Translation and Generation,NMT,https://sites.google.com/site/wnmt18/
+date,submission_num,name,abbreviation,url,location
+2018-07-19,18,BioNLP 2018,BioNLP,https://aclweb.org/aclwiki/BioNLP_Workshop,"Room 207, MCEC"
+2018-07-19,50,Deep Learning Approaches for Low Resource Natural Language Processing,DeepLo,https://sites.google.com/view/deeplo18/home,"Room 211, MCEC"
+2018-07-19,48,Third Workshop on Computational Approaches to Linguistic Code-Switching,CALCS,https://code-switching.github.io/2018/,"Room 209, MCEC"
+2018-07-19,56,Multilingual Surface Realization: Shared Task and Beyond,MSR,http://taln.upf.edu/pages/msr2018-ws/,"Room 216, MCEC"
+2018-07-19,57,The 5th Workshop on Natural Language Processing Techniques for Educational Applications,NLPTEA,https://sites.google.com/view/nlptea2018,"Room 217, MCEC"
+2018-07-19,37,Cognitive Aspects of Computational Language Learning and Processing,CogCL,https://sites.google.com/view/cognitivews2018/home,"Room 218, MCEC"
+2018-07-19,40,Workshop on Relevance of Linguistic Structure in Neural Architectures for NLP,RELNLP,https://sites.google.com/view/relsnnlp,"Room 208, MCEC"
+2018-07-19,25,Workshop on Machine Reading for Question Answering,MRQA,https://mrqa2018.github.io/,"Room 210, MCEC"
+2018-07-20,44,1st Workshop on Economics and Natural Language Processing,ECONLP,http://www.julielab.de/econlp2018.html,"Room 207, MCEC"
+2018-07-20,11,The Seventh Named Entities Workshop,NEWS,http://workshop.colips.org/news2018/,"Room 208, MCEC"
+2018-07-20,20,Workshop for NLP Open Source Software,NLPOSS,https://nlposs.github.io/,"Room 209, MCEC"
+2018-07-20,54,Sixth International Workshop on Natural Language Processing for Social Media,SocialNLP,https://sites.google.com/site/socialnlp2018/,"Room 216, MCEC"
+2018-07-20,49,First Workshop on Computational Modeling of Human Multimodal Language,MML_Challenge,http://multicomp.cs.cmu.edu/acl2018multimodalchallenge/,"Room 217, MCEC"
+2018-07-20,41,3rd Workshop on Representation Learning for NLP,RepL4NLP,https://sites.google.com/site/repl4nlp2018/,"Room 210, MCEC"
+2018-07-20,30,The 2nd Workshop on Neural Machine Translation and Generation,NMT,https://sites.google.com/site/wnmt18/,"Room 211, MCEC"
