@@ -108,6 +108,7 @@ tab_index: 2
                     {% elsif talk.poster %}
                       <a href="/paper/{{ talk.id | slugify }}">{{ talk.name }}</a>
                     {% comment %}
+                    <!-- doesn't work wtf -->
                     {% elsif talk.is_tute %}
                       <a href="/tutorials/#{{ talk.name | slugify | slice: 0, 27 }}">{{ talk.name }}</a>
                     {% endcomment %}
