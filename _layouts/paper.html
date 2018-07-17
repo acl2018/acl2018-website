@@ -17,7 +17,7 @@ layout: default
 	</p>
 
 	<div class="links"><a href="/programme/schedule/#paper-{{ page.id }}">View in Schedule</a> 
-		{% if page.format == 'long' or page.format == 'short' %}
+		{% if page.format == 'long' or page.format == 'short' or page.format == 'srw' or page.format == 'demo' %}
 		| <a href="https://aclanthology.info/catalog?f%5Bpublish_date%5D%5B%5D=2018&f%5Bvenue_acronym%5D%5B%5D=ACL&q=%22{{ page.title | cgi_escape }}%22&search_field=title&utf8=%E2%9C%93">Find in ACL Anthology</a>
 		{% endif %}
 	</div>
