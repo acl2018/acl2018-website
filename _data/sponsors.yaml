@@ -78,8 +78,6 @@
         image: monash.png
       - name: Sintelix
         image: sintelix.png
-      - name: Monash University
-        image: monash.png
   - name: Student Volunteers Sponsor
     sponsors:
       - name: Data 61
