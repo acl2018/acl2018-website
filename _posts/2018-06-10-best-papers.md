@@ -16,3 +16,5 @@ The ACL 2018 organising committee is pleased to announce the following best pape
 
 * *Know What You Don’t Know: Unanswerable Questions for SQuAD.* Pranav Rajpurkar, Robin Jia and Percy Liang
 * *'Lighter' Can Still Be Dark: Modeling Comparative Color Descriptions.* Olivia Winn and Smaranda Muresan
+
+Several other papers received [honourable mentions](/2018/07/26/hon-mention-papers).
