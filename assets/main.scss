@@ -666,8 +666,13 @@ td.conc-session, .conc-session-details-row td.session-details {
     margin-top: 3px;
 }
 
+.listing a.vidlink {
+    font-size: 75%;
+    vertical-align: middle;
+    margin-right: 5px;
+}
 
-a.hashlink {
+a.hashlink, .talk a.vidlink {
     font-size: 75%;
 
     &:link, &:active, &:visited, &:hover {

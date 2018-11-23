@@ -150,6 +150,7 @@ tab_index: 2
                     </div>
                     <div class="talk-title" id="paper-{{ talk.id | slugify }}">
                       <a class="hashlink" onclick="event.stopPropagation()" href="{{ page.url }}#paper-{{ talk.id | slugify }}"><i class="fas fa-link"></i></a>
+                      <a class="vidlink" onclick="event.stopPropagation()" href="https://vimeo.com/search?duration=long&price=free&q=%22{{ talk.name | cgi_escape }}%22" target="_blank"><i class="fas fa-video"></i></a>
                       {% if talk.is_tacl %}
                         <a onclick="event.stopPropagation()" href="https://www.transacl.org/ojs/index.php/tacl/article/view/{{ talk.tacl_id }}" title="view '{{ talk.name }}' on TransACL site if it is already published"><div class="badge tacl-badge"></div> {{ talk.name }} <i class="fas fa-external-link-square-alt"></i></a>
                       {% else %}
